@@ -60,6 +60,13 @@
   line-height: 5.75rem;
 }
 
+.head-text-2 {
+  color: var(--black-color);
+  font-weight: 800;
+  font-size: 3.125rem;
+  line-height: 64px;
+}
+
 .sub-text {
   font-weight: 700;
   color: var(--deep-black);
@@ -69,7 +76,7 @@
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.5rem;
-  color: var(--secondary-black);
+  color: var(--secondary-black-color);
 }
 
 .btn-primary {
@@ -104,11 +111,12 @@
 
 .btn-tertiary {
   border: none;
+  border-radius: 8px;
   outline: none;
-  background: none;
+  background: #FDFDFD;
   font-size: 20px;
   font-weight: 600;
-  color: #2d2d2d;
+  color: #121B98;
   cursor: pointer;
 }
 

@@ -1,1 +1,49 @@
-//you can takes this out
+.home {
+  width: 100%;
+  padding: 6.25rem 6.25rem 0;
+  background: var(--white-color);
+}
+
+.home__section1 {
+  width: 100%;
+  text-align: left;
+  .home__section1-article {
+    width: 58%;
+
+    h1 {
+      margin-bottom: 16px;
+      span {
+        color: var(--primary-color);
+      }
+    }
+
+    & > p {
+      max-width: 31.4rem;
+      margin-bottom: 56px;
+    }
+
+    div {
+      justify-content: flex-start;
+      gap: 0.8rem;
+
+      button {
+        width: 172px;
+        height: 62px;
+      }
+
+      p {
+        color: var(--primary-color);
+        gap: 12px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .home__section1-img {
+    width: 45%;
+  }
+}

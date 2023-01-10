@@ -17,12 +17,12 @@ const NavBar = () => {
       path: "/about",
     },
     {
-      name: "Faq",
-      path: "/faq",
-    },
-    {
       name: "Parents",
       path: "/parents",
+    },
+    {
+      name: "FAQs",
+      path: "/faq",
     },
   ];
   return (
@@ -43,8 +43,7 @@ const NavBar = () => {
           <CiSearch />
         </div>
         <div className="nav__btn">
-          <button className="btn-tertiary">sign In</button>
-          <button className="btn-primary">sign Up</button>
+          <button className="btn-primary">Get Started</button>
         </div>
       </nav>
       <nav className="nav-mobile">
