@@ -1,15 +1,15 @@
 .parents {
   width: 100%;
-  padding: 0 6.25rem;
-  background:  #E0E0E0;
+  background:  var(--white-color);
 }
 
 .parents__section1 {
   width: 100%;
+  padding: 0 6.25rem;
   .parents__section1-article {
     flex: 1;
     h1 {
-      width: 41rem;
+      width: 35.5rem;
       margin-bottom: 24px;
 
       span {
@@ -19,35 +19,36 @@
 
     p {
       width: 31.5rem;
-      margin-bottom: 52px;
+      margin-bottom: 3.25rem;
+      text-align: justify;
     }
 
     button {
       width: 10.75rem;
-      height: 62px;
+      height: 3.875rem;
     }
   }
 
   .parents__section1-div {
     flex: 1;
-    width: 53rem;
+    width: 37rem;
     height: 53rem;
   }
 }
 
 .parents__activities {
   width: 100%;
+  padding: 0 6.25rem;
 
   .parents__activities-img {
-    width: 55%;
-    height: 839px;
+    width: 30.3rem;
+    height: 52.438rem;
   }
 
   .parents__activities-article {
-    width: 45%;
 
     .arctivities-cap {
-      width: 100%;
+      width: 38rem;
       height: 3.5rem;
       border-radius: 0.625rem;
       background-color: #d9d9d9;
@@ -60,13 +61,15 @@
     }
 
     p {
-      max-width: 38rem;
+      width: 38rem;
+      text-align: justify;
     }
   }
 }
 
 .parents__progress {
     width: 100%;
+    padding: 0 6.25rem;
 
     h2 {
         width: 80%;
@@ -76,6 +79,25 @@
 
     div {
         width: 90%;
-        height: 570px;
+        height: 35.6rem;
     }
+}
+
+.parents__started {
+  padding: 4.1rem 6.25rem;
+  background: var(--primary-color);
+
+  p {
+    font-size: 2rem;
+    color: var(--white-color);
+    text-align: center;
+    width: 56.563rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  button {
+    width: 10.4rem;
+    height: 3.875rem;
+  }
 }

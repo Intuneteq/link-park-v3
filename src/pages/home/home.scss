@@ -27,13 +27,13 @@
       gap: 0.8rem;
 
       button {
-        width: 172px;
-        height: 62px;
+        width: 10.75rem;
+        height: 3.875rem;
       }
 
       .about-btn {
         border: 1.5px solid var(--white-color);
-        border-radius: 8px;
+        border-radius: 0.5rem;
         background: none;
         color: var(--white-color);
         outline: none;
@@ -55,13 +55,13 @@
   padding: 6.25rem 6.25rem;
 
   h3 {
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
   }
 
   & > p {
     max-width: 515px;
     text-align: center;
-    margin-bottom: 39px;
+    margin-bottom: 2.5rem;
   }
 
   .section__digital-modal {
@@ -69,13 +69,13 @@
 
     .modal-div {
       width: 32%;
-      height: 297px;
+      height: 18.563rem;
       background: #f9f9f9;
-      border-radius: 8px;
+      border-radius: 0.5rem;
 
       div {
-        width: 126px;
-        height: 129px;
+        width: 7.875rem;
+        height: 8.063rem;
         margin-bottom: 12px;
       }
 
@@ -88,7 +88,7 @@
       }
 
       p {
-        max-width: 364px;
+        max-width: 22.75rem;
         text-align: center;
       }
     }
@@ -105,13 +105,13 @@
   padding: 6.25rem 6.25rem;
   h3 {
     font-size: 2.75rem;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 
   & > p {
     text-align: center;
-    max-width: 334px;
-    margin-bottom: 122px;
+    max-width: 20.875rem;
+    margin-bottom: 7.625rem;
   }
 
   .home__works-article {
@@ -129,7 +129,7 @@
       }
 
       p {
-        max-width: 471px;
+        max-width: 29.438rem;
         text-align: justify;
       }
     }
@@ -171,15 +171,15 @@
       color: var(--white-color);
       h5 {
         font-weight: 800;
-        font-size: 44px;
-        margin-bottom: 12px;
+        font-size: 2.75rem;
+        margin-bottom: 0.75rem;
       }
 
       p {
         font-weight: 600;
-        font-size: 19px;
-        line-height: 24px;
-        max-width: 215px;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        max-width: 13.4rem;
       }
     }
   }
@@ -192,26 +192,26 @@
   h2 {
     font-size: 3.5rem;
     text-align: center;
-    max-width: 911px;
+    max-width: 56.938rem;
     span {
       color: #651387;
     }
   }
 
   p {
-    max-width: 559px;
+    max-width: 34.938rem;
     text-align: center;
     margin-bottom: 1.5rem;
   }
   button {
-    width: 276px;
-    height: 62px;
+    width: 17.25rem;
+    height: 3.875rem;
   }
 }
 
 .home__walk {
   width: 100%;
-  gap: 72px;
+  gap: 4.5rem;
   padding: 5.125rem 6.25rem;
   background: #FDF9FF;
   position: relative;
@@ -219,7 +219,7 @@
   .dot1, .dot2 {
     position: absolute;
     z-index: 0;
-    height: 187px;
+    height: 11.69rem;
   }
 
   .dot1 {
@@ -234,7 +234,7 @@
 
   .home__walk-img {
     flex: 1;
-    width: 661px;
+    width: 41.3rem;
     height: 372px;
     z-index: 5;
   }
@@ -245,18 +245,18 @@
     h6 {
       font-size: 3rem;
       line-height: 3.8rem;
-      max-width: 453px;
+      max-width: 28.313rem;
       margin-bottom: 10px;
     }
 
     p {
-      max-width: 327px;
+      max-width: 20.4rem;
       margin-bottom: 18px;
     }
 
     button {
-      width: 167px;
-      height: 62px;
+      width: 10.4rem;
+      height: 3.875rem;
     }
   }
 }

@@ -20,7 +20,7 @@ const Parents = () => {
         </article>
         <div className="parents__section1-div img-size">
           <img
-            src="https://res.cloudinary.com/intuneteq/image/upload/v1673317634/Link-park-v2/Group_136_zuhc5c.png"
+            src="https://res.cloudinary.com/intuneteq/image/upload/v1673350450/Link-park-v2/Group_15934_ft3umv.png"
             alt="magnet"
           />
         </div>
@@ -28,7 +28,7 @@ const Parents = () => {
       <section className="parents__activities app__flex-2">
         <div className="parents__activities-img img-size">
           <img
-            src="https://res.cloudinary.com/intuneteq/image/upload/v1673319972/Link-park-v2/Group_15923_vvhhm6.png"
+            src="https://res.cloudinary.com/intuneteq/image/upload/v1673350727/Link-park-v2/Group_15935_dtrb8k.png"
             alt="activities"
           />
         </div>
@@ -50,6 +50,10 @@ const Parents = () => {
       </section>
       <section className="parents__testimonials">
         <Testimonials />
+      </section>
+      <section className="parents__started column-flex">
+        <p className="p-text">Receive daily evaluations on students' performance in order to identify shortcomings and improve the appropriate areas.</p>
+        <button className="btn-tertiary">Get Started</button>
       </section>
     </main>
   );
