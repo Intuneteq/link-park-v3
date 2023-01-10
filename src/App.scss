@@ -56,8 +56,8 @@
 .head-text {
   color: var(--black-color);
   font-weight: 800;
-  font-size: 4.5rem;
-  line-height: 5.75rem;
+  font-size: 3.875rem;
+  line-height: 4.9rem;
 }
 
 .head-text-2 {
@@ -69,6 +69,7 @@
 
 .sub-text {
   font-weight: 700;
+  font-size: 2.25rem;
   color: var(--deep-black);
 }
 
@@ -77,6 +78,13 @@
   font-size: 1.25rem;
   line-height: 1.5rem;
   color: var(--secondary-black-color);
+}
+
+.p-text-2 {
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
 .btn-primary {
@@ -100,7 +108,6 @@
   border: 1.5px solid var(--primary-color);
   border-radius: 8px;
   outline: none;
-  box-shadow: 4px 20px rgba(173, 173, 173, 0.16);
   background: none;
 
   color: var(--primary-color);

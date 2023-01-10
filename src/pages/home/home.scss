@@ -1,23 +1,23 @@
 .home {
   width: 100%;
-  padding: 6.25rem 6.25rem 0;
   background: var(--white-color);
 }
 
 .home__section1 {
   width: 100%;
+  padding: 6.25rem 6.25rem 0;
+  background: var(--primary-color);
   text-align: left;
   .home__section1-article {
-    width: 58%;
+    width: 50%;
 
     h1 {
       margin-bottom: 16px;
-      span {
-        color: var(--primary-color);
-      }
+      color: var(--white-color);
     }
 
     & > p {
+      color: var(--white-color);
       max-width: 31.4rem;
       margin-bottom: 56px;
     }
@@ -31,19 +31,232 @@
         height: 62px;
       }
 
-      p {
-        color: var(--primary-color);
-        gap: 12px;
+      .about-btn {
+        border: 1.5px solid var(--white-color);
+        border-radius: 8px;
+        background: none;
+        color: var(--white-color);
+        outline: none;
+        cursor: pointer;
 
-        svg {
-          width: 24px;
-          height: 24px;
-        }
+        font-size: 1.25rem;
+        font-weight: 600;
       }
     }
   }
 
   .home__section1-img {
-    width: 45%;
+    width: 50%;
+  }
+}
+
+.home__digital {
+  width: 100%;
+  padding: 6.25rem 6.25rem;
+
+  h3 {
+    margin-bottom: 12px;
+  }
+
+  & > p {
+    max-width: 515px;
+    text-align: center;
+    margin-bottom: 39px;
+  }
+
+  .section__digital-modal {
+    width: 100%;
+
+    .modal-div {
+      width: 32%;
+      height: 297px;
+      background: #f9f9f9;
+      border-radius: 8px;
+
+      div {
+        width: 126px;
+        height: 129px;
+        margin-bottom: 12px;
+      }
+
+      h6 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #0f0d15;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      p {
+        max-width: 364px;
+        text-align: center;
+      }
+    }
+
+    & > div:nth-child(2) {
+      background: var(--white-color);
+      box-shadow: 0px 4px 20px rgba(173, 173, 173, 0.16);
+    }
+  }
+}
+
+.home__works {
+  width: 100%;
+  padding: 6.25rem 6.25rem;
+  h3 {
+    font-size: 2.75rem;
+    margin-bottom: 8px;
+  }
+
+  & > p {
+    text-align: center;
+    max-width: 334px;
+    margin-bottom: 122px;
+  }
+
+  .home__works-article {
+    width: 100%;
+    margin-bottom: 206px;
+    align-items: flex-start;
+    position: relative;
+
+    .article-content {
+      flex: 1;
+
+      h4 {
+        color: var(--deep-black);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        max-width: 471px;
+        text-align: justify;
+      }
+    }
+
+    .article-img {
+      flex: 1;
+      height: 348px;
+    }
+
+    .article-arrow {
+      position: absolute;
+      bottom: -35%;
+      left: 20%;
+    }
+
+    .article-arrow-2 {
+      position: absolute;
+      bottom: -40%;
+      right: 20%;
+    }
+  }
+}
+
+.home__achievements {
+  width: 100%;
+  padding: 6.25rem 6.25rem;
+  background: var(--primary-color);
+
+  h3 {
+    font-size: 2rem;
+    color: var(--white-color);
+    margin-bottom: 40px;
+  }
+
+  .home__achievements-content {
+    width: 100%;
+
+    .achievements {
+      color: var(--white-color);
+      h5 {
+        font-weight: 800;
+        font-size: 44px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 24px;
+        max-width: 215px;
+      }
+    }
+  }
+}
+
+.home__track {
+  width: 100%;
+  padding: 6.25rem 6.25rem;
+  margin-bottom: 8px;
+  h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    max-width: 911px;
+    span {
+      color: #651387;
+    }
+  }
+
+  p {
+    max-width: 559px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  button {
+    width: 276px;
+    height: 62px;
+  }
+}
+
+.home__walk {
+  width: 100%;
+  gap: 72px;
+  padding: 5.125rem 6.25rem;
+  background: #FDF9FF;
+  position: relative;
+
+  .dot1, .dot2 {
+    position: absolute;
+    z-index: 0;
+    height: 187px;
+  }
+
+  .dot1 {
+    bottom: 0;
+    left: 0;
+  }
+
+  .dot2 {
+    top: 0;
+    right: 0;
+  }
+
+  .home__walk-img {
+    flex: 1;
+    width: 661px;
+    height: 372px;
+    z-index: 5;
+  }
+
+  .home__walk-article {
+    flex: 1;
+
+    h6 {
+      font-size: 3rem;
+      line-height: 3.8rem;
+      max-width: 453px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 327px;
+      margin-bottom: 18px;
+    }
+
+    button {
+      width: 167px;
+      height: 62px;
+    }
   }
 }
