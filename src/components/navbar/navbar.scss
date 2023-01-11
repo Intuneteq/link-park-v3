@@ -87,9 +87,6 @@
 }
 
 @media screen and (max-width: 1040px) {
-  .nav {
-    padding: 0.875rem 0.5rem;
-  }
 
   .nav__logo {
     width: 3rem;
@@ -101,7 +98,7 @@
 
     li {
       a {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -113,8 +110,8 @@
 
   .nav__btn {
     button {
-      width: 5rem;
-      height: 2rem;
+      width: 9rem;
+      height: 3rem;
       font-size: 1rem;
     }
   }

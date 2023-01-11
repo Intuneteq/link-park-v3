@@ -19,10 +19,9 @@ body {
 
 :root {
   --primary-color: #0d1292;
+  --secondary-color: #6767A1;
   --black-color: #131313;
   --secondary-black-color: #434343;
   --deep-black: #000000;
   --white-color: #ffffff;
-  --background-white-color: #fefbff;
-  --link-color: ;
 }
