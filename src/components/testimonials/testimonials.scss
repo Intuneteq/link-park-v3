@@ -62,3 +62,31 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .testimonials {
+    padding: 2rem 0.5rem;
+
+    &>h1 {
+      text-align: center;
+    }
+
+    &>p{ 
+      text-align: center;
+      line-height: 1.2rem;
+    }
+  }
+
+  .mySwiper {
+    width: 100%;
+    padding: 30px 0;
+    justify-content: center !important;
+    align-items: center !important;
+  
+    .swipeItem {
+      width: 350px;
+      padding: 1rem;
+      box-shadow: 0px 2px 5px rgba(173, 173, 173, 0.16);
+    }
+  }
+}
