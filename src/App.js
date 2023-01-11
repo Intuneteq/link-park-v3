@@ -7,6 +7,7 @@ import ExternalLayouts from "./layouts/external";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Parents from "./pages/parents";
+import SignIn from "./pages/signIn";
 
 //import dashboard pages
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/parents" element={<Parents />} />
+          <Route path="/signin" element={<SignIn />} />
         </Route>
       </Routes>
     </div>
