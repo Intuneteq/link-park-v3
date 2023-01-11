@@ -55,12 +55,9 @@ const NavBar = () => {
             </div>
           </Navbar.Brand>
           <Navbar.Content>
-            <Navbar.Link className="btn-tertiary" href="#">
-              Login
-            </Navbar.Link>
             <Navbar.Item>
-              <Button className="btn-primary" auto flat as={Link} href="#">
-                Sign Up
+              <Button className="btn-primary" auto flat as={Link} >
+                Get Started
               </Button>
             </Navbar.Item>
           </Navbar.Content>
