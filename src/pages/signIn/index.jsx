@@ -6,14 +6,14 @@ import "./signIn.scss";
 
 const SignIn = () => {
   return (
-    <main className="signIn app__flex">
-      <section className="signIn__img img-size">
+    <main className="signIn app__flex auth">
+      <section className="auth__img img-size">
         <img
           src="https://res.cloudinary.com/intuneteq/image/upload/v1673438686/Link-park-v2/Frame_15971_ivgcpf.png"
           alt="sign-in"
         />
       </section>
-      <form className="signIn__form column-flex" action="submit">
+      <form className="auth__form column-flex" action="submit">
         <h2 className="sub-text">Welcome Back Mr/Mrs</h2>
         <p className="p-text">Please enter your details to get started</p>
         <section className="column-flex form-inputs">
