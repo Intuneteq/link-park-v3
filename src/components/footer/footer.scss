@@ -1,1 +1,20 @@
-//you can take this off
+footer{
+    background-color: #FAFAFA;
+    padding: 0.875rem 6.25rem;
+
+    p{
+        font-weight: 800;
+        padding-bottom: 20px;
+    }
+    .icons{
+        gap: 10rem;
+        svg{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+h6{
+    text-align: center;
+    padding: 10px 0;
+}

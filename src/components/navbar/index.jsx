@@ -24,6 +24,10 @@ const NavBar = () => {
       name: "FAQs",
       path: "/faq",
     },
+    {
+      name: "UserSelect",
+      path: "/UserSelect",
+    }
   ];
   return (
     <>
@@ -46,6 +50,7 @@ const NavBar = () => {
           <button className="btn-primary">Get Started</button>
         </div>
       </nav>
+
       <nav className="nav-mobile">
         <Navbar isBordered variant="sticky">
           <Navbar.Brand>

@@ -7,7 +7,8 @@ import ExternalLayouts from "./layouts/external";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Parents from "./pages/parents";
-
+import Faq from "./pages/Faq/Faq";
+import UserSelect from "./pages/UserSelect/UserSelect";
 //import dashboard pages
 
 import "./App.scss";
@@ -20,6 +21,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/parents" element={<Parents />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/UserSelect" element={<UserSelect />} />
         </Route>
       </Routes>
     </div>
