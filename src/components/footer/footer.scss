@@ -1,20 +1,28 @@
-footer{
-    background-color: #FAFAFA;
-    padding: 0.875rem 6.25rem;
+footer {
+  background-color: #fafafa;
+  padding: 0.875rem 6.25rem;
 
-    p{
-        font-weight: 800;
-        padding-bottom: 20px;
+  p {
+    font-weight: 800;
+    padding-bottom: 20px;
+  }
+  .icons {
+    gap: 20px;
+    svg {
+      width: 2rem;
+      height: 2rem;
     }
-    .icons{
-        gap: 10rem;
-        svg{
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
+  }
 }
-h6{
-    text-align: center;
-    padding: 10px 0;
+h6 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+// ..................media query.......................
+@media screen and (max-width: 1024px) {
+  footer {
+    padding: 0.775rem 1.05rem;
+    gap: 20px;
+  }
 }

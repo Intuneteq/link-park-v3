@@ -9,18 +9,18 @@ const About = () => {
       <div className="aboutUs">
         <section className="aboutUs__main app__flex-2">
           <div className="aboutUs__main-content">
-            <h1>
+            <h1 className="head-text">
               Education made <span>Easy</span>
             </h1>
             <div className="aboutUs__main-inner">
               <hr />
-              <p>
+              <p className="p-text">
                 LinkPark is an edutech platform that is built to <br /> support
                 the existing school system to bring out the <br /> best out of
                 students.
               </p>
             </div>
-            <button className="btn-primary">Get Started</button>
+            <button className="btn-primary"> Get Started </button>
           </div>
           <div className="aboutUs__img">
             <img
@@ -30,6 +30,7 @@ const About = () => {
           </div>
           <div className="frame"></div>
           <div className="frame2"></div>
+          <button className="btn-primary btn-mobile"> Get Started </button>
         </section>
 
         <section className="boxes">
@@ -98,7 +99,7 @@ const About = () => {
 
         <section className="section4">
           <h1>The Team</h1>
-          <div className="app__flex section4__img-container">
+          <div className="app__flex-2 section4__img-container">
             <div>
               <div className="section4__card">
                 <img
