@@ -1,6 +1,7 @@
 import React from "react";
-import Testimonials from "../../components/testimonials";
 
+import Footer from "../../components/footer";
+import Testimonials from "../../components/testimonials";
 import "./home.scss";
 
 const Home = () => {
@@ -200,6 +201,7 @@ const Home = () => {
       <section>
         <Testimonials />
       </section>
+      <Footer />
     </main>
   );
 };

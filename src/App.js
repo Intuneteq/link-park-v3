@@ -9,7 +9,8 @@ import About from "./pages/about";
 import Parents from "./pages/parents";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signup";
-
+import Faq from "./pages/Faq/Faq";
+import UserSelect from "./pages/UserSelect/UserSelect";
 //import dashboard pages
 
 import "./App.scss";
@@ -24,6 +25,8 @@ function App() {
           <Route path="/parents" element={<Parents />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/UserSelect" element={<UserSelect />} />
         </Route>
       </Routes>
     </div>

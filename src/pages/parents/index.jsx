@@ -1,6 +1,7 @@
 import React from "react";
 
 import Testimonials from "../../components/testimonials";
+import Footer from "../../components/footer";
 import "./parents.scss";
 
 const Parents = () => {
@@ -55,6 +56,7 @@ const Parents = () => {
         <p className="p-text">Receive daily evaluations on students' performance in order to identify shortcomings and improve the appropriate areas.</p>
         <button className="btn-tertiary">Get Started</button>
       </section>
+      <Footer />
     </main>
   );
 };
