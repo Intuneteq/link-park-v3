@@ -76,6 +76,9 @@ const SignUp = () => {
               <input type="number" name="email" placeholder="Phone Number" />
             </div>
           </div>
+          <div className="form-btn">
+            <button className="btn-primary">Sign In</button>
+          </div>
         </section>
       </form>
     </main>

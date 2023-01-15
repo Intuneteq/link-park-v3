@@ -1,0 +1,241 @@
+.faq {
+  padding: 3rem 6.25rem;
+
+  h1 {
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .faq__content {
+    padding: 20px 0;
+    margin-bottom: 40px;
+
+    .faq__content-main {
+      width: 50%;
+
+      .content {
+        margin: 40px 0;
+
+        h3 {
+          font-weight: 800;
+          font-size: 22px;
+        }
+      }
+      .icon {
+        gap: 15px;
+      }
+    }
+    .faq__img-container {
+      padding: 50px;
+      // border: 1px solid black;
+      position: relative;
+
+      .faq__img {
+        width: 30rem;
+        height: 30rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .circle {
+          width: 180px;
+          height: 180px;
+          border-radius: 100%;
+          background: #fce300;
+          position: absolute;
+          top: -70px;
+          right: 100px;
+          z-index: -1;
+        }
+        .circle2 {
+          width: 150px;
+          height: 150px;
+          border-radius: 100%;
+          background: #b1b1d8;
+          position: absolute;
+          top: -30px;
+          right: 200px;
+          z-index: -1;
+        }
+        .circle3 {
+          width: 180px;
+          height: 180px;
+          border-radius: 100%;
+          background: #b1b1d8;
+          position: absolute;
+          bottom: -10px;
+          left: 50px;
+          z-index: -1;
+        }
+        .curve {
+          position: absolute;
+          right: 80px;
+          bottom: -15px;
+
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ...................................media query............................
+
+@media screen and (max-width: 900px) {
+  .faq {
+    padding: 1.5rem 2.5rem;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    .faq__content {
+      flex-direction: column;
+
+      .faq__content-main {
+        width: 100%;
+
+        .content {
+          h3 {
+            font-weight: 800;
+            font-size: 22px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+      .faq__img-container {
+        padding: 50px;
+        position: relative;
+
+        .faq__img {
+          width: 25rem;
+          height: 25rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+
+          .circle {
+            width: 100px;
+            height: 100px;
+            top: -10px;
+            right: 70px;
+            z-index: -1;
+          }
+          .circle2 {
+            width: 80px;
+            height: 80px;
+            top: 15px;
+            right: 140px;
+            z-index: -1;
+          }
+          .circle3 {
+            width: 100px;
+            height: 100px;
+            bottom: -5px;
+            left: 90px;
+            z-index: -1;
+          }
+          .curve {
+            right: 60px;
+            bottom: -15px;
+
+            img {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .faq {
+    padding: 2rem;
+
+    h1 {
+      text-align: center;
+      font-weight: 800;
+      font-size: 40px;
+    }
+
+    .faq__content {
+      padding: 20px 0;
+      margin-bottom: 40px;
+
+      .faq__content-main {
+        // width: 50%;
+
+        .content {
+          margin: 40px 0;
+
+          h3 {
+            font-weight: 800;
+            font-size: 22px;
+          }
+        }
+        .icon {
+          gap: 15px;
+        }
+      }
+      .faq__img-container {
+        padding: 50px;
+        border: 1px solid black;
+        position: relative;
+
+        .faq__img {
+
+          .circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 100%;
+            background: #fce300;
+            position: absolute;
+            top: -70px;
+            right: 100px;
+            z-index: -1;
+          }
+          .circle2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            background: #b1b1d8;
+            position: absolute;
+            top: -30px;
+            right: 200px;
+            z-index: -1;
+          }
+          .circle3 {
+            width: 180px;
+            height: 180px;
+            border-radius: 100%;
+            background: #b1b1d8;
+            position: absolute;
+            bottom: -10px;
+            left: 50px;
+            z-index: -1;
+          }
+          .curve {
+            position: absolute;
+            right: 80px;
+            bottom: -15px;
+
+            img {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

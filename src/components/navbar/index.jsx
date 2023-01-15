@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { Navbar, Button } from "@nextui-org/react";
 
@@ -7,6 +7,7 @@ import "./navbar.scss";
 import Images from "../../constants/Images";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const navLinks = [
     {
       name: "Home",
@@ -43,9 +44,10 @@ const NavBar = () => {
           <CiSearch />
         </div>
         <div className="nav__btn">
-          <button className="btn-primary">Get Started</button>
+          <button onClick={() => navigate('/UserSelect')} className="btn-primary">Get Started</button>
         </div>
       </nav>
+
       <nav className="nav-mobile">
         <Navbar isBordered variant="sticky">
           <Navbar.Brand>
