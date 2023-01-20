@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 //import layouts
 import ExternalLayouts from "./layouts/external";
+import DashboardLayout from "./layouts/dashboard";
 
 //import external pages
 import Home from "./pages/home";
@@ -14,6 +15,7 @@ import UserSelect from "./pages/UserSelect/UserSelect";
 //import dashboard pages
 
 import "./App.scss";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/UserSelect" element={<UserSelect />} />
+        </Route>
+
+        <Route element={<DashboardLayout />}>
+          <Route path="/username/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </div>
