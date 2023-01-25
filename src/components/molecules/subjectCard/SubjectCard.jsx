@@ -1,14 +1,11 @@
 import React from "react";
 
 import styles from "./subjectcard.module.scss";
-import SubjectButton from "../../atoms/SubjectButton";
+import { SubjectButton } from "../../atoms";
 
-const SubjectCard = ({item}) => {
+const SubjectCard = ({ item }) => {
   return (
-    <div
-      style={{ background: item.bgColor }}
-      className={styles.subjectCard}
-    >
+    <div style={{ background: item.bgColor }} className={styles.subjectCard}>
       <div style={{ background: item.color }} className={styles.cardImage}>
         <img src={item.img} alt="subject" />
       </div>
