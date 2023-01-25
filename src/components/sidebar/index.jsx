@@ -18,17 +18,17 @@ const Sidebar = () => {
       icon: <GrHomeRounded />,
     },
     {
-      path: "/username/Results",
+      path: "/username/results",
       name: "Results",
       icon: <TbNotebook />,
     },
     {
-      path: "/username/Subjects",
+      path: "/username/subjects",
       name: "Subjects",
       icon: <BsJoystick />,
     },
     {
-      path: "/username/Events",
+      path: "/username/events",
       name: "Upcoming Events",
       icon: <RiCalendar2Line />,
     },

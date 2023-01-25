@@ -12,10 +12,13 @@ import SignIn from "./pages/signIn";
 import SignUp from "./pages/signup";
 import Faq from "./pages/Faq/Faq";
 import UserSelect from "./pages/UserSelect/UserSelect";
+
 //import dashboard pages
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Results from "./pages/Dashboard/results";
+import Subjects from "./pages/Dashboard/subjects";
 
 import "./App.scss";
-import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -33,6 +36,8 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/username/dashboard" element={<Dashboard />} />
+          <Route path="/username/results" element={<Results />} />
+          <Route path="/username/subjects" element={<Subjects />} />
         </Route>
       </Routes>
     </div>
