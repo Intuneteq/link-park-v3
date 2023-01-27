@@ -1,63 +1,76 @@
 .sidebar {
-    width: 100%;
-    height: 100vh;
-    padding: 5% 0 10%;
+  width: 100%;
+  height: 100vh;
+  padding: 5% 0 10%;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 89px;
-    border-right: 1.5px solid #E6E6F3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 89px;
+  border-right: 1.5px solid #e6e6f3;
 }
 
 .sidebar__logo {
-    width: 82px;
-    height: 72px;
-    // border: 1px solid blue;
+  width: 82px;
+  height: 72px;
+  // border: 1px solid blue;
 }
 
 .sidebar__links {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    // border: 1px solid blue;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  // border: 1px solid blue;
+  width: 100%;
+  height: 100%;
+
+  & > div {
     width: 100%;
-    height: 100%;
+    a {
+      width: 100%;
+      padding: 17px 40px;
+      align-items: center;
+      gap: 12px;
 
-    &>div {
-        width: 100%;
-        a {
-        //    border: 1px solid red;
-           width: 100%;
-           padding: 17px 40px;
-           align-items: center;
-           gap: 12px;
+      svg {
+        color: #1d1929;
+        width: 17.3px;
+        height: 17.3px;
+      }
 
-           svg {
-            color: #1D1929;
-            width: 17.3px;
-            height: 17.3px;
-           }
+      p {
+        font-size: 16px;
+        color: var(--black-color);
+      }
 
-           p {
-            color: var(--black-color);
-           }
-        }
-
-        .active {
-            background-color: #E6E6F3;
-            
-
-            p {
-                font-weight: 700;
-            }
-
-            svg {
-                color: var(--black-color);
-            }
-        }
+      &:hover {
+        background-color: #353aa4;
+      }
     }
 
+    .active {
+      background-color: var(--primary-color);
+
+      p {
+        font-weight: 700;
+        color: var(--white-color);
+      }
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+
+    .sign {
+      p {
+        color: #e0240a;
+      }
+
+      svg {
+        color: #e0240a;
+      }
+    }
+  }
 }

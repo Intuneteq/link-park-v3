@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { GrHomeRounded } from "react-icons/gr";
-import { TbNotebook } from "react-icons/tb";
+// import { GrHomeRounded } from "react-icons/gr";
+import { SlHome } from 'react-icons/sl'
+import { TbNotebook, TbLogout } from "react-icons/tb";
 import { BsJoystick } from "react-icons/bs";
 import { RiCalendar2Line } from "react-icons/ri";
 import { AiOutlineSetting } from "react-icons/ai";
@@ -15,7 +16,7 @@ const Sidebar = () => {
     {
       path: "/username/dashboard",
       name: "Dashboard",
-      icon: <GrHomeRounded />,
+      icon: <SlHome />,
     },
     {
       path: "/username/results",
@@ -56,9 +57,9 @@ const Sidebar = () => {
             </span>
             <p className="p-text">settings</p>
           </NavLink>
-          <NavLink to={"/username/signout"} className="app__flex-3">
+          <NavLink to={"/username/signout"} className="app__flex-3 sign">
             <span>
-              <AiOutlineSetting />
+              <TbLogout />
             </span>
             <p className="p-text">sign out</p>
           </NavLink>
