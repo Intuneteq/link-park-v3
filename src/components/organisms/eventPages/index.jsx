@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import ReactPaginate from "react-paginate";
 
+import { Pagination } from "../../atoms";
 import { EventCard } from "../../molecules";
-
 import "./eventPages.scss";
 
 const EventPages = ({ contents }) => {
@@ -11,9 +9,16 @@ const EventPages = ({ contents }) => {
 
   const cardPerPage = 3;
   const pagesVisited = pageNumber * cardPerPage;
-  const pageCount = Math.ceil(contents.length / cardPerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
+  };
+
+  const styles = {
+    paginationBttns: "paginationBttns",
+    pageNum: "page-num",
+    prevLink: "prev-link",
+    nextLink: "next-link",
+    PaginationActive: "paginationActive",
   };
 
   return (
@@ -26,17 +31,11 @@ const EventPages = ({ contents }) => {
           ))}
       </article>
       <div>
-        <ReactPaginate
-          breakLabel="..."
-          previousLabel={<GrFormPrevious />}
-          nextLabel={<GrFormNext />}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName="paginationBttns"
-          pageLinkClassName="page-num"
-          previousLinkClassName="prev-link"
-          nextLinkClassName="next-link"
-          activeLinkClassName="paginationActive"
+        <Pagination
+          itemPerPage={cardPerPage}
+          contentLength={contents.length}
+          changePage={changePage}
+          styles={styles}
         />
       </div>
     </div>
