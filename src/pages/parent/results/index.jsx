@@ -1,10 +1,18 @@
-import React from "react";
-import Selector from "../../../components/molecules/selector/Selector";
-import { TopNav } from "../../../components/organisms";
+import React, { useState } from "react";
+import { Pagination } from "../../../components/atoms";
 
+import { Selector } from "../../../components/molecules";
+import { TopNav } from "../../../components/organisms";
 import "./results.scss";
 
 const Results = () => {
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const cardPerPage = 7;
+  const pagesVisited = pageNumber * cardPerPage;
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
   const selectors = [
     {
       title: "Result type",
@@ -75,21 +83,22 @@ const Results = () => {
         </div>
         <div className="results__body-result">
           <table className="result-table">
-            
-          {/* <tbody> */}
+            {/* <tbody> */}
             <tr>
               <th className="result-first">Subject</th>
               <th>Grade</th>
               <th>Remark</th>
               <th>Score</th>
             </tr>
-            {result.map((item, index) => (
+            {result.slice(pagesVisited, pagesVisited + cardPerPage).map((item, index) => (
               // <tbody key={index}>
-              <tr  className='items'>
+              <tr className="items">
                 <td className="result-first">{item.subject}</td>
                 <td>100</td>
                 <td>{item.Remark}</td>
-                <td className={item.score >= 65 ? 'green' : 'yellow'}>{item.score}/100</td>
+                <td className={item.score >= 65 ? "green" : "yellow"}>
+                  {item.score}/100
+                </td>
               </tr>
               // </tbody>
             ))}
@@ -97,12 +106,17 @@ const Results = () => {
           </table>
           <table className="result-conclusion">
             <tr>
-                <th className="result-first">Total Score</th>
-                <th>100</th>
-                <th>Excellent</th>
-                <th className="green">98/100</th>
+              <th className="result-first">Total Score</th>
+              <th>100</th>
+              <th>Excellent</th>
+              <th className="green">98/100</th>
             </tr>
           </table>
+          <Pagination
+          itemPerPage={cardPerPage}
+          contentLength={result.length}
+          changePage={changePage}
+        />
         </div>
       </section>
     </div>

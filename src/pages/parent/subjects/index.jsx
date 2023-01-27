@@ -1,15 +1,78 @@
-import React from "react";
-import Back from "../../../components/molecules/back/Back";
+import React, { useState } from "react";
 
+import { Pagination } from "../../../components/atoms";
+import { Selector, SubjectCard, Back } from "../../../components/molecules";
 import { TopNav } from "../../../components/organisms";
-import Selector from "../../../components/molecules/selector/Selector";
 import { Images } from "../../../constants";
 import "./subjects.scss";
-import SubjectCard from "../../../components/molecules/subjectCard/SubjectCard";
 
 const Subjects = () => {
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const cardPerPage = 8;
+  const pagesVisited = pageNumber * cardPerPage;
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   const options = ["SS1", "SS2", "SS3"];
   const content = [
+    {
+      img: Images.calculator,
+      subject: "mathematics",
+      chapters: 12,
+      bgColor: "#FFF0E1",
+      color: "#FCAB5E",
+    },
+    {
+      img: Images.discovery,
+      subject: "Physics",
+      chapters: 16,
+      bgColor: "#E9E3FE",
+      color: "#8A70D6",
+    },
+    {
+      img: Images.science,
+      subject: "Chemistry",
+      chapters: 14,
+      bgColor: "#E5F3FE",
+      color: "#579BE4",
+    },
+    {
+      img: Images.science,
+      subject: "Geography",
+      chapters: 14,
+      bgColor: "#E5F3FE",
+      color: "#8C1BAB",
+    },
+    {
+      img: Images.calculator,
+      subject: "mathematics",
+      chapters: 12,
+      bgColor: "#FFF0E1",
+      color: "#FCAB5E",
+    },
+    {
+      img: Images.discovery,
+      subject: "Physics",
+      chapters: 16,
+      bgColor: "#E9E3FE",
+      color: "#8A70D6",
+    },
+    {
+      img: Images.science,
+      subject: "Chemistry",
+      chapters: 14,
+      bgColor: "#E5F3FE",
+      color: "#579BE4",
+    },
+    {
+      img: Images.science,
+      subject: "Geography",
+      chapters: 14,
+      bgColor: "#E5F3FE",
+      color: "#8C1BAB",
+    },
     {
       img: Images.calculator,
       subject: "mathematics",
@@ -84,10 +147,17 @@ const Subjects = () => {
           />
         </div>
         <div className="subjects__body-cards app__flex-2">
-          {content.map((item, index) => (
-            <SubjectCard key={index} item={item} />
-          ))}
+          {content
+            .slice(pagesVisited, pagesVisited + cardPerPage)
+            .map((item, index) => (
+              <SubjectCard key={index} item={item} />
+            ))}
         </div>
+        <Pagination
+          itemPerPage={cardPerPage}
+          contentLength={content.length}
+          changePage={changePage}
+        />
       </div>
     </div>
   );

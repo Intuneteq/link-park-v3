@@ -13,14 +13,6 @@ const EventPages = ({ contents }) => {
     setPageNumber(selected);
   };
 
-  const styles = {
-    paginationBttns: "paginationBttns",
-    pageNum: "page-num",
-    prevLink: "prev-link",
-    nextLink: "next-link",
-    PaginationActive: "paginationActive",
-  };
-
   return (
     <div className="eventPage">
       <article>
@@ -35,7 +27,6 @@ const EventPages = ({ contents }) => {
           itemPerPage={cardPerPage}
           contentLength={contents.length}
           changePage={changePage}
-          styles={styles}
         />
       </div>
     </div>
