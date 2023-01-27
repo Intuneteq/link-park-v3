@@ -8,7 +8,64 @@
   }
 }
 
-select {
+// select {
+//   border: 1px solid #d1d1d1;
+//   border-radius: 8px;
+//   outline: none;
+// }
+
+.selectMenu {
   border: 1px solid #d1d1d1;
   border-radius: 8px;
+  outline: none;
+  position: relative;
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+}
+
+.selectMenu .selectBtn {
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--deep-black);
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  // border: 1px solid blue;
+}
+
+.selectBtn svg {
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.rotateUp {
+  transform: rotate(-180deg);
+}
+
+.options {
+  position: absolute;
+  // padding: 14px 0;
+  margin-top: 30px;
+  margin-left: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  left: 0;
+}
+
+.option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 14px 16px;
+  align-items: center;
+  width: 100%;
+
+  &:hover {
+    background-color: #353aa4;
+  }
 }
