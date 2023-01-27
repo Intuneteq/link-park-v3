@@ -1,0 +1,6 @@
+export { default as NavBar } from './navbar'
+export {default as Footer } from './footer'
+export { default as TopNav } from './topnav'
+export { default as Sidebar } from './sidebar'
+export { default as EventPages } from './eventPages'
+export { default as Testimonials } from './testimonials'

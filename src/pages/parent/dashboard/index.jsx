@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
-import DashboardNav from "../../../components/organisms/DashboardNav";
+import { TopNav } from "../../../components/organisms";
 
 import "./dashboard.scss";
 
@@ -87,7 +87,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <DashboardNav name="Dashboard" />
+      <TopNav name="Dashboard" />
 
       <section className="dashboard__body app__flex-3">
         <section className="dashboard__body-main">

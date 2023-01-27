@@ -1,7 +1,7 @@
 import React from "react";
 import Back from "../../../components/molecules/back/Back";
 
-import DashboardNav from "../../../components/organisms/DashboardNav";
+import { TopNav } from "../../../components/organisms";
 import Selector from "../../../components/molecules/selector/Selector";
 import { Images } from "../../../constants";
 import "./subjects.scss";
@@ -69,7 +69,7 @@ const Subjects = () => {
   ];
   return (
     <div className="subjects">
-      <DashboardNav name={"Subjects"} />
+      <TopNav name={"Subjects"} />
       <div className="subjects__body">
         <Back />
         <div className="subjects__body-head app__flex-2">

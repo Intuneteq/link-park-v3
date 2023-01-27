@@ -1,6 +1,6 @@
 import React from "react";
 import Selector from "../../../components/molecules/selector/Selector";
-import DashboardNav from "../../../components/organisms/DashboardNav";
+import { TopNav } from "../../../components/organisms";
 
 import "./results.scss";
 
@@ -55,7 +55,7 @@ const Results = () => {
   ];
   return (
     <div className="results">
-      <DashboardNav name="Results" />
+      <TopNav name="Results" />
       <section className="results__body">
         <h3 className="p-text">
           Overall Position <span className="dashboard-subtext">2nd</span>
@@ -75,6 +75,8 @@ const Results = () => {
         </div>
         <div className="results__body-result">
           <table className="result-table">
+            
+          {/* <tbody> */}
             <tr>
               <th className="result-first">Subject</th>
               <th>Grade</th>
@@ -82,13 +84,16 @@ const Results = () => {
               <th>Score</th>
             </tr>
             {result.map((item, index) => (
-              <tr key={index} className='items'>
+              // <tbody key={index}>
+              <tr  className='items'>
                 <td className="result-first">{item.subject}</td>
                 <td>100</td>
                 <td>{item.Remark}</td>
                 <td className={item.score >= 65 ? 'green' : 'yellow'}>{item.score}/100</td>
               </tr>
+              // </tbody>
             ))}
+            {/* </tbody> */}
           </table>
           <table className="result-conclusion">
             <tr>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FaArrowDown } from "react-icons/fa";
-import Footer from "../../components/footer";
+import { Footer } from "../../components/organisms";
 import "./faq.scss";
 
 const Faq = () => {
@@ -64,7 +64,10 @@ const Faq = () => {
               <div className="circle2"></div>
               <div className="circle3"></div>
               <div className="curve">
-                <img src="https://res.cloudinary.com/dxje0rp9f/image/upload/v1673636005/Link%20Park/Line_13_zv4row.png" alt="" />
+                <img
+                  src="https://res.cloudinary.com/dxje0rp9f/image/upload/v1673636005/Link%20Park/Line_13_zv4row.png"
+                  alt=""
+                />
               </div>
             </div>
           </div>

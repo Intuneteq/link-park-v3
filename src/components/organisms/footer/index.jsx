@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 
 import "./footer.scss";
-import Images from "../../constants/Images";
+import Images from "../../../constants/Images";
 
 const Footer = () => {
   return (

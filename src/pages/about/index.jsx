@@ -1,8 +1,7 @@
 import React from "react";
 
 import "./about.scss";
-import Testimonials from "../../components/testimonials";
-import Footer from "../../components/footer";
+import { Testimonials, Footer } from "../../components/organisms";
 
 const About = () => {
   return (

@@ -3,9 +3,9 @@ import { CiSearch } from 'react-icons/ci'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import { Images } from '../../../constants'
 
-import './dashboardNav.scss'
+import './topnav.scss'
 
-const DashboardNav = ({name}) => {
+const TopNav = ({name}) => {
   return (
     <section className="dashboard__nav app__flex-2">
     <h3>{name}</h3>
@@ -27,4 +27,4 @@ const DashboardNav = ({name}) => {
   )
 }
 
-export default DashboardNav;
+export default TopNav;

@@ -1,7 +1,6 @@
 import React from "react";
 
-import Footer from "../../components/footer";
-import Testimonials from "../../components/testimonials";
+import {Footer, Testimonials} from "../../components/organisms";
 import "./home.scss";
 
 const Home = () => {

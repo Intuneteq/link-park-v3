@@ -6,7 +6,7 @@ import { BsJoystick } from "react-icons/bs";
 import { RiCalendar2Line } from "react-icons/ri";
 import { AiOutlineSetting } from "react-icons/ai";
 
-import { Images } from "../../constants";
+import { Images } from "../../../constants";
 
 import "./sidebar.scss";
 
@@ -28,7 +28,7 @@ const Sidebar = () => {
       icon: <BsJoystick />,
     },
     {
-      path: "/username/events",
+      path: "/username/events/new",
       name: "Upcoming Events",
       icon: <RiCalendar2Line />,
     },

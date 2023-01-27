@@ -1,0 +1,49 @@
+.eventPage {
+
+  .paginationBttns {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > :nth-child(1) {
+      margin-right: 40px;
+    }
+
+    & > :nth-last-child(1) {
+      margin-left: 28px;
+    }
+
+    svg {
+      height: 32px;
+      width: 32px;
+      color: var(--black-color);
+      border-radius: 50%;
+      padding: 0;
+      font-weight: 200;
+      // border: 1px solid green;
+      background: var(--white-color);
+      box-shadow: 0px 4px 20px rgba(172, 172, 172, 0.16)
+    }
+
+    .page-num {
+      color: #979797;
+      font-weight: 500;
+      font-size: 18px;
+      margin-right: 12px;
+    }
+
+    .paginationActive {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+  }
+}
