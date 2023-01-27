@@ -1,5 +1,5 @@
 import React from "react";
-import { IoIosArrowForward } from "react-icons/io";
+import { AssessmentCard } from "../../../components/molecules";
 import { TopNav } from "../../../components/organisms";
 
 import "./dashboard.scss";
@@ -53,14 +53,14 @@ const Dashboard = () => {
       date2: "jan",
       title: "Principal Football Cup",
       time: "10am",
-      color: '#5792F0'
+      color: "#5792F0",
     },
     {
       date1: 23,
       date2: "jan",
       title: "Inter House Sport",
       time: "10am",
-      color: '#FFB0C8'
+      color: "#FFB0C8",
     },
     {
       date1: 15,
@@ -98,22 +98,12 @@ const Dashboard = () => {
             </div>
             <div className="app__flex-2 assessment-card">
               {cards.map((item, index) => (
-                <div
-                  key={index}
-                  className="aCard app__flex-5"
-                  style={{ backgroundColor: item.color }}
-                >
-                  <div>
-                    <h6>{item.head}</h6>
-                    <p>{item.subText}</p>
-                  </div>
-                  <span
-                    style={{ backgroundColor: item.color2 }}
-                    className="app__flex"
-                  >
-                    Details <IoIosArrowForward />
-                  </span>
-                </div>
+                <AssessmentCard
+                  color={item.color}
+                  color2={item.color2}
+                  head={item.head}
+                  subText={item.subText}
+                />
               ))}
             </div>
           </div>
