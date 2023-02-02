@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //import layouts
-import {ExternalLayouts, DashboardLayout} from "./components/templates";
+import { ExternalLayouts, DashboardLayout, StudentLayout } from "./components/templates";
 
 //import external pages
 import Home from "./pages/home";
@@ -20,6 +20,7 @@ import Events from "./pages/parent/events";
 import NewEvents from "./pages/parent/events/NewEvents";
 import PastEvents from "./pages/parent/events/PastEvents";
 import AllEvents from "./pages/parent/events/AllEvents";
+import StudentDashboard from "./pages/student/dashboard";
 
 import "./App.scss";
 
@@ -37,6 +38,12 @@ function App() {
           <Route path="/UserSelect" element={<UserSelect />} />
         </Route>
 
+        {/* student dashboard */}
+        <Route element={<StudentLayout />}>
+          <Route path="/student/dashboard" element={<StudentDashboard />} />
+        </Route>
+
+        {/* Parent dashboard */}
         <Route element={<DashboardLayout />}>
           <Route path="/username/dashboard" element={<Dashboard />} />
           <Route path="/username/results" element={<Results />} />
