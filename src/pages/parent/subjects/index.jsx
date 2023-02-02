@@ -130,6 +130,10 @@ const Subjects = () => {
       color: "#8C1BAB",
     },
   ];
+
+  const style = {
+    width: '214px'
+  }
   return (
     <div className="subjects">
       <TopNav name={"Subjects"} />
@@ -150,7 +154,7 @@ const Subjects = () => {
           {content
             .slice(pagesVisited, pagesVisited + cardPerPage)
             .map((item, index) => (
-              <SubjectCard key={index} item={item} />
+              <SubjectCard key={index} item={item} style={style} />
             ))}
         </div>
         <Pagination

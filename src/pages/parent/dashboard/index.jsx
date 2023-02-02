@@ -1,6 +1,11 @@
 import React from "react";
 import { AssessmentCard } from "../../../components/molecules";
-import { TopNav } from "../../../components/organisms";
+import {
+  CalendarEvents,
+  LinkParkCalendar,
+  Table,
+  TopNav,
+} from "../../../components/organisms";
 
 import "./dashboard.scss";
 
@@ -20,32 +25,39 @@ const Dashboard = () => {
     },
   ];
 
-  const assignments = [
-    {
-      title: "Fun Fact About Australia",
-      date: "Tue 12, 2022",
-      grade: "0/10",
-      status: "Pending",
-    },
-    {
-      title: "Verbal Abtitude",
-      date: "Tue 12, 2022",
-      grade: "8/10",
-      status: "Completed",
-    },
-    {
-      title: "Physics Assignment",
-      date: "Tue 12, 2022",
-      grade: "9/10",
-      status: "Completed",
-    },
-    {
-      title: "Technical Drawing",
-      date: "Tue 12, 2022",
-      grade: "0/10",
-      status: "Completed",
-    },
-  ];
+  const tableData = {
+    head: ["Title", "Grade", "Status"],
+    body: [
+      {
+        bodyHead: {
+          headTitle: "Fun Fact About Australia",
+          headText: "Tue 12, 2022",
+        },
+        bodyItems: ["0/10", "Pending"],
+      },
+      {
+        bodyHead: {
+          headTitle: "Verbal Abtitude",
+          headText: "Tue 12, 2022",
+        },
+        bodyItems: ["8/10", "Completed"],
+      },
+      {
+        bodyHead: {
+          headTitle: "Physics Assignment",
+          headText: "Tue 12, 2022",
+        },
+        bodyItems: ["9/10", "Completed"],
+      },
+      {
+        bodyHead: {
+          headTitle: "Physics Assignment",
+          headText: "Tue 12, 2022",
+        },
+        bodyItems: ["9/10", "Completed"],
+      },
+    ],
+  };
 
   const events = [
     {
@@ -99,6 +111,7 @@ const Dashboard = () => {
             <div className="app__flex-2 assessment-card">
               {cards.map((item, index) => (
                 <AssessmentCard
+                  key={index}
                   color={item.color}
                   color2={item.color2}
                   head={item.head}
@@ -112,51 +125,12 @@ const Dashboard = () => {
               <h3>Students Assignments</h3>
               <button className="btn-tertiary">view all</button>
             </div>
-            <table className="assignment-table">
-              <tr>
-                <th className="title">Title</th>
-                <th>Grade</th>
-                <th>Status</th>
-              </tr>
-              {assignments.map((item, index) => (
-                <tr key={index}>
-                  <td className="title">
-                    <span className="title-head">{item.title}</span> <br />
-                    <span className="title-date">{item.date}</span>
-                  </td>
-                  <td className="table-grade">{item.grade}</td>
-                  <td className={item.status.toLowerCase()}>{item.status}</td>
-                </tr>
-              ))}
-            </table>
+            <Table content={tableData} />
           </div>
         </section>
         <section className="dashboard__body-side">
-          <div className="dashboard-calender">
-            <h3>Calender</h3>
-            <div className="calendar">okay</div>
-          </div>
-          <div className="dashboard-events">
-            <h3 className="dashboard-subtext">Upcoming Events</h3>
-            {events.map((item, index) => (
-              <div key={index} className="event-card app__flex">
-                <div
-                  style={{ backgroundColor: item.color }}
-                  className="event-date app__flex"
-                >
-                  {item.date1}
-                  <br /> {item.date2}
-                </div>
-                <div className="event-info">
-                  <p>{item.title}</p>
-                  <span>Time: {item.time}</span>
-                </div>
-              </div>
-            ))}
-            <div className="app__flex">
-              <button className="btn-secondary">View all</button>
-            </div>
-          </div>
+          <LinkParkCalendar />
+          <CalendarEvents events={events} />
         </section>
       </section>
     </div>

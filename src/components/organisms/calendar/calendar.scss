@@ -1,0 +1,17 @@
+.dashboard-calender {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black-color);
+    margin-bottom: 2rem;
+  }
+
+  .calendar {
+    width: 100%;
+    height: 15.688rem;
+    border: 1px solid red;
+  }
+}

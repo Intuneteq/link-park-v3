@@ -4,7 +4,8 @@ import user from "../assets/user.svg"
 import calculator from "../assets/calculator.png"
 import discovery from "../assets/discovery.png"
 import science from "../assets/science.png"
+import heart from '../assets/heart.svg'
 
-const Images = {logo, user, calculator, discovery, science};
+const Images = {logo, user, calculator, discovery, science, heart};
 
 export default Images;
