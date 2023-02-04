@@ -23,6 +23,7 @@ import AllEvents from "./pages/parent/events/AllEvents";
 import StudentDashboard from "./pages/student/dashboard";
 
 import "./App.scss";
+import Library from "./pages/student/library";
 
 function App() {
   return (
@@ -39,8 +40,9 @@ function App() {
         </Route>
 
         {/* student dashboard */}
-        <Route element={<StudentLayout />}>
-          <Route path="/student/dashboard" element={<StudentDashboard />} />
+        <Route path='/student' element={<StudentLayout />}>
+          <Route path='/student/dashboard' element={<StudentDashboard />} />
+          <Route path='/student/library' element={<Library />} />
         </Route>
 
         {/* Parent dashboard */}
