@@ -1,6 +1,6 @@
 import React from "react";
-import { AssessmentCard } from "../../../components/molecules";
 import {
+  AssessmentCards,
   CalendarEvents,
   LinkParkCalendar,
   Table,
@@ -108,17 +108,7 @@ const Dashboard = () => {
               <h1>Assessments</h1>
               <h2>SS3c</h2>
             </div>
-            <div className="app__flex-2 assessment-card">
-              {cards.map((item, index) => (
-                <AssessmentCard
-                  key={index}
-                  color={item.color}
-                  color2={item.color2}
-                  head={item.head}
-                  subText={item.subText}
-                />
-              ))}
-            </div>
+            <AssessmentCards cards={cards} />
           </div>
           <div className="assignment">
             <div className="app__flex-2 assignment-head">

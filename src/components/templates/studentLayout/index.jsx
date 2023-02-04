@@ -26,12 +26,12 @@ const StudentLayout = () => {
           icon: <BsJoystick />,
         },
         {
-          path: "/username/calendar",
+          path: "/student/calendar",
           name: "link park calendar",
           icon: <RiCalendar2Line />,
         },
         {
-          path: "/username/portal",
+          path: "/student/portal",
           name: "Portal",
           icon: <RiCalendar2Line />,
         },
