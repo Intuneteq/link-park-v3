@@ -1,0 +1,45 @@
+.events {
+  width: 100%;
+  background: #ffffff;
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.events__body {
+  width: 100%;
+  padding: 2rem 14% 4rem 4.5%;
+
+  .events__body-head {
+    gap: 40px;
+    margin-bottom: 35px;
+
+    .event-links {
+      font-size: 24px;
+      font-weight: 400;
+      color: #767676;
+      padding-bottom: 5px;
+      transition: 0.3s all ease-in;
+    }
+
+    .active {
+      color: var(--black-color);
+      font-weight: 700;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import React from "react";
 
-import Testimonials from "../../components/testimonials";
-import Footer from "../../components/footer";
+import { Testimonials, Footer } from "../../components/organisms";
 import "./parents.scss";
 
 const Parents = () => {
@@ -44,16 +43,26 @@ const Parents = () => {
         </article>
       </section>
       <section className="column-flex parents__progress">
-        <h2 className="head-text-2">Your Dashboard and Inbox<br />will both provide progress reports.</h2>
+        <h2 className="head-text-2">
+          Your Dashboard and Inbox
+          <br />
+          will both provide progress reports.
+        </h2>
         <div className="img-size">
-          <img src="https://res.cloudinary.com/intuneteq/image/upload/v1673321378/Link-park-v2/MBP_Mockup_cyihx1.png" alt="laptop" />
+          <img
+            src="https://res.cloudinary.com/intuneteq/image/upload/v1673321378/Link-park-v2/MBP_Mockup_cyihx1.png"
+            alt="laptop"
+          />
         </div>
       </section>
       <section className="parents__testimonials">
         <Testimonials />
       </section>
       <section className="parents__started column-flex">
-        <p className="p-text">Receive daily evaluations on students' performance in order to identify shortcomings and improve the appropriate areas.</p>
+        <p className="p-text">
+          Receive daily evaluations on students' performance in order to
+          identify shortcomings and improve the appropriate areas.
+        </p>
         <button className="btn-tertiary">Get Started</button>
       </section>
       <Footer />

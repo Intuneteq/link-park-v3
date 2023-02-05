@@ -1,0 +1,101 @@
+.dashboard {
+  width: 100%;
+  background: #ffffff;
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+.dashboard__body {
+  width: 100%;
+  padding: 2rem 2.6% 4rem 4.5%;
+  gap: 6%;
+}
+
+.dashboard__body-main {
+  width: 64%;
+
+  .assessment {
+    width: 100%;
+    margin-bottom: 6.25rem;
+
+    .assessment-head {
+      margin-bottom: 2.313rem;
+
+      h1,
+      h2 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--black-color);
+      }
+    }
+
+    // .assessment-card {
+    //   gap: 0.75rem;
+    // }
+  }
+
+  .assignment {
+    .assignment-head {
+      margin-bottom: 2rem;
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--black-color);
+      }
+    }
+  }
+}
+
+.dashboard__body-side {
+  width: 30%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  // .dashboard__nav {
+  //   h3 {
+  //     margin-right: 4%;
+  //   }
+  // }
+}
+
+@media screen and (max-width: 1024px) {
+  // .dashboard__nav {
+  //   padding: 2rem 1% 2rem 2%;
+  //   h3 {
+  //     margin-right: 2%;
+  //   }
+
+  //   .dashboard__nav-user {
+  //     width: 44px;
+  //     height: 44px;
+  //   }
+  // }
+
+  .dashboard__body {
+    width: 100%;
+    padding: 2rem 1% 4rem 2%;
+    gap: 2%;
+  }
+
+  .dashboard__body-main {
+    width: 58%;
+
+   .assessment {
+    .assessment-card {
+      flex-direction: column;
+    }
+    }
+  }
+
+  .dashboard__body-side {
+    width: 40%;
+  }
+}

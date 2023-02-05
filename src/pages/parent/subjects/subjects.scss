@@ -1,0 +1,26 @@
+.subjects {
+  width: 100%;
+  background: #ffffff;
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.subjects__body {
+  padding: 52px 143px 109px 4.5%;
+  .subjects__body-head {
+    margin: 49px 0 40px;
+  }
+
+  .subjects__body-cards {
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    margin-bottom: 71px;
+  }
+}

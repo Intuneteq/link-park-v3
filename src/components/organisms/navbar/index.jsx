@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { Navbar, Button } from "@nextui-org/react";
 
 import "./navbar.scss";
-import Images from "../../constants/Images";
+import Images from "../../../constants/Images";
 
 const NavBar = () => {
   const navigate = useNavigate();
