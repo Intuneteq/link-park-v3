@@ -23,6 +23,7 @@ import AllEvents from "./pages/parent/events/AllEvents";
 import StudentDashboard from "./pages/student/dashboard";
 import Library from "./pages/student/library";
 import Portal from "./pages/student/portal";
+//testinf
 
 import "./App.scss";
 
