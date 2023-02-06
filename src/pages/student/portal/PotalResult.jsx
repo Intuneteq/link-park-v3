@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import { Container, ResultBoard } from '../../../components/templates'
 
-import { Container, ResultBoard } from "../../../components/templates";
-import "./results.scss";
-
-const Results = () => {
-  const [pageNumber, setPageNumber] = useState(0);
+const PotalResult = () => {
+    const [pageNumber, setPageNumber] = useState(0);
 
   const cardPerPage = 7;
   const pagesVisited = pageNumber * cardPerPage;
@@ -60,16 +58,17 @@ const Results = () => {
     },
   ];
   return (
-    <Container name={'Results'}>
-      <ResultBoard
+    <Container name={'Portal'}>
+        <ResultBoard
         selectors={selectors}
         result={result}
         cardPerPage={cardPerPage}
         pagesVisited={pagesVisited}
         changePage={changePage}
+        backbutton={true}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default Results;
+export default PotalResult

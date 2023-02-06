@@ -13,6 +13,7 @@ const AssessmentCards = ({ cards }) => {
           color2={item.color2}
           head={item.head}
           subText={item.subText}
+          path={item.path}
         />
       ))}
     </div>

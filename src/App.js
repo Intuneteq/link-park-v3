@@ -10,6 +10,7 @@ import Parents from "./pages/parents";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signup";
 import UserSelect from "./pages/userselect/UserSelect";
+import Faq from "./pages/Faq/Faq";
 
 //import dashboard pages
 import Dashboard from "./pages/parent/dashboard";
@@ -22,12 +23,9 @@ import AllEvents from "./pages/parent/events/AllEvents";
 import StudentDashboard from "./pages/student/dashboard";
 import Library from "./pages/student/library";
 import Portal from "./pages/student/portal";
-//testinf
-//
-//test
+import PotalResult from "./pages/student/portal/PotalResult";
 
 import "./App.scss";
-import Faq from "./pages/Faq/Faq";
 
 function App() {
   return (
@@ -48,6 +46,7 @@ function App() {
           <Route path='/student/dashboard' element={<StudentDashboard />} />
           <Route path='/student/library' element={<Library />} />
           <Route path='/student/portal' element={<Portal />} />
+          <Route path="/student/portal/results" element ={<PotalResult />} />
         </Route>
 
         {/* Parent dashboard */}

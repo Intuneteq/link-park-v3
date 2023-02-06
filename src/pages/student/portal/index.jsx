@@ -4,7 +4,6 @@ import {
   AssessmentCards,
   CalendarEvents,
   LinkParkCalendar,
-  TopNav,
 } from "../../../components/organisms";
 import { Container } from "../../../components/templates";
 
@@ -20,12 +19,14 @@ const Portal = () => {
       subText: "2nd",
       color: "#8A70D6",
       color2: "#BDA6FF",
+      path: '/student/portal/results'
     },
     {
       head: "Total Subjects",
       subText: "12",
       color: "#FCAB5E",
       color2: "#FFCFA2",
+      path: '#'
     },
   ];
 
@@ -121,8 +122,7 @@ const Portal = () => {
   ];
 
   return (
-    <Container>
-      <TopNav name="Portal" />
+    <Container name="Portal">
       <section className="portal__body app__flex-3">
         <article className="portal__body-main">
           <AssessmentCards cards={cards} />

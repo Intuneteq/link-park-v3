@@ -1,5 +1,4 @@
 import React from "react";
-import { TopNav } from "../../../components/organisms";
 import { Container } from "../../../components/templates";
 
 import "./library.scss";
@@ -58,10 +57,8 @@ const Library = () => {
     },
   ];
   return (
-    <Container>
+    <Container name={'Library'}>
       <div className="library">
-        <TopNav name="Dashboard" />
-
         <section className="library__body">
           <div className="library__body-cards">
             {libraryItems.slice(0, 7).map((item, index) => (
