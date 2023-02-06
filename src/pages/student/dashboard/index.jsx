@@ -1,13 +1,12 @@
 import React from "react";
 
-
 import {
   CalendarEvents,
   LinkParkCalendar,
   SubjectCarousel,
   Table,
-  TopNav,
 } from "../../../components/organisms";
+import { Container } from "../../../components/templates";
 import { Images } from "../../../constants";
 import "./studentdashboard.scss";
 
@@ -82,39 +81,37 @@ const StudentDashboard = () => {
   ];
 
   const tableData = {
-    head: ['Course name', 'Start', 'Grade'],
+    head: ["Course name", "Start", "Grade"],
     body: [
       {
         bodyHead: {
           headImg: Images.heart,
-          headTitle: 'Biology',
-          headText: '30 Lessons'
+          headTitle: "Biology",
+          headText: "30 Lessons",
         },
-        bodyItems: ['May 5', '100']
+        bodyItems: ["May 5", "100"],
       },
       {
         bodyHead: {
           headImg: Images.heart,
-          headTitle: 'Biology',
-          headText: '30 Lessons'
+          headTitle: "Biology",
+          headText: "30 Lessons",
         },
-        bodyItems: ['May 5', '100']
+        bodyItems: ["May 5", "100"],
       },
       {
         bodyHead: {
           headImg: Images.heart,
-          headTitle: 'Biology',
-          headText: '30 Lessons'
+          headTitle: "Biology",
+          headText: "30 Lessons",
         },
-        bodyItems: ['May 5', '100']
+        bodyItems: ["May 5", "100"],
       },
-    ]
-  }
+    ],
+  };
 
   return (
-    <div className="studentDashboard">
-      <TopNav name="Dashboard" />
-
+    <Container name="Dashboard">
       <section className="studentDashboard__body app__flex-3">
         <article className="studentDashboard__body-main">
           <div className="main_progress">
@@ -131,7 +128,7 @@ const StudentDashboard = () => {
           <CalendarEvents events={events} />
         </article>
       </section>
-    </div>
+    </Container>
   );
 };
 

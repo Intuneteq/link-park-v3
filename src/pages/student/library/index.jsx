@@ -58,7 +58,6 @@ const Library = () => {
   ];
   return (
     <Container name={'Library'}>
-      <div className="library">
         <section className="library__body">
           <div className="library__body-cards">
             {libraryItems.slice(0, 7).map((item, index) => (
@@ -76,7 +75,6 @@ const Library = () => {
             <button className="btn-secondary">Load more</button>
           </div>
         </section>
-      </div>
     </Container>
   );
 };

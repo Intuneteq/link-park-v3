@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 
 import styles from "./back.module.scss";
 
-const Back = ({path}) => {
+const Back = () => {
   const navigate = useNavigate()
   return (
     <button onClick={()=>navigate(-1)} className={styles.back}>

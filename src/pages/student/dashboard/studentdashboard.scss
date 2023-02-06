@@ -1,19 +1,6 @@
-.studentDashboard {
-  width: 100%;
-  background: #ffffff;
-  height: 100vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 .studentDashboard__body {
   width: 100%;
-  padding: 2rem 2.6% 4rem 4.5%;
   gap: 6%;
 }
 

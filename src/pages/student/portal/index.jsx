@@ -144,7 +144,7 @@ const Portal = () => {
           <div className="portal-materials">
             <div className="app__flex-2">
               <h3 className="dashboard-subtext">Materials</h3>
-              <LinkButton name={"View all  materials"} />
+              <LinkButton name={"View all  materials"} path={'/student/portal/materials'} />
             </div>
             <div className="subject_material app__flex-2">
               {content.slice(0, 3).map((item, index) => (

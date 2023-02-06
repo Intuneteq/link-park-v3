@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React, { useState} from 'react'
+import { Container, SubjectTemplate } from '../../../components/templates'
+import { Images } from '../../../constants';
 
-import { Container, SubjectTemplate } from "../../../components/templates";
-import { Images } from "../../../constants";
-import "./subjects.scss";
-
-const Subjects = () => {
-  const [pageNumber, setPageNumber] = useState(0);
+const PortalMaterials = () => {
+    const [pageNumber, setPageNumber] = useState(0);
 
   const cardPerPage = 8;
   const pagesVisited = pageNumber * cardPerPage;
@@ -133,9 +131,9 @@ const Subjects = () => {
     width: "214px",
   };
   return (
-    <Container>
-      <SubjectTemplate
-        title={"Subjects"}
+    <Container name={'Portal'}>
+        <SubjectTemplate
+        title={"Materials"}
         options={options}
         content={content}
         pagesVisited={pagesVisited}
@@ -144,7 +142,7 @@ const Subjects = () => {
         style={style}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default Subjects;
+export default PortalMaterials
