@@ -1,7 +1,9 @@
 import React from "react";
-import { Container } from "../../../components/templates";
+import { Link } from "react-router-dom";
 
-import "./library.scss";
+import { Container } from "../../../components/templates";
+import { Images } from "../../../constants";
+import styles from "./library.module.scss";
 
 const Library = () => {
   const libraryItems = [
@@ -11,70 +13,75 @@ const Library = () => {
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "English",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Physics",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Chemistry",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Biology",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Agriculture",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "CRK",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Futher Mathematics",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Social studies",
       teacher: "Mr James Isah",
       class: "SS2",
     },
     {
-      subject: "Mathematics",
+      subject: "Geography",
       teacher: "Mr James Isah",
       class: "SS2",
     },
   ];
   return (
-    <Container name={'Library'}>
-        <section className="library__body">
-          <div className="library__body-cards">
-            {libraryItems.slice(0, 7).map((item, index) => (
-              <div key={index} className="library-card">
-                <div className="subject-img img-size">
-                  <img src="" alt="subject" />
-                </div>
-                <h6>{item.subject}</h6>
-                <p>Teacher: {item.teacher}</p>
-                <span>Class: {item.class}</span>
-              </div>
-            ))}
-          </div>
-          <div className="library__body-btn app__flex">
-            <button className="btn-secondary">Load more</button>
-          </div>
-        </section>
+    <Container name={"Library"}>
+      <div className={styles.library__body_cards}>
+        {libraryItems.slice(0, 8).map((item, index) => (
+          <Link
+            to={`/student/library/${item.subject
+              .toLocaleLowerCase()
+              .split(" ")
+              .join("")}`}
+            key={index}
+            className={styles.library_card}
+          >
+            <div className={[styles.subject_img, "img-size"].join(' ')}>
+              <img src={Images.english} alt="subject" />
+            </div>
+            <h6>{item.subject}</h6>
+            <p>Teacher: {item.teacher}</p>
+            <span>Class: {item.class}</span>
+          </Link>
+        ))}
+      </div>
+      <div className={[styles.library__body_btn, "app__flex"].join(' ')}>
+        <button className="btn-secondary">Load more</button>
+      </div>
     </Container>
   );
 };

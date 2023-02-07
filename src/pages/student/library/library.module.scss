@@ -1,0 +1,174 @@
+.library__body_cards {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  &::-webkit-scrollbar {
+    height: 8px;
+    background: grey;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:horizontal {
+    background: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+.library_card {
+  min-width: 246px;
+  width: 246px;
+  height: 377px;
+  font-size: 20px;
+
+  .subject_img {
+    width: 100%;
+    height: 271px;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h6 {
+    all: unset;
+    color: var(--black-color);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  p,
+  span {
+    font-weight: 600;
+    color: #5d5d5d;
+    margin-bottom: 4px;
+  }
+}
+
+.library__body_btn {
+  width: 100%;
+  margin-top: 40px;
+
+  button {
+    width: 144px;
+    height: 48px;
+  }
+}
+
+//slugs
+
+.slugs {
+  width: 100%;
+  justify-content: space-between !important;
+
+  .subjectHolder {
+    width: 25%;
+
+    .subjectCard {
+      width: 100%;
+      height: 733px;
+      background: #0d1292;
+      border-radius: 8px;
+      margin-bottom: 34px;
+      padding: 12px 14px;
+      color: var(--white-color);
+
+      .cardImg {
+        width: 100%;
+        height: 271px;
+        margin-bottom: 15px;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .cardContent {
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        h6 {
+          all: unset;
+          font-weight: 400;
+          font-size: 20px;
+          color: #e7e6e6;
+        }
+
+        p {
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+
+      .teacherContainer {
+        margin-top: 22px;
+        width: 100%;
+
+        .teacher {
+          width: 152px;
+          height: 152px;
+        }
+
+        h6 {
+          all: unset;
+          font-weight: 400;
+          font-size: 20px;
+          color: #e7e6e6;
+          margin-top: 12px;
+        }
+
+        p {
+          font-weight: 700;
+          font-size: 20px;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 48px;
+    }
+  }
+
+  .accordionContainer {
+    width: 69%;
+    padding-top: 30px;
+    // border: 1px solid red;
+
+    .accordionHead {
+      margin-bottom: 34px;
+    }
+
+    .accordionHolder {
+      width: 100%;
+      gap: 8px;
+
+      .accordion {
+        width: 100%;
+        background-color: #f7f7f7;
+        border-radius: 8px;
+        padding: 20px;
+        cursor: pointer;
+
+        h6 {
+          all: unset;
+          font-weight: 700;
+          font-size: 20px;
+          color: var(--black-color);
+        }
+
+        p {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}

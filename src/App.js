@@ -22,6 +22,7 @@ import PastEvents from "./pages/parent/events/PastEvents";
 import AllEvents from "./pages/parent/events/AllEvents";
 import StudentDashboard from "./pages/student/dashboard";
 import Library from "./pages/student/library";
+import LibrarySlugs from "./pages/student/library/LibrarySlugs";
 import Portal from "./pages/student/portal";
 import PotalResult from "./pages/student/portal/PotalResult";
 import PortalMaterials from "./pages/student/portal/PortalMaterials";
@@ -46,6 +47,7 @@ function App() {
         <Route path='/student' element={<StudentLayout />}>
           <Route path='/student/dashboard' element={<StudentDashboard />} />
           <Route path='/student/library' element={<Library />} />
+          <Route path="/student/library/:slugs" element={<LibrarySlugs />} />
           <Route path='/student/portal' element={<Portal />} />
           <Route path="/student/portal/results" element ={<PotalResult />} />
           <Route path='/student/portal/materials' element={<PortalMaterials />} />
