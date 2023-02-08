@@ -1,0 +1,450 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../../node_modules/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+$primary: #0d1292;
+$info: #5a9eff;
+$dark: #131313;
+$body-color: #979dad;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+$theme-colors: (
+  'primary': $primary,
+  'info': $info,
+  'dark': $dark,
+);
+
+// Create your own map
+$custom-colors: (
+  'blue': #1f2666,
+  'cyan': #1c1d1d,
+  'grey': #4a5568,
+  'black': #000000,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$container-max-widths: (
+  xl: 1148px,
+  xxl: 1248px,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$spacers: (
+  0: 0,
+  '0_5': 0.125rem,
+  1: 0.25rem,
+  '1_5': 0.375rem,
+  2: 0.5rem,
+  '2_5': 0.7rem,
+  3: 0.75rem,
+  '3_5': 0.875rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  12: 3rem,
+  14: 3.5rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  28: 7rem,
+  32: 8rem,
+  36: 9rem,
+  40: 10rem,
+  44: 11rem,
+  48: 12rem,
+  52: 13rem,
+  56: 14rem,
+  60: 15rem,
+  64: 16rem,
+  72: 18rem,
+  80: 20rem,
+  96: 24rem,
+);
+
+$font-sizes: (
+  xs: '0.75rem',
+  sm: '0.875rem',
+  md: '1rem',
+  lg: '1.125rem',
+  xl: '1.25rem',
+  '2xl': '1.5rem',
+  '3xl': '2rem',
+  '4xl': '2.75rem',
+  '5xl': '3rem',
+  '6xl': '3.75rem',
+  '7xl': '4.5rem',
+  '8xl': '6rem',
+  '9xl': '8rem',
+  '20': '20px',
+  '22': '22px',
+  '24': '24px',
+);
+
+// 8. Add additional custom code here
+// OVERIDES
+.dropdown-toggle::after {
+  display: none;
+}
+
+.border-radius-lg {
+  border-radius: fn.rem(16);
+}
+
+.cc-img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cc-shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.cc-hover {
+  transition: 0.3s ease;
+  &:hover {
+    box-shadow: 0px 0px 0px 4px #0266f450;
+    color: colors.$light;
+  }
+}
+
+.cc-link-hover {
+  transition: 0.3s ease;
+  &:hover {
+    color: colors.$light-red !important;
+  }
+}
+
+.cc-grow {
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+img {
+  vertical-align: inherit;
+}
+
+.App {
+    width: 100%;
+    max-width: 2000px;
+    min-height: 100vh;
+  }
+  
+  .img-size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  
+  .app__flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app__flex-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .app__flex-3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .app__flex-4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .app__flex-5 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  
+  .column-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .head-text {
+    color: var(--black-color);
+    font-weight: 800;
+    font-size: 3.875rem;
+    line-height: 4.9rem;
+  }
+  
+  .head-text-2 {
+    color: var(--black-color);
+    font-weight: 800;
+    font-size: 3.125rem;
+    line-height: 64px;
+  }
+  
+  .sub-text {
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--deep-black);
+  }
+  
+  .dashboard-subtext {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black-color);
+  }
+  
+  .p-text {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: var(--secondary-black-color);
+  }
+  
+  .p-text-2 {
+    color: #222222;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(173, 173, 173, 0.16);
+  
+    color: var(--white-color);
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+  
+    &:hover {
+      background: #353aa4;
+    }
+  }
+  
+  .btn-secondary {
+    border: 1.5px solid var(--primary-color);
+    border-radius: 8px;
+    outline: none;
+    background: none;
+  
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .btn-tertiary {
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #fdfdfd;
+    font-size: 20px;
+    font-weight: 600;
+    color: #121b98;
+    cursor: pointer;
+  }
+  
+  .auth {
+    .auth__img {
+      width: 50%;
+    }
+  
+    .auth__form {
+      width: 50%;
+  
+      h2 {
+        color: var(--black-color);
+        font-size: 2rem;
+        margin-bottom: 11px;
+      }
+  
+      p {
+        font-weight: 600;
+        color: #616161;
+        text-align: center;
+        max-width: 296px;
+        margin-bottom: 40px;
+      }
+  
+      .form-inputs {
+        width: 70%;
+        .form-control {
+          width: 100%;
+          align-items: flex-start;
+  
+          label {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--deep-black);
+            margin-bottom: 12px;
+          }
+  
+          div {
+            width: 100%;
+            position: relative;
+            margin-bottom: 20px;
+            input,
+            select {
+              width: 100%;
+              border: 1px solid #6b6b6b;
+              border-radius: 0.5rem;
+              padding: 14px 20px;
+  
+              font-size: 1rem;
+              font-weight: 400;
+              color: #afafaf;
+            }
+  
+            svg {
+              color: #200e32;
+              width: 18px;
+              height: 12px;
+              position: absolute;
+              right: 2%;
+              top: 50%;
+              transform: translateY(-50%);
+              cursor: pointer;
+            }
+          }
+        }
+  
+        .remember-me {
+          width: 100%;
+          margin-bottom: 40px;
+  
+          span {
+            color: #000000;
+            font-weight: 600;
+            font-size: 1rem;
+          }
+  
+          .check-box {
+            margin-right: 4px;
+          }
+        }
+  
+        .form-btn {
+          width: 100%;
+          height: 62px;
+          button {
+            width: 100%;
+            height: 100%;
+          }
+        }
+  
+        .form-footer {
+          width: 100%;
+          margin-top: 20px;
+  
+          p {
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            color: #131313;
+          }
+  
+          span {
+            cursor: pointer;
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--black-color);
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .test {
+    border: 1px solid red;
+  }
+  
+  .test1 {
+    border: 1px solid blue;
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .signIn {
+      height: 100vh;
+    }
+    .auth__img {
+      width: 50%;
+      height: 100vh;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .auth__img {
+      display: none !important;
+    }
+  
+    .auth__form {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .signIn {
+      height: 100vh;
+      padding: 0 0.5rem;
+    }
+    .auth__form {
+      width: 100%;
+      .form-inputs {
+        width: 90%;
+      }
+    }
+  }
+  
