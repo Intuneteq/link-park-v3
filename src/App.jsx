@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 //import layouts
@@ -8,7 +9,7 @@ import {
 } from './components/templates'
 
 //import constants
-import { ErrPage } from './constants'
+import { ErrPage, Loading } from './constants'
 
 //import external pages
 import Home from './pages/home'
@@ -34,8 +35,6 @@ import Portal from './pages/student/portal'
 import PotalResult from './pages/student/portal/PotalResult'
 import PortalMaterials from './pages/student/portal/PortalMaterials'
 import Activities from './pages/student/activities'
-
-import './App.scss'
 
 function App() {
   return (

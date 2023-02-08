@@ -1,7 +1,7 @@
-import React from "react";
-import { AssessmentCard } from "../../molecules";
+import React from 'react'
+import { AssessmentCard } from '../../molecules'
 
-import styles from "./cards.module.scss";
+import styles from './cards.module.scss'
 
 const AssessmentCards = ({ cards }) => {
   return (
@@ -17,7 +17,7 @@ const AssessmentCards = ({ cards }) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default AssessmentCards;
+export default AssessmentCards

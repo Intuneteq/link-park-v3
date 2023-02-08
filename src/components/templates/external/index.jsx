@@ -1,7 +1,7 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-import { NavBar } from "../../organisms";
+import { NavBar } from '../../organisms'
 
 const ExternalLayouts = () => {
   return (
@@ -9,7 +9,7 @@ const ExternalLayouts = () => {
       <NavBar />
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default ExternalLayouts;
+export default ExternalLayouts

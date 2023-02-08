@@ -1,64 +1,64 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { Container, ResultBoard } from "../../../components/templates";
-import "./results.scss";
+import { Container, ResultBoard } from '../../../components/templates'
+import './results.scss'
 
 const Results = () => {
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0)
 
-  const cardPerPage = 7;
-  const pagesVisited = pageNumber * cardPerPage;
+  const cardPerPage = 7
+  const pagesVisited = pageNumber * cardPerPage
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+    setPageNumber(selected)
+  }
   const selectors = [
     {
-      title: "Result type",
-      options: ["Exam Result", "Test Result", "Assignment scores"],
+      title: 'Result type',
+      options: ['Exam Result', 'Test Result', 'Assignment scores'],
     },
     {
-      title: "Sort by",
-      options: ["First Term", "Second Term", "Third Term"],
+      title: 'Sort by',
+      options: ['First Term', 'Second Term', 'Third Term'],
     },
-  ];
+  ]
 
   const result = [
     {
-      subject: "English Language",
-      Remark: "Good",
+      subject: 'English Language',
+      Remark: 'Good',
       score: 70,
     },
     {
-      subject: "Mathematics",
-      Remark: "Very Good",
+      subject: 'Mathematics',
+      Remark: 'Very Good',
       score: 81,
     },
     {
-      subject: "Social Studies",
-      Remark: "Excellent",
+      subject: 'Social Studies',
+      Remark: 'Excellent',
       score: 98,
     },
     {
-      subject: "Physics",
-      Remark: "Good",
+      subject: 'Physics',
+      Remark: 'Good',
       score: 65,
     },
     {
-      subject: "Chemistry",
-      Remark: "Good",
+      subject: 'Chemistry',
+      Remark: 'Good',
       score: 78,
     },
     {
-      subject: "Information Techology",
-      Remark: "Excellent",
+      subject: 'Information Techology',
+      Remark: 'Excellent',
       score: 99,
     },
     {
-      subject: "Biology",
-      Remark: "Pass",
+      subject: 'Biology',
+      Remark: 'Pass',
       score: 45,
     },
-  ];
+  ]
   return (
     <Container name={'Results'}>
       <ResultBoard
@@ -69,7 +69,7 @@ const Results = () => {
         changePage={changePage}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default Results;
+export default Results

@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { Pagination } from "../../atoms";
-import { EventCard } from "../../molecules";
-import "./eventPages.scss";
+import { Pagination } from '../../atoms'
+import { EventCard } from '../../molecules'
+import './eventPages.scss'
 
 const EventPages = ({ contents }) => {
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0)
 
-  const cardPerPage = 3;
-  const pagesVisited = pageNumber * cardPerPage;
+  const cardPerPage = 3
+  const pagesVisited = pageNumber * cardPerPage
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+    setPageNumber(selected)
+  }
 
   return (
-    <div className="eventPage">
+    <div className='eventPage'>
       <article>
         {contents
           .slice(pagesVisited, pagesVisited + cardPerPage)
           .map((item, index) => (
-            <EventCard key={index} content={item} className="eventPage" />
+            <EventCard key={index} content={item} className='eventPage' />
           ))}
       </article>
       <div>
@@ -30,7 +30,7 @@ const EventPages = ({ contents }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EventPages;
+export default EventPages

@@ -1,14 +1,14 @@
-import React from "react";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import ReactPaginate from "react-paginate";
+import React from 'react'
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import ReactPaginate from 'react-paginate'
 
 import styles from './atoms.module.scss'
 
 const Pagination = ({ itemPerPage, contentLength, changePage }) => {
-  const pageCount = Math.ceil(contentLength / itemPerPage);
+  const pageCount = Math.ceil(contentLength / itemPerPage)
   return (
     <ReactPaginate
-      breakLabel="..."
+      breakLabel='...'
       previousLabel={<GrFormPrevious />}
       nextLabel={<GrFormNext />}
       pageCount={pageCount}
@@ -19,7 +19,7 @@ const Pagination = ({ itemPerPage, contentLength, changePage }) => {
       nextLinkClassName={styles.nextLink}
       activeLinkClassName={styles.paginationActive}
     />
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

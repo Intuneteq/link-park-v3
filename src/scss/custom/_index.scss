@@ -4,7 +4,6 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @use '../../scss/utils/functions' as fn;
 @use '../../scss/global/colors' as colors;
-@import '../../../node_modules/bootstrap/scss/functions';
 
 // 2. Include any default variable overrides here
 $primary: #0d1292;
@@ -129,15 +128,15 @@ $font-sizes: (
   transition: 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 0px 4px #0266f450;
-    color: colors.$light;
+    // color: colors.$light;
   }
 }
 
 .cc-link-hover {
   transition: 0.3s ease;
-  &:hover {
-    color: colors.$light-red !important;
-  }
+  // &:hover {
+  //   // color: colors.$light-red !important;
+  // }
 }
 
 .cc-grow {

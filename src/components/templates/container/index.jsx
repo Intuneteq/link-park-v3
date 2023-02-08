@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 import { PropTypes } from 'prop-types'
 
-import { TopNav } from "../../organisms";
+import { TopNav } from '../../organisms'
 
-import styles from "./container.module.scss";
+import styles from './container.module.scss'
 
 const Container = ({ children, name }) => {
   return (
@@ -11,8 +11,8 @@ const Container = ({ children, name }) => {
       <TopNav name={name} />
       <section className={styles.containerBody}>{children}</section>
     </div>
-  );
-};
+  )
+}
 
 Container.propTypes = {
   children: PropTypes.oneOfType([
@@ -22,5 +22,4 @@ Container.propTypes = {
   ]).isRequired,
 }
 
-
-export default Container;
+export default Container

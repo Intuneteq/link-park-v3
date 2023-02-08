@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { GrDown } from "react-icons/gr";
+import React, { useState } from 'react'
+import { GrDown } from 'react-icons/gr'
 
-import styles from "./selector.module.scss";
+import styles from './selector.module.scss'
 
 const Selector = ({
   borderNone,
@@ -12,22 +12,22 @@ const Selector = ({
   padding,
   selectWidth,
 }) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false)
   return (
     <div style={{ width }} className={styles.selector}>
-      {title && <p className="p-text">{title}</p>}
+      {title && <p className='p-text'>{title}</p>}
       <div
         className={styles.selectMenu}
         style={{
           width: selectWidth,
           height,
           padding,
-          borderStyle: borderNone && "none",
+          borderStyle: borderNone && 'none',
         }}
       >
         <div onClick={() => setToggle(!toggle)} className={styles.selectBtn}>
           <span className={styles.sBtnText}>{options[0]}</span>
-          <GrDown className={toggle ? styles.rotateUp : ""} />
+          <GrDown className={toggle ? styles.rotateUp : ''} />
         </div>
 
         {toggle && (
@@ -41,7 +41,7 @@ const Selector = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Selector;
+export default Selector

@@ -1,64 +1,69 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { CiSearch } from "react-icons/ci";
-import { Navbar, Button } from "@nextui-org/react";
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { CiSearch } from 'react-icons/ci'
+import { Navbar, Button } from '@nextui-org/react'
 
-import "./navbar.scss";
-import Images from "../../../constants/Images";
+import './navbar.scss'
+import Images from '../../../constants/Images'
 
 const NavBar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const navLinks = [
     {
-      name: "Home",
-      path: "/",
+      name: 'Home',
+      path: '/',
     },
     {
-      name: "About Us",
-      path: "/about",
+      name: 'About Us',
+      path: '/about',
     },
     {
-      name: "Parents",
-      path: "/parents",
+      name: 'Parents',
+      path: '/parents',
     },
     {
-      name: "FAQs",
-      path: "/faq",
+      name: 'FAQs',
+      path: '/faq',
     },
-  ];
+  ]
   return (
     <>
-      <nav className="nav app__flex-2">
-        <div className="img-size nav__logo">
-          <img src={Images} alt="logo" />
+      <nav className='nav app__flex-2'>
+        <div className='img-size nav__logo'>
+          <img src={Images} alt='logo' />
         </div>
-        <ul className="app__flex-2 nav__links">
+        <ul className='app__flex-2 nav__links'>
           {navLinks.map((item, index) => (
             <li key={index}>
               <Link to={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>
-        <div className="nav__search">
-          <input type="search" placeholder="Search" />
+        <div className='nav__search'>
+          <input type='search' placeholder='Search' />
           <CiSearch />
         </div>
-        <div className="nav__btn">
-          <button onClick={() => navigate('/UserSelect')} className="btn-primary">Get Started</button>
+        <div className='nav__btn'>
+          <button
+            onClick={() => navigate('/UserSelect')}
+            className='btn-primary'
+          >
+            Get Started
+          </button>
         </div>
       </nav>
 
-      <nav className="nav-mobile">
-        <Navbar isBordered variant="sticky">
+      <nav className='nav-mobile'>
+        <Navbar isBordered variant='sticky'>
           <Navbar.Brand>
-            <Navbar.Toggle aria-label="toggle navigation" />
-            <div className="img-size nav__logo">
-              <img src={Images} alt="logo" />
+            <Navbar.Toggle aria-label='toggle navigation' />
+            <div className='img-size nav__logo'>
+              <img src={Images} alt='logo' />
             </div>
           </Navbar.Brand>
           <Navbar.Content>
             <Navbar.Item>
-              <Button className="btn-primary" auto flat as={Link} >
+              <Button className='btn-primary' auto flat as={Link}>
                 Get Started
               </Button>
             </Navbar.Item>
@@ -67,9 +72,9 @@ const NavBar = () => {
             {navLinks.map((item, index) => (
               <Navbar.CollapseItem key={index}>
                 <Link
-                  color="inherit"
+                  color='inherit'
                   css={{
-                    minWidth: "100%",
+                    minWidth: '100%',
                   }}
                   to={item.path}
                 >
@@ -81,7 +86,7 @@ const NavBar = () => {
         </Navbar>
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

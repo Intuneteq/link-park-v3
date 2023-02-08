@@ -1,141 +1,141 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { Container, SubjectTemplate } from "../../../components/templates";
-import { Images } from "../../../constants";
-import "./subjects.scss";
+import { Container, SubjectTemplate } from '../../../components/templates'
+import { Images } from '../../../constants'
+import './subjects.scss'
 
 const Subjects = () => {
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0)
 
-  const cardPerPage = 8;
-  const pagesVisited = pageNumber * cardPerPage;
+  const cardPerPage = 8
+  const pagesVisited = pageNumber * cardPerPage
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+    setPageNumber(selected)
+  }
 
-  const options = ["SS1", "SS2", "SS3"];
+  const options = ['SS1', 'SS2', 'SS3']
   const content = [
     {
       img: Images.calculator,
-      subject: "mathematics",
+      subject: 'mathematics',
       chapters: 12,
-      bgColor: "#FFF0E1",
-      color: "#FCAB5E",
+      bgColor: '#FFF0E1',
+      color: '#FCAB5E',
     },
     {
       img: Images.discovery,
-      subject: "Physics",
+      subject: 'Physics',
       chapters: 16,
-      bgColor: "#E9E3FE",
-      color: "#8A70D6",
+      bgColor: '#E9E3FE',
+      color: '#8A70D6',
     },
     {
       img: Images.science,
-      subject: "Chemistry",
+      subject: 'Chemistry',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#579BE4",
+      bgColor: '#E5F3FE',
+      color: '#579BE4',
     },
     {
       img: Images.science,
-      subject: "Geography",
+      subject: 'Geography',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#8C1BAB",
+      bgColor: '#E5F3FE',
+      color: '#8C1BAB',
     },
     {
       img: Images.calculator,
-      subject: "mathematics",
+      subject: 'mathematics',
       chapters: 12,
-      bgColor: "#FFF0E1",
-      color: "#FCAB5E",
+      bgColor: '#FFF0E1',
+      color: '#FCAB5E',
     },
     {
       img: Images.discovery,
-      subject: "Physics",
+      subject: 'Physics',
       chapters: 16,
-      bgColor: "#E9E3FE",
-      color: "#8A70D6",
+      bgColor: '#E9E3FE',
+      color: '#8A70D6',
     },
     {
       img: Images.science,
-      subject: "Chemistry",
+      subject: 'Chemistry',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#579BE4",
+      bgColor: '#E5F3FE',
+      color: '#579BE4',
     },
     {
       img: Images.science,
-      subject: "Geography",
+      subject: 'Geography',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#8C1BAB",
+      bgColor: '#E5F3FE',
+      color: '#8C1BAB',
     },
     {
       img: Images.calculator,
-      subject: "mathematics",
+      subject: 'mathematics',
       chapters: 12,
-      bgColor: "#FFF0E1",
-      color: "#FCAB5E",
+      bgColor: '#FFF0E1',
+      color: '#FCAB5E',
     },
     {
       img: Images.discovery,
-      subject: "Physics",
+      subject: 'Physics',
       chapters: 16,
-      bgColor: "#E9E3FE",
-      color: "#8A70D6",
+      bgColor: '#E9E3FE',
+      color: '#8A70D6',
     },
     {
       img: Images.science,
-      subject: "Chemistry",
+      subject: 'Chemistry',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#579BE4",
+      bgColor: '#E5F3FE',
+      color: '#579BE4',
     },
     {
       img: Images.science,
-      subject: "Geography",
+      subject: 'Geography',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#8C1BAB",
+      bgColor: '#E5F3FE',
+      color: '#8C1BAB',
     },
     {
       img: Images.calculator,
-      subject: "mathematics",
+      subject: 'mathematics',
       chapters: 12,
-      bgColor: "#FFF0E1",
-      color: "#FCAB5E",
+      bgColor: '#FFF0E1',
+      color: '#FCAB5E',
     },
     {
       img: Images.discovery,
-      subject: "Physics",
+      subject: 'Physics',
       chapters: 16,
-      bgColor: "#E9E3FE",
-      color: "#8A70D6",
+      bgColor: '#E9E3FE',
+      color: '#8A70D6',
     },
     {
       img: Images.science,
-      subject: "Chemistry",
+      subject: 'Chemistry',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#579BE4",
+      bgColor: '#E5F3FE',
+      color: '#579BE4',
     },
     {
       img: Images.science,
-      subject: "Geography",
+      subject: 'Geography',
       chapters: 14,
-      bgColor: "#E5F3FE",
-      color: "#8C1BAB",
+      bgColor: '#E5F3FE',
+      color: '#8C1BAB',
     },
-  ];
+  ]
 
   const style = {
-    width: "214px",
-  };
+    width: '214px',
+  }
   return (
     <Container>
       <SubjectTemplate
-        title={"Subjects"}
+        title={'Subjects'}
         options={options}
         content={content}
         pagesVisited={pagesVisited}
@@ -144,7 +144,7 @@ const Subjects = () => {
         style={style}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default Subjects;
+export default Subjects
