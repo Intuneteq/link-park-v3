@@ -26,6 +26,7 @@ import LibrarySlugs from "./pages/student/library/LibrarySlugs";
 import Portal from "./pages/student/portal";
 import PotalResult from "./pages/student/portal/PotalResult";
 import PortalMaterials from "./pages/student/portal/PortalMaterials";
+import Activities from "./pages/student/activities";
 
 import "./App.scss";
 
@@ -51,6 +52,7 @@ function App() {
           <Route path='/student/portal' element={<Portal />} />
           <Route path="/student/portal/results" element ={<PotalResult />} />
           <Route path='/student/portal/materials' element={<PortalMaterials />} />
+          <Route path="/student/activities" element={<Activities />} />
         </Route>
 
         {/* Parent dashboard */}

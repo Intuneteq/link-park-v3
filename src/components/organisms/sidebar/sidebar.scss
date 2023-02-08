@@ -46,20 +46,24 @@
       }
 
       &:hover {
-        background-color: #353aa4;
+        background-color: var(--primary-color);
+
+        p, svg{
+          color: var(--white-color);
+        }
       }
     }
 
     .active {
-      background-color: var(--primary-color);
+      background-color: #CFD0E9;
 
       p {
         font-weight: 700;
-        color: var(--white-color);
+        color: var(--primary-color);
       }
 
       svg {
-        color: var(--white-color);
+        color: var(--primary-color);
       }
     }
 

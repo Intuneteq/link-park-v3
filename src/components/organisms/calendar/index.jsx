@@ -2,11 +2,11 @@ import React from "react";
 
 import "./calendar.scss";
 
-const LinkParkCalendar = () => {
+const LinkParkCalendar = ({ showTitle, height }) => {
   return (
     <div className="dashboard-calender">
-      <h3>Calender</h3>
-      <div className="calendar">okay</div>
+      {showTitle ? "" : <h3>Calender</h3>}
+      <div style={{height}} className="calendar">okay</div>
     </div>
   );
 };

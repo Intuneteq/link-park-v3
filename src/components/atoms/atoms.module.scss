@@ -63,11 +63,11 @@
   align-items: center;
   gap: 12px;
 
-  svg, img {
+  svg,
+  img {
     width: 24px;
     height: 24px;
     color: var(--black-color);
- 
   }
 
   p {
@@ -83,4 +83,53 @@
 
 .rotateUp {
   transform: rotate(-180deg);
+}
+
+.pill {
+  font-size: 12px;
+  font-weight: 600;
+
+  border-radius: 100px;
+  padding: 3px 12px;
+}
+
+//tableCard
+.tableData {
+  border-bottom: 1px solid #d8d8d8;
+  text-align: center;
+
+  p {
+    color: var(--black-color);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  small {
+    color: #5B5B5B;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  .green {
+    color: #10ad76;
+  }
+
+  .pending {
+    color: #ce9500;
+  }
+
+  .red {
+    color: #e0240a;
+  }
+
+  &:nth-child(1) {
+    width: 50%;
+    text-align: left;
+    padding: 20px 0 8px 18px;
+  }
 }

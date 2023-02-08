@@ -8,6 +8,7 @@ import heart from "../assets/heart.svg";
 import subject from "../assets/subject.png";
 import english from "../assets/english.png";
 import teacher from "../assets/teacher.png";
+import eventImage from '../assets/eventImage.png'
 
 const Images = {
   logo,
@@ -19,6 +20,7 @@ const Images = {
   subject,
   english,
   teacher,
+  eventImage
 };
 
 export default Images;
