@@ -7,14 +7,14 @@ import {
 } from 'react-icons/ai'
 
 import './footer.scss'
-import Images from '../../../constants/Images'
+import { Images } from '../../../constants'
 
 const Footer = () => {
   return (
     <div>
       <footer className='footer app__flex-3'>
         <div className='img-size footer-logo'>
-          <img src={Images} alt='logo' />
+          <img src={Images.logo} alt='logo' />
         </div>
         <ul>
           <p>Quick Links</p>

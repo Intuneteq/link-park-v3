@@ -1,25 +1,36 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/breakpoints';
+@import '../../scss/utils/mixins';
+
 .home {
   width: 100%;
   background: var(--white-color);
 }
 
 .home__section1 {
+  @include flex_align;
+  justify-content: center;
   width: 100%;
-  padding: 6.25rem 6.25rem 0;
+  padding: fn.rem(98) 6.25rem 0;
   background: var(--primary-color);
   text-align: left;
   .home__section1-article {
     width: 50%;
 
     h1 {
-      margin-bottom: 16px;
+      font-size: fn.rem(62);
+      line-height: 128%;
+      margin-bottom: fn.rem(4);
       color: var(--white-color);
     }
 
     & > p {
       color: var(--white-color);
+      font-size: fn.rem(20);
+      line-height: fn.rem(24);
       max-width: 31.4rem;
-      margin-bottom: 56px;
+      margin-bottom: fn.rem(56);
     }
 
     div {
@@ -47,47 +58,61 @@
 
   .home__section1-img {
     width: 50%;
+    // margin-top: fn.rem(88);
   }
 }
 
 .home__digital {
+  @include flex_column;
+  @include flex_centered;
   width: 100%;
   padding: 6.25rem 6.25rem;
 
   h3 {
-    margin-bottom: 0.75rem;
+    font-size: fn.rem(32);
+    color: colors.$header-dark;
   }
 
   & > p {
-    max-width: 515px;
+    font-size: fn.rem(16);
+    max-width: fn.rem(515);
+    line-height: fn.rem(24);
+    color: colors.$light-dark;
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: fn.rem(39);
   }
 
   .section__digital-modal {
+    @include flex_align;
+    justify-content: space-between;
     width: 100%;
 
     .modal-div {
+      @include flex_column;
+      @include flex_centered;
       width: 32%;
       height: 18.563rem;
-      background: #f9f9f9;
+      background: colors.$dark-bg;
       border-radius: 0.5rem;
 
       div {
         width: 7.875rem;
         height: 8.063rem;
-        margin-bottom: 12px;
+        margin-bottom: fn.rem(12);
       }
 
       h6 {
+        all: unset;
         font-size: 1.4rem;
         font-weight: 800;
-        color: #0f0d15;
+        color: colors.$subtext-dark;
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: fn.rem(12);
       }
 
       p {
+        color: colors.$light-dark;
+        line-height: fn.rem(24);
         max-width: 22.75rem;
         text-align: center;
       }
@@ -101,34 +126,45 @@
 }
 
 .home__works {
+  @include flex_column;
+  @include flex_centered;
   width: 100%;
   padding: 6.25rem 6.25rem;
+
   h3 {
+    color: colors.$header-dark;
     font-size: 2.75rem;
     margin-bottom: 0.5rem;
   }
 
   & > p {
+    color: colors.$light-dark;
     text-align: center;
     max-width: 20.875rem;
     margin-bottom: 7.625rem;
   }
 
   .home__works-article {
-    width: 100%;
-    margin-bottom: 206px;
+    @include flex;
+    justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
+    margin-bottom: fn.rem(205.9);
     position: relative;
 
     .article-content {
       flex: 1;
 
-      h4 {
-        color: var(--deep-black);
+      h3 {
+        color: colors.$header-dark;
+        font-size: fn.rem(32);
         margin-bottom: 1rem;
       }
 
       p {
+        font-size: fn.rem(20);
+        color: colors.$text-grey;
+        line-height: fn.rem(28);
         max-width: 29.438rem;
         text-align: justify;
       }
@@ -136,7 +172,7 @@
 
     .article-img {
       flex: 1;
-      height: 348px;
+      height: fn.rem(348);
     }
 
     .article-arrow {
@@ -154,21 +190,26 @@
 }
 
 .home__achievements {
+  @include flex_column;
+  @include flex_centered;
+
   width: 100%;
   padding: 6.25rem 6.25rem;
-  background: var(--primary-color);
+  background: colors.$color-primary;
 
   h3 {
     font-size: 2rem;
-    color: var(--white-color);
-    margin-bottom: 40px;
+    color: colors.$light;
+    margin-bottom: fn.rem(40);
   }
 
   .home__achievements-content {
+    @include flex_align;
     width: 100%;
+    justify-content: space-between;
 
     .achievements {
-      color: var(--white-color);
+      color: colors.$light;
       h5 {
         font-weight: 800;
         font-size: 2.75rem;
@@ -177,8 +218,8 @@
 
       p {
         font-weight: 600;
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: fn.rem(19);
+        line-height: fn.rem(24);
         max-width: 13.4rem;
       }
     }
@@ -186,10 +227,15 @@
 }
 
 .home__track {
+  @include flex_column;
+  @include flex_centered;
+
   width: 100%;
   padding: 6.25rem 6.25rem;
   margin-bottom: 8px;
+
   h2 {
+    color: colors.$light-dark;
     font-size: 3.5rem;
     text-align: center;
     max-width: 56.938rem;
@@ -199,18 +245,19 @@
   }
 
   p {
+    color: colors.$subtext-dark;
+    font-size: fn.rem(20);
     max-width: 34.938rem;
     text-align: center;
     margin-bottom: 1.5rem;
   }
-  button {
-    width: 17.25rem;
-    height: 3.875rem;
-  }
 }
 
 .home__walk {
+  @include flex_align;
+
   width: 100%;
+  justify-content: space-between;
   gap: 4.5rem;
   padding: 5.125rem 6.25rem;
   background: #fdf9ff;
@@ -243,16 +290,17 @@
   .home__walk-article {
     flex: 1;
 
-    h6 {
+    h2 {
       font-size: 3rem;
       line-height: 3.8rem;
       max-width: 28.313rem;
-      margin-bottom: 10px;
+      margin-bottom: fn.rem(10);
     }
 
     p {
+      font-size: fn.rem(20);
       max-width: 20.4rem;
-      margin-bottom: 18px;
+      margin-bottom: fn.rem(18);
     }
 
     button {
