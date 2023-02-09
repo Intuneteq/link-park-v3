@@ -7,6 +7,8 @@ import { TbNotebook } from 'react-icons/tb'
 import { BsJoystick } from 'react-icons/bs'
 import { RiCalendar2Line } from 'react-icons/ri'
 
+import styles from './layout.module.scss'
+
 const DashboardLayout = () => {
   const sideBarLinks = [
     {
@@ -31,11 +33,11 @@ const DashboardLayout = () => {
     },
   ]
   return (
-    <main style={{ width: '100%' }} className='app__flex-3'>
-      <div style={{ width: '21%' }}>
+    <main className={styles.layout}>
+      <div className={styles.sidebar}>
         <Sidebar sideLinks={sideBarLinks} />
       </div>
-      <div style={{ width: '79%' }}>
+      <div className={styles.outlet}>
         <Outlet />
       </div>
     </main>

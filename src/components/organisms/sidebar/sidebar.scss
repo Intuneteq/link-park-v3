@@ -1,79 +1,86 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
 .sidebar {
-  width: 100%;
-  height: 100vh;
-  padding: 5% 0 10%;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  gap: 89px;
-  border-right: 1.5px solid #e6e6f3;
-}
-
-.sidebar__logo {
-  width: 82px;
-  height: 72px;
-  // border: 1px solid blue;
-}
-
-.sidebar__links {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-  // border: 1px solid blue;
-  width: 100%;
-  height: 100%;
-
-  & > div {
+  display: none;
+  @include breakpoint-up('lg') {
+    display: block;
     width: 100%;
-    a {
+    height: 100vh;
+    padding: 5% 0 10%;
+
+    @include flex_column;
+    @include flex_align;
+    justify-content: flex-start;
+    gap: fn.rem(89);
+    border-right: fn.rem(1.5) solid #e6e6f3;
+
+    .sidebar__logo {
+      width: fn.rem(82);
+      height: fn.rem(72);
+    }
+
+    .sidebar__links {
+      @include flex_column;
+      @include flex_align;
+      justify-content: space-between;
+
       width: 100%;
-      padding: 17px 40px;
-      align-items: center;
-      gap: 12px;
+      height: 100%;
 
-      svg {
-        color: #1d1929;
-        width: 17.3px;
-        height: 17.3px;
-      }
+      & > div {
+        width: 100%;
+        a {
+          width: 100%;
+          padding: fn.rem(17) fn.rem(40);
+          align-items: center;
+          gap: fn.rem(12);
 
-      p {
-        font-size: 16px;
-        color: var(--black-color);
-      }
+          svg {
+            color: #1d1929;
+            width: fn.rem(17.3);
+            height: fn.rem(17.3);
+          }
 
-      &:hover {
-        background-color: var(--primary-color);
+          p {
+            font-size: fn.rem(16);
+            color: colors.$text-dark;
+          }
 
-        p, svg{
-          color: var(--white-color);
+          &:hover {
+            background-color: colors.$color-primary;
+
+            p,
+            svg {
+              color: colors.$light;
+            }
+          }
         }
-      }
-    }
 
-    .active {
-      background-color: #CFD0E9;
+        .active {
+          background-color: #cfd0e9;
 
-      p {
-        font-weight: 700;
-        color: var(--primary-color);
-      }
+          p {
+            font-weight: 700;
+            color: colors.$color-primary;
+          }
 
-      svg {
-        color: var(--primary-color);
-      }
-    }
+          svg {
+            color: colors.$color-primary;
+          }
+        }
 
-    .sign {
-      p {
-        color: #e0240a;
-      }
+        .sign {
+          p {
+            color: colors.$text-redII;
+          }
 
-      svg {
-        color: #e0240a;
+          svg {
+            color: colors.$text-redII;
+          }
+        }
       }
     }
   }

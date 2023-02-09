@@ -1,0 +1,27 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.layout {
+  @include flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+.sidebar {
+    display: none;
+    @include breakpoint-up('lg') {
+      width: 21%;
+      display: block;
+  }
+}
+
+.outlet {
+    width: 100%;
+    @include breakpoint-up('lg') {
+        width: 79%;
+  }
+}

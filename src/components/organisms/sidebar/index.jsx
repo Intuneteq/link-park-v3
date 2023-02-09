@@ -1,7 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { TbLogout } from 'react-icons/tb'
-// import { GrHomeRounded } from "react-icons/gr";
 import { AiOutlineSetting } from 'react-icons/ai'
 
 import { Images } from '../../../constants'
@@ -47,6 +47,12 @@ const Sidebar = ({ sideLinks }) => {
       </div>
     </nav>
   )
+}
+
+Sidebar.propTypes = {
+  sideLinks: PropTypes.arrayOf([
+    PropTypes.objectOf(PropTypes.string.isRequired),
+  ]),
 }
 
 export default Sidebar
