@@ -1,6 +1,7 @@
 import React from 'react'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 import styles from './atoms.module.scss'
 
@@ -23,6 +24,14 @@ const LinkButton = ({ name, path, button, btnItems, back }) => {
       )}
     </>
   )
+}
+
+LinkButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  button: PropTypes.bool,
+  back: PropTypes.bool,
+  btnItems: PropTypes.oneOfType([PropTypes.string, PropTypes.any.isRequired]),
 }
 
 export default LinkButton

@@ -1,10 +1,11 @@
 import React from 'react'
-import { CiSearch } from 'react-icons/ci'
+import PropTypes from 'prop-types'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import { Images } from '../../../constants'
 import { Selector } from '../../molecules'
 
 import './topnav.scss'
+import { SearchInput } from '../../atoms'
 
 const TopNav = ({ name }) => {
   const options = ['Temitope Adekunle', 'Temitope', 'Temitope']
@@ -12,8 +13,7 @@ const TopNav = ({ name }) => {
     <section className='dashboard__nav app__flex-2'>
       <h3>{name}</h3>
       <div className='dashboard__nav-search'>
-        <input type='search' placeholder='Search' />
-        <CiSearch />
+        <SearchInput height={3.25} />
       </div>
       <IoMdNotificationsOutline />
       <div className='dashboard__nav-selector'>
@@ -31,6 +31,10 @@ const TopNav = ({ name }) => {
       </div>
     </section>
   )
+}
+
+TopNav.propTypes = {
+  name: PropTypes.string.isRequired,
 }
 
 export default TopNav

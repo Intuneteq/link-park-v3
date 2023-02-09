@@ -1,38 +1,23 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { CiSearch } from 'react-icons/ci'
 import { Navbar, Button } from '@nextui-org/react'
 
-import './navbar.scss'
 import Images from '../../../constants/Images'
+import { SearchInput, Buttons } from '../../atoms'
+import { NAV_CONTENT } from './contents'
+import './navbar.scss'
 
 const NavBar = () => {
   const navigate = useNavigate()
-  const navLinks = [
-    {
-      name: 'Home',
-      path: '/',
-    },
-    {
-      name: 'About Us',
-      path: '/about',
-    },
-    {
-      name: 'Parents',
-      path: '/parents',
-    },
-    {
-      name: 'FAQs',
-      path: '/faq',
-    },
-  ]
+  const { navLinks } = NAV_CONTENT
+
   return (
     <>
-      <nav className='nav app__flex-2'>
+      <nav className='nav'>
         <div className='img-size nav__logo'>
-          <img src={Images} alt='logo' />
+          <img src={Images.logo} alt='logo' />
         </div>
-        <ul className='app__flex-2 nav__links'>
+        <ul className='nav__links'>
           {navLinks.map((item, index) => (
             <li key={index}>
               <Link to={item.path}>{item.name}</Link>
@@ -40,17 +25,16 @@ const NavBar = () => {
           ))}
         </ul>
         <div className='nav__search'>
-          <input type='search' placeholder='Search' />
-          <CiSearch />
+          <SearchInput height={3} />
         </div>
-        <div className='nav__btn'>
-          <button
-            onClick={() => navigate('/UserSelect')}
-            className='btn-primary'
-          >
-            Get Started
-          </button>
-        </div>
+        <Buttons
+          width={8.75}
+          height={3}
+          classType={'primary'}
+          type={'button'}
+          text={'Get Started'}
+          onClick={() => navigate('/UserSelect')}
+        />
       </nav>
 
       <nav className='nav-mobile'>

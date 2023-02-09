@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { GrDown } from 'react-icons/gr'
 
 import styles from './atoms.module.scss'
@@ -13,6 +15,10 @@ const AccordionIcon = ({ toggle }) => {
       }
     />
   )
+}
+
+AccordionIcon.propTypes = {
+  toggle: PropTypes.object.isRequired,
 }
 
 export default AccordionIcon
