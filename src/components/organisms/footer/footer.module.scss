@@ -1,0 +1,111 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.footer {
+  @include flex_column;
+  @include flex_centered;
+  padding: fn.rem(32) 0 fn.rem(100);
+  background: colors.$foot-bg;
+
+  .footer_logo {
+    margin-bottom: fn.rem(85.53);
+  }
+
+  h3 {
+    font-size: fn.rem(20);
+    color: colors.$text-dark;
+    margin-bottom: fn.rem(28);
+  }
+
+  .footerLinks,
+  .quickLinks,
+  .footerHelp {
+    @include flex_column;
+    @include flex_centered;
+  }
+
+  .footerLinks {
+    gap: fn.rem(56);
+    margin-bottom: fn.rem(56);
+  }
+
+  ul {
+    @include flex_column;
+    @include flex_centered;
+    gap: fn.rem(20);
+    li {
+      color: colors.$text-dark;
+      font-size: fn.rem(20);
+      font-weight: 400;
+    }
+  }
+
+  .footer__icons {
+    @include flex_column;
+    @include flex_centered;
+
+    .icons {
+      @include flex_centered;
+      gap: fn.rem(20);
+      svg {
+        width: fn.rem(48);
+        height: fn.rem(48);
+      }
+    }
+  }
+
+  @include breakpoint-up('md') {
+    @include flex_row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: fn.rem(32) fn.rem(16) fn.rem(50);
+
+    .footerLinks {
+      @include flex_row;
+      align-items: flex-start;
+      width: 70%;
+      gap: fn.rem(193);
+    }
+
+    .quickLinks,
+    .footerHelp {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    ul {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .icons {
+      flex-wrap: wrap;
+    }
+  }
+
+  @include breakpoint-up('lg') {
+    padding: 0.875rem 6.25rem;
+
+    .footer_logo {
+      width: fn.rem(72);
+      height: fn.rem(82);
+      margin-bottom: 0;
+    }
+
+    .icons {
+      flex-wrap: nowrap;
+    }
+  }
+}
+hr {
+  color: #e0e0e0;
+  width: 0.2px;
+}
+.footer_end {
+  width: 100%;
+  background-color: #fafafa;
+  text-align: center;
+  padding: fn.rem(10) 0;
+}
