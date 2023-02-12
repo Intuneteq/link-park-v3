@@ -17,8 +17,8 @@ import About from './pages/about'
 import Parents from './pages/parents'
 import SignIn from './pages/signIn'
 import SignUp from './pages/signup'
-import UserSelect from './pages/userselect/UserSelect'
 import Faq from './pages/Faq/Faq'
+import UserSelect from './pages/userselect/UserSelect'
 
 //import dashboard pages
 import Dashboard from './pages/parent/dashboard'
