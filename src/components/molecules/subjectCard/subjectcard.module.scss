@@ -1,21 +1,29 @@
+@use '../../../scss/utils/functions' as fn;
+@use '../../../scss/global/colors' as colors;
+@import '../../../scss/utils/breakpoints';
+
 .subjectCard {
-  width: 214px;
+  width: fn.rem(165) !important;
   height: 246px;
-  box-shadow: 0px 4px 20px rgba(173, 173, 173, 0.16);
+  box-shadow: 0px fn.rem(4) fn.rem(20) rgba(173, 173, 173, 0.16);
   border-radius: 8px;
-  padding: 12px 15px 32px;
+  padding: fn.rem(12) fn.rem(15) fn.rem(32);
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
+  @include breakpoint-up('sm') {
+    width: fn.rem(214) !important;
+  }
+
   .cardImage {
     width: 100%;
-    height: 104px;
-    border-radius: 8px;
-    margin-bottom: 26px;
-    padding: 10px;
+    height: fn.rem(104);
+    border-radius: fn.rem(8);
+    margin-bottom: fn.rem(26);
+    padding: fn.rem(10);
 
     display: flex;
     align-items: center;
@@ -31,11 +39,11 @@
   p {
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 24px;
-    color: var(--black-color);
+    font-size: fn.rem(24);
+    color: colors.$text-dark;
     text-align: left;
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: fn.rem(6);
   }
 
   .cardFooter {
@@ -46,7 +54,7 @@
 
     span {
       font-weight: 600;
-      font-size: 16px;
+      font-size: fn.rem(16);
       color: #5d5d5d;
     }
   }

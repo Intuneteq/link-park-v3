@@ -1,6 +1,24 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+h4 {
+  font-size: fn.rem(20);
+  color: colors.$header-dark;
+
+  @include breakpoint-up('lg') {
+    font-weight: 700;
+    font-size: fn.rem(24);
+    color: colors.$text-dark;
+  }
+}
+
 .subjects__body {
     width: 100%;
 }
 .subjects__body_head {
+    @include flex_align;
+  justify-content: space-between;
   margin: 49px 0 40px;
 }
