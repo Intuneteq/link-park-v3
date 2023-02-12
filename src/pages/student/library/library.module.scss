@@ -1,35 +1,48 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
 .library__body_cards {
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-rows: auto auto;
   grid-auto-flow: column;
-  grid-column-gap: 20px;
-  grid-row-gap: 40px;
+  grid-column-gap: fn.rem(20);
+  grid-row-gap: fn.rem(40);
   overflow-x: scroll;
-  padding-bottom: 10px;
+  padding-bottom: fn.rem(10);
   &::-webkit-scrollbar {
-    height: 8px;
-    background: grey;
-    border-radius: 10px;
+    display: none;
+    @include breakpoint-up('md') {
+      display: block;
+      height: fn.rem(8);
+      background: grey;
+      border-radius: fn.rem(10);
+    }
   }
   &::-webkit-scrollbar-thumb:horizontal {
     background: var(--primary-color);
-    border-radius: 10px;
+    border-radius: fn.rem(10);
     cursor: pointer;
   }
 }
 
 .library_card {
-  min-width: 246px;
-  width: 246px;
-  height: 377px;
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: fn.rem(246);
+  width: fn.rem(246);
+  height: fn.rem(377);
+  font-size: fn.rem(20);
 
   .subject_img {
     width: 100%;
-    height: 271px;
-    margin-bottom: 20px;
+    height: fn.rem(271);
+    margin-bottom: fn.rem(20);
 
     img {
       width: 100%;
@@ -41,24 +54,24 @@
     all: unset;
     color: var(--black-color);
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: fn.rem(4);
   }
 
   p,
   span {
     font-weight: 600;
     color: #5d5d5d;
-    margin-bottom: 4px;
+    margin-bottom: fn.rem(4);
   }
 }
 
 .library__body_btn {
   width: 100%;
-  margin-top: 40px;
+  margin-top: fn.rem(40);
 
   button {
-    width: 144px;
-    height: 48px;
+    width: fn.rem(144);
+    height: fn.rem(48);
   }
 }
 
@@ -66,108 +79,154 @@
 
 .slugs {
   width: 100%;
-  justify-content: space-between !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include breakpoint-up('md') {
+    flex-direction: row;
+  }
 
   .subjectHolder {
-    width: 25%;
+    @include flex_column;
+    @include flex_centered;
+    width: 100%;
+
+    @include breakpoint-up('md') {
+      width: 25%;
+    }
 
     .subjectCard {
       width: 100%;
-      height: 733px;
+      height: fn.rem(733);
       background: #0d1292;
-      border-radius: 8px;
-      margin-bottom: 34px;
-      padding: 12px 14px;
-      color: var(--white-color);
+      border-radius: fn.rem(8);
+      margin-bottom: fn.rem(34);
+      padding: fn.rem(12) fn.rem(14);
+      color: colors.$light;
+
+      @include breakpoint-up('sm') {
+        width: 75%;
+      }
+
+      @include breakpoint-up('md') {
+        width: 100%;
+      }
 
       .cardImg {
         width: 100%;
-        height: 271px;
-        margin-bottom: 15px;
+        height: fn.rem(271);
+        margin-bottom: fn.rem(15);
 
         img {
-          object-fit: cover;
+          object-fit: contain;
         }
       }
 
       .cardContent {
+        display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        margin-bottom: 12px;
+        margin-bottom: fn.rem(12);
         h6 {
           all: unset;
           font-weight: 400;
-          font-size: 20px;
+          font-size: fn.rem(20);
           color: #e7e6e6;
         }
 
         p {
           font-weight: 700;
-          font-size: 20px;
+          font-size: fn.rem(20);
         }
       }
 
       .teacherContainer {
-        margin-top: 22px;
+        @include flex_column;
+        @include flex_centered;
+        margin-top: fn.rem(22);
         width: 100%;
 
         .teacher {
-          width: 152px;
-          height: 152px;
+          width: fn.rem(152);
+          height: fn.rem(152);
         }
 
         h6 {
           all: unset;
           font-weight: 400;
-          font-size: 20px;
+          font-size: fn.rem(20);
           color: #e7e6e6;
-          margin-top: 12px;
+          margin-top: fn.rem(12);
         }
 
         p {
           font-weight: 700;
-          font-size: 20px;
-          margin-top: 8px;
+          font-size: fn.rem(20);
+          margin-top: fn.rem(8);
         }
       }
     }
 
     button {
       width: 100%;
-      height: 48px;
+      height: fn.rem(48);
     }
   }
 
   .accordionContainer {
-    width: 71%;
-    padding-top: 30px;
-    // border: 1px solid red;
+    width: 100%;
+    padding-top: fn.rem(30);
+
+    @include breakpoint-up('md') {
+      width: 71%;
+    }
 
     .accordionHead {
-      margin-bottom: 34px;
+      @include flex_column;
+      @include flex_centered;
+      margin-bottom: fn.rem(34);
+
+      @include breakpoint-up('md') {
+        @include flex_align;
+        flex-direction: row;
+        justify-content: space-between;
+      } 
+
+      & > div {
+        @include flex_centered;
+      }
     }
 
     .accordionHolder {
       width: 100%;
-      gap: 8px;
+      @include flex_column;
+      @include flex_centered;
+      gap: fn.rem(8);
 
       .accordion {
         all: unset;
         width: 100%;
         background-color: #f7f7f7;
-        border-radius: 8px;
-        padding: 20px;
+        border-radius: fn.rem(8);
+        padding: fn.rem(20);
         cursor: pointer;
+
+        & > div {
+          @include flex_align;
+          justify-content: space-between;
+        }
 
         h6 {
           all: unset;
           font-weight: 700;
-          font-size: 20px;
-          color: var(--black-color);
+          font-size: fn.rem(20);
+          color: colors.$text-dark;
         }
 
         p {
-          margin-top: 24px;
+          margin-top: fn.rem(24);
         }
       }
     }

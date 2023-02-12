@@ -27,7 +27,7 @@ const LinkButton = ({ name, path, button, btnItems, back }) => {
 }
 
 LinkButton.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   path: PropTypes.string.isRequired,
   button: PropTypes.bool,
   back: PropTypes.bool,
