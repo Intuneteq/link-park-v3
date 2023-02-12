@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './calendar.scss'
 
@@ -11,6 +12,11 @@ const LinkParkCalendar = ({ showTitle, height }) => {
       </div>
     </div>
   )
+}
+
+LinkParkCalendar.propTypes = {
+  showTitle: PropTypes.any,
+  height: PropTypes.any,
 }
 
 export default LinkParkCalendar

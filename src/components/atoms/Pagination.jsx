@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import ReactPaginate from 'react-paginate'
 
@@ -20,6 +21,12 @@ const Pagination = ({ itemPerPage, contentLength, changePage }) => {
       activeLinkClassName={styles.paginationActive}
     />
   )
+}
+
+Pagination.propTypes = {
+  itemPerPage: PropTypes.any,
+  contentLength: PropTypes.any,
+  changePage: PropTypes.any,
 }
 
 export default Pagination

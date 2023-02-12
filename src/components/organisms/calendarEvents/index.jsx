@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './calendarevents.scss'
 
@@ -26,6 +27,9 @@ const CalendarEvents = ({ events }) => {
       </div>
     </div>
   )
+}
+CalendarEvents.propTypes = {
+  events: PropTypes.any,
 }
 
 export default CalendarEvents

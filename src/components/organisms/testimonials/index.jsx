@@ -66,7 +66,7 @@ const Testimonials = () => {
             </div>
             <p className='card-body'>
               Link-Park is really a saver, ever since my children school
-              introduced this i have been able to monitor all my children's
+              introduced this i have been able to monitor all my childrens
               school activities such as their tests score assignments, results
               and upcoming events. Thanks so much for this. 5 stars for me.
             </p>
