@@ -1,11 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/pagination'
 
-import { LinkParkCalendar } from '../../../components/organisms'
+import { Carousel, LinkParkCalendar } from '../../../components/organisms'
 import { Container } from '../../../components/templates'
 import { Images } from '../../../constants'
 import { Pill, TableCard } from '../../../components/atoms'
@@ -65,32 +61,24 @@ const Activities = () => {
       <section className={[styles.activities, 'app__flex-3'].join(' ')}>
         <div className={styles.activities_main}>
           <h1 className='dashboard-subtext'>Upcoming Event</h1>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className={[styles.swiper_component, 'mySwiper'].join(' ')}
+          <Carousel
+            events={events}
+            modules='pagination'
+            swiperValues={{ slides: 1, space: 10 }}
           >
-            {events.map((event, index) => (
-              <SwiperSlide key={index} className={[styles.swipes].join(' ')}>
-                <div className={styles.eventCard}>
-                  <div className={styles.eventCard_content}>
-                    <p className='app__flex'>24th January, 2023</p>
-                    <h2>Inter-school</h2>
-                    <span>Competition</span>
-                    <br />
-                    <Link to='#'>View Full Details</Link>
-                  </div>
-                  <div className={[styles.eventcard_Img, 'img-size'].join(' ')}>
-                    <img src={Images.eventImage} alt='events' />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <div className={styles.eventCard}>
+              <div className={styles.eventCard_content}>
+                <p className='app__flex'>24th January, 2023</p>
+                <h2>Inter-school</h2>
+                <span>Competition</span>
+                <br />
+                <Link to='#'>View Full Details</Link>
+              </div>
+              <div className={[styles.eventcard_Img, 'img-size'].join(' ')}>
+                <img src={Images.eventImage} alt='events' />
+              </div>
+            </div>
+          </Carousel>
           <div className={styles.activitiesTable}>
             <h3 className='dashboard-subtext'>To Do Tasks</h3>
             <div className={styles.tableContent}>
@@ -104,7 +92,7 @@ const Activities = () => {
               <table>
                 <tbody>
                   {tableContent.map((item, index) => (
-                    <tr>
+                    <tr key={index}>
                       <TableCard>
                         <p>{item.head.headText}</p>
                         <small>{item.head.headSmall}</small>

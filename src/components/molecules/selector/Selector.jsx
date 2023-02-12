@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { GrDown } from 'react-icons/gr'
 
 import styles from './selector.module.scss'
@@ -25,10 +26,14 @@ const Selector = ({
           borderStyle: borderNone && 'none',
         }}
       >
-        <div onClick={() => setToggle(!toggle)} className={styles.selectBtn}>
+        <button
+          type='button'
+          onClick={() => setToggle(!toggle)}
+          className={styles.selectBtn}
+        >
           <span className={styles.sBtnText}>{options[0]}</span>
           <GrDown className={toggle ? styles.rotateUp : ''} />
-        </div>
+        </button>
 
         {toggle && (
           <ul style={{ width: selectWidth }} className={styles.options}>
@@ -42,6 +47,16 @@ const Selector = ({
       </div>
     </div>
   )
+}
+
+Selector.propTypes = {
+  borderNone: PropTypes.bool,
+  title: PropTypes.string,
+  options: PropTypes.array,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  padding: PropTypes.string,
+  selectWidth: PropTypes.string,
 }
 
 export default Selector

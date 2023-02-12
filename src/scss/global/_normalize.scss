@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family:  utils.$base-font;;
+  font-family:  utils.$base-font;
 }
 
 html {
@@ -27,7 +27,7 @@ body {
   font-family: utils.$base-font;
   background-color: colors.$base-bg;
   color: colors.$text-dark;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 a,

@@ -1,32 +1,47 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+
 .selector {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  // align-items: flex-start;
+  flex-direction: column;
+  gap: fn.rem(12);
+  
   p {
-    color: var(--black-color);
+    color: colors.$text-dark;
+  }
+  
+  @include breakpoint-up('md') {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
   }
 }
 
 .selectMenu {
   border: 1px solid #d1d1d1;
-  border-radius: 8px;
+  border-radius: fn.rem(8);
   outline: none;
   position: relative;
 }
 
 .selectMenu .selectBtn {
+  all: unset;
+  width: 100%;
   display: flex;
-  font-size: 14px;
+  justify-content: space-between;
+  font-size: fn.rem(14);
   font-weight: 400;
-  color: var(--deep-black);
+  color: colors.$header-dark;
   align-items: center;
   cursor: pointer;
-  justify-content: space-between;
 }
 
 .selectBtn svg {
-  font-size: 14px;
+  font-size: fn.rem(14);
   transition: 0.3s;
 }
 
@@ -35,26 +50,32 @@
 }
 
 .options {
+  width: 200%;
   position: absolute;
-  margin-top: 30px;
+  padding: fn.rem(14) 0;
+  margin-top: fn.rem(30);
   margin-left: 0;
-  border-radius: 8px;
+  border-radius: fn.rem(8);
   background: #fff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   left: 0;
   z-index: 5;
+
+  @include breakpoint-up('lg') {
+    width: 100% !important;
+  }
 }
 
 .option {
   display: flex;
-  height: 55px;
+  height: fn.rem(55);
   cursor: pointer;
-  padding: 14px 16px;
+  padding: fn.rem(14) fn.rem(16);
   align-items: center;
   width: 100%;
-  font-size: 14px;
+  font-size: fn.rem(14);
 
   &:hover {
-    background-color: #353aa4;
+    background-color: colors.$color-secondary;
   }
 }

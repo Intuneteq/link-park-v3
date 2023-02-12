@@ -50,9 +50,7 @@ const Sidebar = ({ sideLinks }) => {
 }
 
 Sidebar.propTypes = {
-  sideLinks: PropTypes.arrayOf([
-    PropTypes.objectOf(PropTypes.string.isRequired),
-  ]),
+  sideLinks: PropTypes.any,
 }
 
 export default Sidebar

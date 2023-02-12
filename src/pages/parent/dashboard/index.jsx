@@ -1,129 +1,69 @@
 import React from 'react'
+
+import useGetWindowResize from '../../../hooks/useGetWindowResize'
+import { Buttons } from '../../../components/atoms'
+import { AssignmentCard } from '../../../components/molecules'
 import {
   AssessmentCards,
   CalendarEvents,
+  Carousel,
   LinkParkCalendar,
   Table,
-  TopNav,
 } from '../../../components/organisms'
-
-import './dashboard.scss'
+import { Container } from '../../../components/templates'
+import { DASHBOARD_CONTENT } from './contents'
+import styles from './dashboard.module.scss'
 
 const Dashboard = () => {
-  const cards = [
-    {
-      head: 'Overall Position',
-      subText: '2nd',
-      color: '#8A70D6',
-      color2: '#BDA6FF',
-    },
-    {
-      head: 'Total Subjects',
-      subText: '12',
-      color: '#FCAB5E',
-      color2: '#FFCFA2',
-    },
-  ]
-
-  const tableData = {
-    head: ['Title', 'Grade', 'Status'],
-    body: [
-      {
-        bodyHead: {
-          headTitle: 'Fun Fact About Australia',
-          headText: 'Tue 12, 2022',
-        },
-        bodyItems: ['0/10', 'Pending'],
-      },
-      {
-        bodyHead: {
-          headTitle: 'Verbal Abtitude',
-          headText: 'Tue 12, 2022',
-        },
-        bodyItems: ['8/10', 'Completed'],
-      },
-      {
-        bodyHead: {
-          headTitle: 'Physics Assignment',
-          headText: 'Tue 12, 2022',
-        },
-        bodyItems: ['9/10', 'Completed'],
-      },
-      {
-        bodyHead: {
-          headTitle: 'Physics Assignment',
-          headText: 'Tue 12, 2022',
-        },
-        bodyItems: ['9/10', 'Completed'],
-      },
-    ],
-  }
-
-  const events = [
-    {
-      date1: 2,
-      date2: 'jan',
-      title: 'Principal Football Cup',
-      time: '10am',
-      color: '#5792F0',
-    },
-    {
-      date1: 23,
-      date2: 'jan',
-      title: 'Inter House Sport',
-      time: '10am',
-      color: '#FFB0C8',
-    },
-    {
-      date1: 15,
-      date2: 'Feb',
-      title: 'Swimming Class',
-      time: '4pm',
-      color: '#B395F3',
-    },
-    {
-      date1: 28,
-      date2: 'Feb',
-      title: 'Visitation to the Zoo',
-      time: '3pm',
-      color: '#E9B575',
-    },
-    {
-      date1: 28,
-      date2: 'Feb',
-      title: 'Excursion to Aso Rock',
-      time: '11am',
-      color: '#E9B575',
-    },
-  ]
+  const { isMobile } = useGetWindowResize()
+  const { cards, tableData, events } = DASHBOARD_CONTENT
 
   return (
-    <div className='dashboard'>
-      <TopNav name='Dashboard' />
-
-      <section className='dashboard__body app__flex-3'>
-        <section className='dashboard__body-main'>
-          <div className='assessment'>
-            <div className='app__flex-2 assessment-head'>
-              <h1>Assessments</h1>
-              <h2>SS3c</h2>
+    <Container name={'Dashboard'}>
+      <section className={styles.dashboard}>
+        <section className={styles.dashboard__main}>
+          <div className={styles.assessment}>
+            <div className={styles.assessment_head}>
+              <h4>{isMobile ? 'Dashboard' : 'Assessments'}</h4>
+              <h4>SS3C</h4>
             </div>
             <AssessmentCards cards={cards} />
           </div>
-          <div className='assignment'>
-            <div className='app__flex-2 assignment-head'>
+          <div className={styles.assignment}>
+            <div className={styles.assignment_head}>
               <h3>Students Assignments</h3>
-              <button className='btn-tertiary'>view all</button>
+              {!isMobile ? (
+                <Buttons
+                  type={'button'}
+                  text={'View All'}
+                  classType={'tertiary'}
+                  width={4}
+                  height={1.25}
+                  color={'#474646'}
+                />
+              ) : (
+                ''
+              )}
             </div>
-            <Table content={tableData} />
+            {isMobile ? (
+              <Carousel
+                events={events}
+                modules='pagination'
+                swiperValues={{ slides: 1, space: 10 }}
+              >
+                <AssignmentCard />
+              </Carousel>
+            ) : (
+              <Table content={tableData} />
+            )}
           </div>
         </section>
-        <section className='dashboard__body-side'>
+        <section className={styles.dashboard__side}>
           <LinkParkCalendar />
           <CalendarEvents events={events} />
         </section>
       </section>
-    </div>
+    </Container>
   )
 }
 

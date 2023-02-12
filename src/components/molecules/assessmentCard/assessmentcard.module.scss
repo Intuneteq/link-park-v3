@@ -1,30 +1,48 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@use '../../../scss/utils' as utils;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
 .aCard {
-    max-height: 8.75rem;
-    font-family: "lora";
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.25rem 1.25rem 2rem;
-    width: 100%;
-    justify-content: space-between;
-    box-shadow: 0px 2px 1.25rem rgba(174, 173, 173, 0.16);
-    color: var(--white-color);
+  @include flex_centered;
+  justify-content: space-between;
+  height: fn.rem(140);
+  max-height: 8.75rem;
+  font-family: utils.$lora;
+  border-radius: 0.5rem;
+  padding: fn.rem(20) fn.rem(32);
+  width: 100%;
+  box-shadow: 0px 2px 1.25rem rgba(174, 173, 173, 0.16);
+  color: var(--white-color);
 
-    h6 {
-      background: none;
-      font-weight: 500;
-      font-size: 1.25rem;
-    }
-
-    p {
-      font-weight: 700;
-      font-size: 3rem;
-    }
-
-    a {
-      color: var(--white-color);
-      padding: 0.531rem 0.75rem;
-      font-weight: 500;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
+  &>div {
+    @include flex_column;
+    // justify-content: space-between;
+    gap: fn.rem(15);
+    // border: 1px solid black;
+    height: 100%;
   }
+
+  h6 {
+    background: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+    // border: 1px solid red;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  a {
+    color: var(--white-color);
+    padding: 0.531rem 0.75rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: auto;
+  }
+}

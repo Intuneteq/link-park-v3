@@ -1,0 +1,138 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.dashboard__nav {
+  display: none;
+  @include breakpoint-up('md') {
+    display: block;
+    @include flex_align;
+    justify-content: space-between; //here
+    width: 100%;
+    max-height: 6.25rem;
+    padding: 2rem 0.5rem 2rem; //here
+    box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
+    z-index: 10;
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--black-color);
+      margin-right: 0; //here
+    }
+
+    .dashboard__nav_search {
+      width: 40%; //here
+    }
+
+    & > svg {
+      color: var(--black-color);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .dashboard__nav_selector {
+      width: 16%;
+    }
+
+    .dashboard__nav_user {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  @include breakpoint-up('lg') {
+    display: block;
+    @include flex_align;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 6.25rem;
+    padding: 2rem 2.6% 2rem 4.5%;
+    box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
+    z-index: 10;
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--black-color);
+      margin-right: 9%;
+    }
+
+    .dashboard__nav_search {
+      width: 40%;
+    }
+
+    & > svg {
+      color: var(--black-color);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .dashboard__nav_selector {
+      width: 16%;
+    }
+
+    .dashboard__nav_user {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+.mobile {
+  @include flex_align;
+  justify-content: space-between;
+  // border: 1px solid red;
+  width: 100%;
+  height: fn.rem(100);
+  padding: fn.rem(35) fn.rem(31) fn.rem(20) fn.rem(20);
+  background: colors.$base-bg;
+  box-shadow: 0px 4px 20px rgba(193, 193, 193, 0.16);
+
+  .aboutUser {
+    @include flex_centered;
+    gap: fn.rem(8);
+
+    .dashboard__mobile_user {
+      width: fn.rem(45);
+      height: fn.rem(44);
+    }
+  }
+
+  .menuOptions {
+    @include flex_centered;
+    gap: fn.rem(17);
+
+    svg {
+      width: fn.rem(24);
+      height: fn.rem(24);
+    }
+  }
+
+  @include breakpoint-up('md') {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .dashboard__nav {
+    h3 {
+      margin-right: 4%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard__nav {
+    padding: 2rem 1% 2rem 2%;
+    h3 {
+      margin-right: 2%;
+    }
+
+    .dashboard__nav_user {
+      width: fn.rem(44);
+      height: fn.rem(44);
+    }
+  }
+}

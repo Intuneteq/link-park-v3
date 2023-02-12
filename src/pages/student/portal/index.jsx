@@ -26,7 +26,7 @@ const Portal = () => {
       subText: '12',
       color: '#FCAB5E',
       color2: '#FFCFA2',
-      path: '#',
+      path: '/',
     },
   ]
 

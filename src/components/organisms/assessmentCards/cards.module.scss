@@ -1,4 +1,30 @@
+// @use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
 .assessment_card {
+    @include flex_column;
+    justify-content: center;
+    gap: fn.rem(20);
     width: 100%;
-    gap: 0.75rem;
+    @include breakpoint-up('sm') {
+        @include flex_row;
+        @include flex_align;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    @include breakpoint-up('md') {
+        @include flex_column;
+        justify-content: center;
+    }
+
+    @include breakpoint-up('lg') {
+        @include flex_row;
+        @include flex_align;
+        justify-content: space-between;
+    }
+
+
 }

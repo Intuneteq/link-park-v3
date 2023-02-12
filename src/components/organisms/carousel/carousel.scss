@@ -1,0 +1,26 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/mixins';
+
+.carousel_swiper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+
+    .swiper-pagination-bullet {
+      width: fn.rem(16) !important;
+      height: fn.rem(16) !important;
+      border-radius: 50% !important;
+      border: 1px solid #B9B9B9;
+      opacity: 1;
+      background-color: colors.$light !important;
+    }
+    .carousel_swipes {
+      margin-bottom: 46px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #B9B9B9 !important;
+    }
+}

@@ -1,0 +1,68 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/mixins';
+
+.assignmentCard {
+    @include flex_column;
+    justify-content: space-between;
+    width: 100%;
+    height: fn.rem(155);
+    background: colors.$base-bg;
+    padding: fn.rem(18) fn.rem(25) fn.rem(26) fn.rem(11);
+    box-shadow: 0px 3.28395px 16.4198px rgba(174, 173, 173, 0.16);
+}
+
+.cardTop {
+    @include flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: fn.rem(26);
+
+    span {
+        font-weight: 400;
+        font-size: fn.rem(16);
+        color: #898989;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: fn.rem(16);
+        color: colors.$text-dark;
+        margin-bottom: fn.rem(8);
+    }
+
+    small {
+        font-weight: 600;
+        font-size: fn.rem(16);
+        color: #373636;
+    }
+}
+
+.cardBottom {
+    @include flex_align;
+    justify-content: space-between;
+
+    .bottom {
+        @include flex_align;
+        justify-content: flex-start;
+        gap: fn.rem(14);
+
+        p {
+            font-weight: 400;
+            font-size: fn.rem(16);
+            color: #898989;
+        }
+
+        span {
+            font-weight: 600;
+            font-size: fn.rem(16);
+            color: colors.$text-dark;
+        }
+
+        small {
+            font-weight: 400;
+            font-size: fn.rem(16);
+            color: #E0AF00;
+        }
+    }
+}

@@ -18,7 +18,12 @@ const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
       onClick={onClick}
       type={type}
       className={toggleClassName()}
-      style={{ width: `${width}rem`, height: `${height}rem`, color }}
+      style={{
+        width: `${width}rem`,
+        height: `${height}rem`,
+        color,
+        fontSize: '1rem',
+      }}
     >
       {text}
     </button>

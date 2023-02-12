@@ -13,7 +13,7 @@
 
 .sidebar {
     display: none;
-    @include breakpoint-up('lg') {
+    @include breakpoint-up('md') {
       width: 21%;
       display: block;
   }
@@ -21,7 +21,7 @@
 
 .outlet {
     width: 100%;
-    @include breakpoint-up('lg') {
+    @include breakpoint-up('md') {
         width: 79%;
   }
 }

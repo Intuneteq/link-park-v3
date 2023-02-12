@@ -1,11 +1,12 @@
 import React from 'react'
-import { AssessmentCard } from '../../molecules'
+import PropTypes from 'prop-types'
 
+import { AssessmentCard } from '../../molecules'
 import styles from './cards.module.scss'
 
 const AssessmentCards = ({ cards }) => {
   return (
-    <div className={[`app__flex-2 ${styles.assessment_card}`].join(' ')}>
+    <div className={[`${styles.assessment_card}`].join(' ')}>
       {cards.map((item, index) => (
         <AssessmentCard
           key={index}
@@ -18,6 +19,10 @@ const AssessmentCards = ({ cards }) => {
       ))}
     </div>
   )
+}
+
+AssessmentCards.propTypes = {
+  cards: PropTypes.any,
 }
 
 export default AssessmentCards

@@ -4,17 +4,18 @@
 @import '../../../scss/utils/mixins';
 
 .container {
-    width: 100%;
-    background: #ffffff;
-    height: 100vh;
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    
+  width: 100%;
+  background: #ffffff;
+  height: 100vh;
+  overflow-y: scroll;
+  // overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   // SCREENS 1400px and LARGER
   @media only screen and (min-width: 1240px) {
     width: 100%;
@@ -24,5 +25,8 @@
 }
 
 .containerBody {
-  padding: 2rem 2.6% 4rem 4.5%;
+  padding: fn.rem(29) fn.rem(20) fn.rem(73);
+  @include breakpoint-up('lg') {
+    padding: 2rem 2.6% 4rem 4.5%;
+  }
 }

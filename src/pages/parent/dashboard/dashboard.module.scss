@@ -1,0 +1,90 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.dashboard {
+  @include breakpoint-up('lg') {
+    @include flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 6%;
+  }
+}
+
+h3 {
+  color: colors.$text-dark;
+  font-size: fn.rem(16);
+  margin-bottom: fn.rem(8);
+
+  @include breakpoint-up('lg') {
+    font-weight: 700;
+    font-size: fn.rem(24);
+  }
+}
+
+h4 {
+  font-size: fn.rem(20);
+  color: colors.$header-dark;
+
+  @include breakpoint-up('lg') {
+    font-weight: 700;
+    font-size: fn.rem(24);
+    color: colors.$text-dark;
+  }
+}
+
+.dashboard__main {
+  width: 100%;
+  margin-bottom: fn.rem(32);
+
+  .assessment {
+    width: 100%;
+    margin-bottom: fn.rem(32);
+
+    .assessment_head {
+      @include flex_align;
+      justify-content: space-between;
+      margin-bottom: fn.rem(20);
+    }
+  }
+  
+  .assignment {
+    .assignment_head {
+      margin-bottom: fn.rem(20);
+    }
+  }
+
+  @include breakpoint-up('lg') {
+    width: 64%;
+    margin-bottom: 0;
+
+    .assessment {
+      width: 100%;
+      margin-bottom: fn.rem(100);
+      
+      .assessment_head {
+        margin-bottom: fn.rem(29);
+      }
+    }
+
+    .assignment {
+      .assignment_head {
+        @include flex_align;
+        justify-content: space-between;
+        margin-bottom: fn.rem(24);
+      }
+    }
+  }
+}
+
+.dashboard__side {
+  @include flex_column;
+  flex-direction: column-reverse;
+  gap: fn.rem(32);
+  @include breakpoint-up('lg') {
+    flex-direction: column;
+    width: 30%;
+  }
+}

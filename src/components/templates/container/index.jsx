@@ -20,6 +20,7 @@ Container.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]).isRequired,
+  name: PropTypes.string.isRequired,
 }
 
 export default Container
