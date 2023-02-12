@@ -18,7 +18,7 @@ import Parents from './pages/parents'
 import SignIn from './pages/signIn'
 import SignUp from './pages/signup'
 import Faq from './pages/Faq/Faq'
-import UserSelect from './pages/userselect/UserSelect'
+import User from './pages/user/User'
 
 //import dashboard pages
 import Dashboard from './pages/parent/dashboard'
@@ -47,7 +47,7 @@ function App() {
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/faq' element={<Faq />} />
-          <Route path='/UserSelect' element={<UserSelect />} />
+          <Route path='/user' element={<User />} />
           <Route exact path='*' element={<ErrPage />} />
         </Route>
 

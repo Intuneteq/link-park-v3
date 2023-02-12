@@ -33,7 +33,7 @@ const NavBar = () => {
           classType={'primary'}
           type={'button'}
           text={'Get Started'}
-          onClick={() => navigate('/UserSelect')}
+          onClick={() => navigate('/user')}
         />
       </nav>
 

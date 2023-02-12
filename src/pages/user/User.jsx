@@ -4,7 +4,7 @@ import 'animate.css'
 
 import './UserSelect.scss'
 
-const UserSelect = () => {
+const User = () => {
   const navigate = useNavigate()
   const [animate, setAnimate] = useState({
     activeUser: null,
@@ -56,4 +56,4 @@ const UserSelect = () => {
   )
 }
 
-export default UserSelect
+export default User
