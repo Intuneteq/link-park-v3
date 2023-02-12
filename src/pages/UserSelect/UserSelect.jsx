@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import 'animate.css'
 
 import './UserSelect.scss'
+
 const UserSelect = () => {
   const navigate = useNavigate()
   const [animate, setAnimate] = useState({
@@ -22,7 +23,7 @@ const UserSelect = () => {
       <h1 className='sub-text'>Select User Type</h1>
       <p className='p-text'>Please select the option that best describes you</p>
       <section className='app__flex-2 UserSelect__container'>
-        <div
+        <button
           onClick={() => setAnimate({ ...animate, activeUser: 0 })}
           className={toggleActiveClassName(0)}
         >
@@ -33,8 +34,8 @@ const UserSelect = () => {
             />
           </div>
           <p>I am a Parent</p>
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => setAnimate({ ...animate, activeUser: 1 })}
           className={toggleActiveClassName(1)}
         >
@@ -45,7 +46,7 @@ const UserSelect = () => {
             />
           </div>
           <p>I am a Student</p>
-        </div>
+        </button>
       </section>
       <button onClick={() => navigate('/signin')} className='btn-primary'>
         {' '}
