@@ -106,7 +106,8 @@ const LibrarySlugs = () => {
           </div>
           <div className={[styles.accordionHolder, 'column-flex'].join(' ')}>
             {subjectContent.map((item, index) => (
-              <div
+              <button
+                type='button'
                 key={index}
                 onClick={() => handleToggleAccordion(index)}
                 className={[styles.accordion].join(' ')}
@@ -116,7 +117,7 @@ const LibrarySlugs = () => {
                   <AccordionIcon toggle={active === index} />
                 </div>
                 {active === index && <p>{item.content}</p>}
-              </div>
+              </button>
             ))}
           </div>
         </div>

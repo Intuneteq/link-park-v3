@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import { Pagination } from '../../atoms'
 import { EventCard } from '../../molecules'
@@ -31,6 +32,10 @@ const EventPages = ({ contents }) => {
       </div>
     </div>
   )
+}
+
+EventPages.propTypes = {
+  contents: PropTypes.any,
 }
 
 export default EventPages

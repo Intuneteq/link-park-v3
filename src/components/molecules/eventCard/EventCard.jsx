@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
+import PropTypes from 'prop-types'
 
 import styles from './eventcard.module.scss'
+import { AccordionIcon } from '../../atoms'
 
 const EventCard = ({ content }) => {
   const [dropDown, setDropDown] = useState(false)
@@ -12,7 +13,10 @@ const EventCard = ({ content }) => {
         <p className='dashboard-subtext'>{content.day}</p>
         <span>{content.month}</span>
       </div>
-      <div className={styles.cardBody}>
+      <button
+        onClick={() => setDropDown(!dropDown)}
+        className={styles.cardBody}
+      >
         <div>
           <h5>{content.title}</h5>
           <p className='p-text-2'>
@@ -22,14 +26,14 @@ const EventCard = ({ content }) => {
           </p>
           <h6>{!dropDown ? '' : 'Signed: Management'}</h6>
         </div>
-        {!dropDown ? (
-          <IoIosArrowDown onClick={() => setDropDown(!dropDown)} />
-        ) : (
-          <IoIosArrowUp onClick={() => setDropDown(!dropDown)} />
-        )}
-      </div>
+        <AccordionIcon toggle={dropDown} />
+      </button>
     </div>
   )
+}
+
+EventCard.propTypes = {
+  content: PropTypes.any,
 }
 
 export default EventCard

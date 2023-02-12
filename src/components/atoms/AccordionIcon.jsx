@@ -18,7 +18,7 @@ const AccordionIcon = ({ toggle }) => {
 }
 
 AccordionIcon.propTypes = {
-  toggle: PropTypes.object.isRequired,
+  toggle: PropTypes.bool.isRequired,
 }
 
 export default AccordionIcon
