@@ -1,21 +1,30 @@
+// @use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+// @import '../../../scss/utils/breakpoints';
+// @import '../../../scss/utils/mixins';
+
 .swiper_component {
     width: 100%;
-    padding: 20px 20px 20px 0;
+    padding: fn.rem(20) fn.rem(20) fn.rem(20) 0;
     margin: 0;
-
+    
     .swipes {
-      margin-bottom: 30px;
+      margin-bottom: fn.rem(30);
+
+      display: flex;
+      align-items: center;
+      justify-content: center ;
     }
 
     .swiper-pagination-bullet {
-      width: 11px;
-      height: 7px;
-      border-radius: 4px;
+      width: fn.rem(11);
+      height: fn.rem(7);
+      border-radius: fn.rem(4);
       opacity: 1;
       background-color: #999595 !important;
     }
 
     .swiper-pagination-bullet-active {
-      width: 82px;
+      width: fn.rem(82);
     }
   }

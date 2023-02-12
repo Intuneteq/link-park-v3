@@ -5,16 +5,18 @@ import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import useGetWindowResize from '../../../hooks/useGetWindowResize'
 import { SubjectCard } from '../../molecules'
 import './subjectcarousel.scss'
 
 const SubjectCarousel = ({ courses }) => {
+  const { isMobile } = useGetWindowResize()
   const style = {
-    width: '181px',
+    width: isMobile ? '250px' : '181px',
   }
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={isMobile ? 1 : 3}
       spaceBetween={40}
       pagination={{
         clickable: true,

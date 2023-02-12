@@ -3,7 +3,7 @@
 @import '../../../scss/utils/breakpoints';
 
 .subjectCard {
-  width: fn.rem(165) !important;
+  width: fn.rem(165);
   height: 246px;
   box-shadow: 0px fn.rem(4) fn.rem(20) rgba(173, 173, 173, 0.16);
   border-radius: 8px;
@@ -15,7 +15,7 @@
   flex-direction: column;
 
   @include breakpoint-up('sm') {
-    width: fn.rem(214) !important;
+    width: fn.rem(214);
   }
 
   .cardImage {
