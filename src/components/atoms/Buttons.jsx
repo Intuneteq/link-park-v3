@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import useGetScreenSize from '../../hooks/useMediaQuery'
 import styles from './atoms.module.scss'
 
 const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
+  const { isMobile } = useGetScreenSize()
   const toggleClassName = () => {
     if (classType.toLowerCase() === 'primary') {
       return styles.btnPrimary
@@ -19,8 +21,8 @@ const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
       type={type}
       className={toggleClassName()}
       style={{
-        width: `${width}rem`,
-        height: `${height}rem`,
+        width: isMobile ? '9rem' : `${width}rem`,
+        height: isMobile ? '3rem' : `${height}rem`,
         color,
         fontSize: '1rem',
       }}
