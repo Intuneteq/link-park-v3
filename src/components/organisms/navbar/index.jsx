@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Navbar, Button } from '@nextui-org/react'
 
+// import useGetScreenSize from '../../../hooks/useMediaQuery'
 import Images from '../../../constants/Images'
 import { SearchInput, Buttons } from '../../atoms'
 import { NAV_CONTENT } from './contents'
@@ -10,6 +11,7 @@ import './navbar.scss'
 const NavBar = () => {
   const navigate = useNavigate()
   const { navLinks } = NAV_CONTENT
+  // const { isMobile } = useGetScreenSize()
 
   return (
     <>
