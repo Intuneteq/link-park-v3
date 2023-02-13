@@ -1,9 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './about.scss'
 import { Testimonials, Footer } from '../../components/organisms'
 
 const About = () => {
+  const navigate = useNavigate()
+
   return (
     <main>
       <div className='aboutUs'>
@@ -20,7 +23,14 @@ const About = () => {
                 students.
               </p>
             </div>
-            <button className='btn-primary'> Get Started </button>
+            <button
+              onClick={() => navigate('/user')}
+              type='button'
+              className='btn-primary'
+            >
+              {' '}
+              Get Started{' '}
+            </button>
           </div>
           <div className='aboutUs__img'>
             <img
@@ -30,7 +40,13 @@ const About = () => {
           </div>
           <div className='frame'></div>
           <div className='frame2'></div>
-          <button className='btn-primary btn-mobile'> Get Started </button>
+          <button
+            onClick={() => navigate('/user')}
+            className='btn-primary btn-mobile'
+          >
+            {' '}
+            Get Started{' '}
+          </button>
         </section>
 
         <section className='boxes'>

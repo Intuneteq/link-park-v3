@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { Images } from '../../constants'
 import { Footer, Testimonials } from '../../components/organisms'
@@ -7,6 +8,7 @@ import './home.scss'
 import { Buttons } from '../../components/atoms'
 
 const Home = () => {
+  const navigate = useNavigate()
   const {
     heroSection,
     sectionTwo,
@@ -29,8 +31,15 @@ const Home = () => {
               height={3.875}
               width={10.75}
               classType={'tertiary'}
+              onClick={() => navigate('/user')}
             />
-            <button className='about-btn'>About us</button>
+            <button
+              type='button'
+              onClick={() => navigate('/about')}
+              className='about-btn'
+            >
+              About us
+            </button>
           </div>
         </article>
         <div className='home__section1-img img-size'>
@@ -111,6 +120,7 @@ const Home = () => {
           type='button'
           text='Get Started'
           classType='primary'
+          onClick={() => navigate('/user')}
         />
       </section>
       <section className='home__walk'>
@@ -129,6 +139,7 @@ const Home = () => {
             classType='secondary'
             width={10.4}
             height={3.875}
+            onClick={() => navigate('/about')}
           />
         </article>
         <div className='dot2 img-size'>
