@@ -19,8 +19,7 @@ const Faq = () => {
                 whole class or get for their child/children?
               </h3>
               <p>
-                Parents would only gain access to their child/children&aposs
-                result.
+                Parents would only gain access to their child/children`s result.
               </p>
             </div>
             <div className='content'>

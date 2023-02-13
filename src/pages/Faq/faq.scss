@@ -1,3 +1,14 @@
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/breakpoints';
+
+p {
+  font-size: fn.rem(14);
+
+  @include breakpoint-up('md') {
+    font-size: fn.rem(16);
+  }
+}
+
 .faq {
   padding: 3rem 6.25rem;
 
@@ -7,27 +18,27 @@
   }
 
   .faq__content {
-    padding: 20px 0;
-    margin-bottom: 40px;
+    padding: fn.rem(20) 0;
+    margin-bottom: fn.rem(40);
 
     .faq__content-main {
       width: 50%;
 
       .content {
-        margin: 40px 0;
+        margin: fn.rem(40) 0;
 
         h3 {
           font-weight: 800;
-          font-size: 22px;
+          font-size: fn.rem(22);
         }
       }
       .icon {
-        gap: 15px;
+        gap: fn.rem(15);
       }
     }
     .faq__img-container {
-      padding: 50px;
-      // border: 1px solid black;
+      width: 50%;
+      padding: fn.rem(50);
       position: relative;
 
       .faq__img {
@@ -41,42 +52,42 @@
         }
 
         .circle {
-          width: 180px;
-          height: 180px;
+          width: fn.rem(180);
+          height: fn.rem(180);
           border-radius: 100%;
           background: #fce300;
           position: absolute;
-          top: -70px;
-          right: 100px;
+          top: fn.rem(-70);
+          right: fn.rem(100);
           z-index: -1;
         }
         .circle2 {
-          width: 150px;
-          height: 150px;
+          width: fn.rem(150);
+          height: fn.rem(150);
           border-radius: 100%;
           background: #b1b1d8;
           position: absolute;
-          top: -30px;
-          right: 200px;
+          top: fn.rem(-30);
+          right: fn.rem(200);
           z-index: -1;
         }
         .circle3 {
-          width: 180px;
-          height: 180px;
+          width: fn.rem(180);
+          height: fn.rem(180);
           border-radius: 100%;
           background: #b1b1d8;
           position: absolute;
-          bottom: -10px;
-          left: 50px;
+          bottom: fn.rem(10);
+          left: fn.rem(50);
           z-index: -1;
         }
         .curve {
           position: absolute;
-          right: 80px;
-          bottom: -15px;
+          right: fn.rem(80);
+          bottom: fn.rem(15);
 
           img {
-            width: 150px;
+            width: fn.rem(150);
           }
         }
       }
@@ -86,12 +97,30 @@
 
 // ...................................media query............................
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
+  .faq {
+    padding: inherit 1rem;
+
+   .faq__content {
+    flex-direction: column;
+
+    .faq__content-main {
+      width: 100%;
+    }
+
+    .faq__img-container { 
+      margin-top: fn.rem(100);
+    }
+   }    
+  }
+}
+
+@media screen and (max-width: 768px) {
   .faq {
     padding: 1.5rem 2.5rem;
 
     h1 {
-      font-size: 50px;
+      font-size: fn.rem(50);
     }
 
     .faq__content {
@@ -103,15 +132,15 @@
         .content {
           h3 {
             font-weight: 800;
-            font-size: 22px;
+            font-size: fn.rem(22);
           }
           p {
-            font-size: 20px;
+            font-size: fn.rem(20);
           }
         }
       }
       .faq__img-container {
-        padding: 50px;
+        padding: fn.rem(50);
         position: relative;
 
         .faq__img {
@@ -125,32 +154,32 @@
           }
 
           .circle {
-            width: 100px;
-            height: 100px;
-            top: -10px;
-            right: 70px;
+            width: fn.rem(100);
+            height: fn.rem(100);
+            top: fn.rem(-10);
+            right: fn.rem(70);
             z-index: -1;
           }
           .circle2 {
-            width: 80px;
-            height: 80px;
-            top: 15px;
-            right: 140px;
+            width: fn.rem(80);
+            height: fn.rem(80);
+            top: fn.rem(15);
+            right: fn.rem(140);
             z-index: -1;
           }
           .circle3 {
-            width: 100px;
-            height: 100px;
-            bottom: -5px;
-            left: 90px;
+            width: fn.rem(100);
+            height: fn.rem(100);
+            bottom: fn.rem(-5);
+            left: fn.rem(90);
             z-index: -1;
           }
           .curve {
-            right: 60px;
-            bottom: -15px;
+            right: fn.rem(60);
+            bottom: fn.rem(-15);
 
             img {
-              width: 150px;
+              width: fn.rem(150);
             }
           }
         }
@@ -159,82 +188,44 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 576px) {
   .faq {
     padding: 2rem;
 
     h1 {
       text-align: center;
       font-weight: 800;
-      font-size: 40px;
+      font-size: fn.rem(26);
+      margin-bottom: 0;
     }
 
     .faq__content {
-      padding: 20px 0;
-      margin-bottom: 40px;
+      padding: fn.rem(20) 0;
+      margin-bottom: fn.rem(40);
 
       .faq__content-main {
-        // width: 50%;
+        padding-top: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
 
         .content {
-          margin: 40px 0;
+          margin: fn.rem(40) 0;
+
+          &:nth-child(1) {
+            margin-top: 0;
+          }
 
           h3 {
             font-weight: 800;
-            font-size: 22px;
+            font-size: fn.rem(18);
           }
         }
         .icon {
-          gap: 15px;
+          gap: fn.rem(15);
         }
       }
       .faq__img-container {
-        padding: 50px;
-        border: 1px solid black;
-        position: relative;
-
-        .faq__img {
-
-          .circle {
-            width: 180px;
-            height: 180px;
-            border-radius: 100%;
-            background: #fce300;
-            position: absolute;
-            top: -70px;
-            right: 100px;
-            z-index: -1;
-          }
-          .circle2 {
-            width: 150px;
-            height: 150px;
-            border-radius: 100%;
-            background: #b1b1d8;
-            position: absolute;
-            top: -30px;
-            right: 200px;
-            z-index: -1;
-          }
-          .circle3 {
-            width: 180px;
-            height: 180px;
-            border-radius: 100%;
-            background: #b1b1d8;
-            position: absolute;
-            bottom: -10px;
-            left: 50px;
-            z-index: -1;
-          }
-          .curve {
-            position: absolute;
-            right: 80px;
-            bottom: -15px;
-
-            img {
-              width: 150px;
-            }
-          }
-        }
+        display: none;
       }
     }
   }
