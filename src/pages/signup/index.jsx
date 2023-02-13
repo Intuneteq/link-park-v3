@@ -17,26 +17,26 @@ const SignUp = () => {
         <section className='column-flex form-inputs'>
           <div style={{ width: '100%' }} className='app__flex-2'>
             <div style={{ width: '48%' }} className='form-control column-flex'>
-              <label>First Name</label>
+              <label htmlFor='firstName'>First Name</label>
               <div>
                 <input type='text' name='email' placeholder='First Name' />
               </div>
             </div>
             <div style={{ width: '48%' }} className='form-control column-flex'>
-              <label>Last Name</label>
+              <label htmlFor='last name'>Last Name</label>
               <div>
                 <input type='text' name='email' placeholder='Last Name' />
               </div>
             </div>
           </div>
           <div className='form-control column-flex'>
-            <label>Email Address</label>
+            <label htmlFor='email'>Email Address</label>
             <div>
               <input type='email' name='email' placeholder='Email Address' />
             </div>
           </div>
           <div className='form-control column-flex'>
-            <label>Password</label>
+            <label htmlFor='password'>Password</label>
             <div>
               <input type='password' name='email' placeholder='Password' />
             </div>
@@ -71,7 +71,7 @@ const SignUp = () => {
             </div>
           </div>
           <div className='form-control column-flex'>
-            <label>Phone Number</label>
+            <label htmlFor='phoneNumber'>Phone Number</label>
             <div>
               <input type='number' name='email' placeholder='Phone Number' />
             </div>

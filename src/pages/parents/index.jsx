@@ -12,9 +12,9 @@ const Parents = () => {
             Including <span>YOU</span> in Work and Assessment at School
           </h1>
           <p className='p-text'>
-            Bring your school along for the ride as they learn, and don't skip
-            out on the assigned reading or assignments. View both your personal
-            and academic work in one location.
+            Bring your school along for the ride as they learn, and don&apos;t
+            skip out on the assigned reading or assignments. View both your
+            personal and academic work in one location.
           </p>
           <button className='btn-primary'>Get Started</button>
         </article>
@@ -60,7 +60,7 @@ const Parents = () => {
       </section>
       <section className='parents__started column-flex'>
         <p className='p-text'>
-          Receive daily evaluations on students' performance in order to
+          Receive daily evaluations on students&lsquo; performance in order to
           identify shortcomings and improve the appropriate areas.
         </p>
         <button className='btn-tertiary'>Get Started</button>

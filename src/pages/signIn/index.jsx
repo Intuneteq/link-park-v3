@@ -20,13 +20,13 @@ const SignIn = () => {
         <p className='p-text'>Please enter your details to get started</p>
         <section className='column-flex form-inputs'>
           <div className='form-control column-flex'>
-            <label>Email Address</label>
+            <label htmlFor='email'>Email Address</label>
             <div>
               <input type='email' name='email' placeholder='Email Address' />
             </div>
           </div>
           <div className='form-control column-flex'>
-            <label>Password</label>
+            <label htmlFor='password'>Password</label>
             <div>
               <input type='password' name='email' placeholder='Password' />
               <AiFillEyeInvisible />
@@ -43,9 +43,11 @@ const SignIn = () => {
             <button className='btn-primary'>Sign In</button>
           </div>
           <div className='form-footer app__flex'>
-            <p classaName='p-text-2'>
+            <p className='p-text-2'>
               Don’t Have an Account?{' '}
-              <span onClick={() => navigate('/signup')}>Register</span>
+              <button type='button' onClick={() => navigate('/signup')}>
+                Register
+              </button>
             </p>
           </div>
         </section>
