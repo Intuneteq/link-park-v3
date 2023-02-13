@@ -1,31 +1,35 @@
+// @use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+// @import '../../scss/utils/breakpoints';
+// @import '../../scss/utils/mixins';
+
 .aboutUs {
   padding: 3rem 6.25rem;
 
   .aboutUs__main {
     position: relative;
     .aboutUs__main-content {
-      // border: 1px solid black;
       width: 50%;
 
       h1 {
-        margin-bottom: 30px;
+        margin-bottom: fn.rem(30);
         span {
           color: #0d1292;
         }
       }
       .aboutUs__main-inner {
         display: flex;
-        gap: 8px;
-        margin-bottom: 30px;
+        gap: fn.rem(8);
+        margin-bottom: fn.rem(30);
 
         hr {
-          border: 0.2pc solid #b1b1d8;
-          border-radius: 10px;
+          border: 0.2px solid #b1b1d8;
+          border-radius: fn.rem(10);
         }
       }
       button {
         width: 10.75rem;
-        height: 62px;
+        height: fn.rem(62);
       }
     }
     .aboutUs__img {
@@ -39,13 +43,13 @@
       }
     }
     .frame {
-      width: 250px;
-      height: 400px;
+      width: fn.rem(250);
+      height: fn.rem(400);
       background-color: #b1b1d8;
-      border-radius: 10px;
+      border-radius: fn.rem(10);
       position: absolute;
-      top: -45px;
-      right: -100px;
+      top: fn.rem(-45);
+      right: fn.rem(-100);
       z-index: -1;
     }
     .frame2 {
@@ -64,10 +68,8 @@
   }
 
   .boxes {
-    // border: 1px solid black;
     position: relative;
-    // width: 60%;
-    height: 150px;
+    height: fn.rem(150);
     margin: 80px auto 0;
 
     .small {
@@ -76,23 +78,22 @@
     }
     .big {
       position: absolute;
-      right: 45px;
-      top: 36px;
+      right: fn.rem(45);
+      top: fn.rem(36);
     }
     .bigPurple {
       position: absolute;
-      bottom: 50px;
+      bottom: fn.rem(50);
     }
     .smallGreen {
       position: absolute;
-      bottom: 10px;
-      left: 80px;
+      bottom: fn.rem(10);
+      left: fn.rem(80);
     }
   }
 
   .section2 {
-    // border: 1px solid black;
-    margin-bottom: 40px;
+    margin-bottom: fn.rem(40);
 
     .section2__img {
       width: 30rem;
@@ -108,19 +109,18 @@
       width: 50%;
       h3 {
         font-weight: 800;
-        font-size: 39px;
+        font-size: fn.rem(39);
       }
       p {
         font-weight: 400;
-        font-size: 20px;
+        font-size: fn.rem(20);
         line-height: 165%;
       }
     }
   }
 
   .section3 {
-    // border: 1px solid black;
-    margin-bottom: 40px;
+    margin-bottom: fn.rem(40);
     .section3__img {
       width: 30rem;
       height: 30rem;
@@ -135,45 +135,44 @@
       width: 50%;
       h3 {
         font-weight: 800;
-        font-size: 50px;
+        font-size: fn.rem(50);
       }
       p {
         font-weight: 400;
-        font-size: 20px;
+        font-size: fn.rem(20);
         line-height: 175%;
       }
     }
   }
 
   .section4 {
-    // border: 1px solid black;
     h1 {
       text-align: center;
       font-weight: 800;
-      font-size: 50px;
+      font-size: fn.rem(50);
     }
 
     .section4__img-container {
       flex-wrap: wrap;
-      padding: 70px 0 0;
+      padding: fn.rem(70) 0 0;
 
       .section4__card {
         position: relative;
-        width: 200px;
-        height: 290px;
+        width: fn.rem(200);
+        height: fn.rem(290);
         background-color: #d9d9d9;
-        border-radius: 20px;
+        border-radius: fn.rem(20);
 
         img {
           position: absolute;
-          width: 200px;
-          left: 20px;
-          bottom: -15px;
+          width: fn.rem(200);
+          left: fn.rem(20);
+          bottom: fn.rem(-15);
         }
       }
       .section4__card-content {
         text-align: left;
-        margin-top: 30px;
+        margin-top: fn.rem(30);
       }
     }
   }
@@ -181,32 +180,32 @@
 
 .newsletter {
   background: #0d1292;
-  padding: 40px 0;
+  padding: fn.rem(40) 0;
   color: #fff;
 
   h1 {
     font-weight: 700;
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: fn.rem(36);
+    margin-bottom: fn.rem(10);
   }
 
   .newsletter__input {
     width: fit-content;
     // border: 1px solid red;
     background-color: #ffff;
-    border-radius: 10px;
-    margin-top: 30px;
+    border-radius: fn.rem(10);
+    margin-top: fn.rem(30);
 
     input {
-      width: 400px;
-      height: 55px;
+      width: fn.rem(400);
+      height: fn.rem(55);
       border: none;
       outline: none;
-      margin-left: 10px;
+      margin-left: fn.rem(10);
     }
     button {
-      padding: 8px;
-      margin-right: 10px;
+      padding: fn.rem(8);
+      margin-right: fn.rem(10);
     }
   }
 }
@@ -220,13 +219,13 @@
 
     .aboutUs__main {
       .frame {
-        width: 250px;
-        height: 400px;
+        width: fn.rem(250);
+        height: fn.rem(400);
         background-color: #b1b1d8;
-        border-radius: 10px;
+        border-radius: fn.rem(10);
         position: absolute;
-        top: -45px;
-        right: -25px;
+        top: fn.rem(-45);
+        right: fn.rem(-25);
         z-index: -1;
       }
     }
@@ -240,19 +239,19 @@
         width: 50%;
 
         h1 {
-          margin-bottom: 30px;
+          margin-bottom: fn.rem(30);
           span {
             color: #0d1292;
           }
         }
         .aboutUs__main-inner {
           display: flex;
-          gap: 8px;
-          margin-bottom: 30px;
+          gap: fn.rem(8);
+          margin-bottom: fn.rem(30);
         }
         button {
           width: 10.75rem;
-          height: 62px;
+          height: fn.rem(62);
         }
       }
       .aboutUs__img {
@@ -293,16 +292,16 @@
         text-align: center;
 
         h1 {
-          margin-bottom: 5px;
-          font-size: 55px;
+          margin-bottom: fn.rem(5);
+          font-size: fn.rem(55);
           span {
             color: #0d1292;
           }
         }
         .aboutUs__main-inner {
           display: flex;
-          gap: 8px;
-          margin-bottom: 30px;
+          gap: fn.rem(8);
+          margin-bottom: fn.rem(30);
           flex-direction: column;
 
           hr {
@@ -313,7 +312,7 @@
         button {
           display: none;
           width: 10.75rem;
-          height: 62px;
+          height: fn.rem(62);
         }
       }
       .aboutUs__img {
@@ -327,10 +326,10 @@
         }
       }
       .frame {
-        width: 250px;
-        height: 400px;
+        width: fn.rem(250);
+        height: fn.rem(400);
         background-color: #b1b1d8;
-        border-radius: 10px;
+        border-radius: fn.rem(10);
         position: absolute;
         // top: -45px;
         // right: -100px;
@@ -339,19 +338,19 @@
       }
       .frame2 {
         width: 100%;
-        height: 70px;
-        border-radius: 10px;
+        height: fn.rem(70);
+        border-radius: fn.rem(10);
         background: rgba(231, 231, 251, 0.62);
         position: absolute;
-        bottom: -50px;
+        bottom: fn.rem(-50);
         z-index: -1;
         display: none;
       }
 
       .btn-mobile {
-        margin: 40px 0;
+        margin: fn.rem(40) 0;
         width: 10.75rem;
-        height: 62px;
+        height: fn.rem(62);
       }
     }
 
@@ -359,8 +358,8 @@
       // border: 1px solid black;
       position: relative;
       // width: 60%;
-      height: 150px;
-      margin: 80px auto 0;
+      height: fn.rem(150);
+      margin: fn.rem(80) auto 0;
       display: none;
 
       .small {
@@ -369,23 +368,23 @@
       }
       .big {
         position: absolute;
-        right: 45px;
-        top: 36px;
+        right: fn.rem(45);
+        top: fn.rem(36);
       }
       .bigPurple {
         position: absolute;
-        top: -150px;
+        top: fn.rem(-150);
       }
       .smallGreen {
         position: absolute;
-        top: -200px;
-        left: 80px;
+        top: fn.rem(-200);
+        left: fn.rem(80);
       }
     }
 
     .section2 {
       flex-direction: column-reverse;
-      margin-bottom: 40px;
+      margin-bottom: fn.rem(40);
 
       .section2__img {
         width: 30rem;
@@ -405,7 +404,7 @@
 
     .section3 {
       flex-direction: column;
-      margin-bottom: 40px;
+      margin-bottom: fn.rem(40);
 
       .section3__img {
         width: 30rem;
@@ -426,11 +425,11 @@
     .section4 {
       .section4__img-container {
         .section4__card {
-          width: 150px;
-          height: 220px;
+          width: fn.rem(150);
+          height: fn.rem(220);
 
           img {
-            width: 150px;
+            width: fn.rem(150);
           }
         }
       }
@@ -438,41 +437,42 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 576px) {
   .aboutUs {
     padding: 1rem 1.25rem;
 
     .aboutUs__main {
       position: relative;
       .aboutUs__main-content {
-        // border: 1px solid black;
         width: 100%;
 
         h1 {
           margin-bottom: 0;
-          font-size: 35px;
+          font-size: fn.rem(35);
+          line-height: fn.rem(50);
           span {
             color: #0d1292;
           }
         }
         .aboutUs__main-inner {
           display: flex;
-          gap: 8px;
-          margin-bottom: 30px;
+          gap: fn.rem(8);
+          margin-bottom: fn.rem(30);
 
           hr {
-            border: 0.2pc solid #b1b1d8;
-            border-radius: 10px;
+            border: 0.2px solid #b1b1d8;
+            border-radius: fn.rem(10);
           }
         }
         button {
           width: 10.75rem;
-          height: 62px;
+          height: fn.rem(62);
         }
       }
       .aboutUs__img {
-        width: 25rem;
+        width: 100%;
         height: 30rem;
+        border: 1px solid red;
 
         img {
           width: 100%;
@@ -487,13 +487,11 @@
     }
 
     .section2 {
-      // border: 1px solid black;
       margin-bottom: 40px;
 
       .section2__img {
-        width: 20rem;
+        width: 100%;
         height: 20rem;
-
       }
       .section2__content {
         width: 100%;
@@ -502,10 +500,10 @@
     }
 
     .section3 {
-      margin-bottom: 40px;
+      margin-bottom: fn.rem(40);
 
       .section3__img {
-        width: 20rem;
+        width: 100%;
         height: 20rem;
       }
       .section3__content {
@@ -514,43 +512,42 @@
     }
 
     .section4 {
-      // border: 1px solid black;
       h1 {
         text-align: center;
         font-weight: 800;
-        font-size: 40px;
+        font-size: fn.rem(40);
       }
 
       .section4__img-container {
         flex-wrap: wrap;
-        justify-content: center; 
-        gap: 50px;
+        justify-content: center;
+        gap: fn.rem(50);
       }
     }
   }
 
   .newsletter {
     background: #0d1292;
-    padding: 40px 0;
+    padding: fn.rem(40) 0;
     color: #fff;
 
     h1 {
       font-weight: 700;
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: fn.rem(36);
+      margin-bottom: fn.rem(10);
     }
-    p{
+    p {
       text-align: center;
     }
 
     .newsletter__input {
       width: fit-content;
       background-color: #ffff;
-      border-radius: 10px;
-      margin-top: 30px;
+      border-radius: fn.rem(10);
+      margin-top: fn.rem(30);
 
       input {
-        width: 100%;   
+        width: 100%;
       }
     }
   }
