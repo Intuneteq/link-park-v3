@@ -1,56 +1,63 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import 'animate.css'
 
+import { selectParent, selectStudent } from './slices/userSlice'
+import { USER_CONTENTS } from './contents'
 import './UserSelect.scss'
 
 const User = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { header, subHeader, users } = USER_CONTENTS
   const [animate, setAnimate] = useState({
     activeUser: null,
   })
 
-  const toggleActiveClassName = (user) => {
-    if (animate.activeUser === user) {
+  const toggleActiveClassName = (index) => {
+    if (animate.activeUser === index) {
       return 'animate__animated animate__pulse active UserSelect__container-inner column-flex'
     } else {
       return 'UserSelect__container-inner column-flex'
     }
   }
 
+  const handleUserClick = (index, user) => {
+    setAnimate({ ...animate, activeUser: index })
+    if (user.toLowerCase() === 'parent') {
+      dispatch(selectParent(true))
+    } else if (user.toLowerCase() === 'student') {
+      dispatch(selectStudent(true))
+    }
+  }
+
   return (
     <main className='UserSelect column-flex'>
-      <h1 className='sub-text'>Select User Type</h1>
-      <p className='p-text'>Please select the option that best describes you</p>
+      <h1 className='sub-text'>{header}</h1>
+      <p className='p-text'>{subHeader}</p>
       <section className='app__flex-2 UserSelect__container'>
-        <button
-          onClick={() => setAnimate({ ...animate, activeUser: 0 })}
-          className={toggleActiveClassName(0)}
-        >
-          <div className='img-size'>
-            <img
-              src='https://res.cloudinary.com/dxje0rp9f/image/upload/v1673601432/Link%20Park/undraw_pic_profile_re_7g2h_1_lraa9b.png'
-              alt=''
-            />
-          </div>
-          <p>I am a Parent</p>
-        </button>
-        <button
-          onClick={() => setAnimate({ ...animate, activeUser: 1 })}
-          className={toggleActiveClassName(1)}
-        >
-          <div className='img-size'>
-            <img
-              src='https://res.cloudinary.com/dxje0rp9f/image/upload/v1673601432/Link%20Park/274_manager_outline_jbe8zx.png'
-              alt=''
-            />
-          </div>
-          <p>I am a Student</p>
-        </button>
+        {users.map((user, index) => (
+          <button
+            key={index}
+            type='button'
+            onClick={() => handleUserClick(index, user.name)}
+            className={toggleActiveClassName(index)}
+            onAnimationEnd={() => setAnimate({ ...animate, activeUser: null })}
+          >
+            <div className='img-size'>
+              <img src={user.img} alt='user' />
+            </div>
+            <p>{user.text}</p>
+          </button>
+        ))}
       </section>
-      <button onClick={() => navigate('/signin')} className='btn-primary'>
-        {' '}
-        Next{' '}
+      <button
+        type='button'
+        onClick={() => navigate('/signin')}
+        className='btn-primary'
+      >
+        Next
       </button>
     </main>
   )

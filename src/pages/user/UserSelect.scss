@@ -1,64 +1,67 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+
 .UserSelect {
   width: 100%;
   padding: 4rem 0;
   gap: 0;
 
   &>h1 {
-    margin-bottom: 16px;
+    margin-bottom: fn.rem(16);
   }
 
   &>p {
     color: #505050;
-    margin-bottom: 44px;
+    margin-bottom: fn.rem(44);
   }
 
   .UserSelect__container {
-    height: 505px;
+    height: fn.rem(505);
     width: 70%;
-    margin-bottom: 72px;
+    margin-bottom: fn.rem(72);
 
     .UserSelect__container-inner {
-      all: unset;
+      background-color: colors.$light !important;
       width: 48%;
       height: 100%;
       box-shadow: 0px 4px 20px rgba(172, 172, 172, 0.16);
-      border-radius: 8px;
+      border-radius: fn.rem(8);
       transition: 1s all ease-in;
       cursor: pointer;
       
       .img-size {
-        width: 186px;
-        height: 186px;
-        margin-bottom: 69px;
+        width: fn.rem(186);
+        height: fn.rem(186);
+        margin-bottom: fn.rem(69);
       }
 
       p {
         text-align: center;
-        font-size: 28px;
+        font-size: fn.rem(28);
         font-weight: 700;
         color: #000000;
       }
     }
 
     .UserSelect__container-inner:hover {
-      border: 1.5px solid #0d1292;
+      border: 1.5px solid colors.$color-primary;
     }
 
     .active {
-      border: 1.5px solid #0d1292;
+      border: 1.5px solid colors.$color-primary;
     }
   }
 
   button {
     width: 10.75rem;
-    height: 62px;
+    height: fn.rem(62);
   }
 }
 
 @media screen and (max-width: 1200px) {
   .UserSelect__container {
     width: 80% !important;
-    height: 420px !important;
+    height: fn.rem(420) !important;
   }
 }
 
@@ -71,18 +74,18 @@
 @media screen and (max-width: 768px) {
   .UserSelect__container {
     width: 100% !important;
-    row-gap: 20px;
+    row-gap: fn.rem(20);
     flex-direction: column;
     height: unset !important;
 
     .UserSelect__container-inner {
       width: 70% !important;
-      height: 505px !important;
+      height: fn.rem(505) !important;
     }
   }  
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
   .UserSelect {
     padding: 4rem 0.5rem;
     &>p {
@@ -93,7 +96,7 @@
   .UserSelect__container {
 
     .UserSelect__container-inner {
-      width: 100% !important;
+      width: 90% !important;
     }
   } 
 }
