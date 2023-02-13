@@ -40,16 +40,13 @@ const NavBar = () => {
       <nav className='nav-mobile'>
         <Navbar isBordered variant='sticky'>
           <Navbar.Brand>
-            <Navbar.Toggle aria-label='toggle navigation' />
             <div className='img-size nav__logo'>
-              <img src={Images} alt='logo' />
+              <img src={Images.logo} alt='logo' />
             </div>
           </Navbar.Brand>
           <Navbar.Content>
             <Navbar.Item>
-              <Button className='btn-primary' auto flat as={Link}>
-                Get Started
-              </Button>
+              <Navbar.Toggle aria-label='toggle navigation' />
             </Navbar.Item>
           </Navbar.Content>
           <Navbar.Collapse>
@@ -66,6 +63,11 @@ const NavBar = () => {
                 </Link>
               </Navbar.CollapseItem>
             ))}
+            <Navbar.CollapseItem>
+              <Button className='btn-primary' auto flat as={Link}>
+                Get Started
+              </Button>
+            </Navbar.CollapseItem>
           </Navbar.Collapse>
         </Navbar>
       </nav>
