@@ -12,21 +12,25 @@ import styles from './layout.module.scss'
 const DashboardLayout = () => {
   const sideBarLinks = [
     {
+      id: 1,
       path: '/username/dashboard',
       name: 'Dashboard',
       icon: <SlHome />,
     },
     {
+      id: 2,
       path: '/username/results',
       name: 'Results',
       icon: <TbNotebook />,
     },
     {
+      id: 3,
       path: '/username/subjects',
       name: 'Subjects',
       icon: <BsJoystick />,
     },
     {
+      id: 4,
       path: '/username/events/new',
       name: 'Upcoming Events',
       icon: <RiCalendar2Line />,
@@ -38,7 +42,7 @@ const DashboardLayout = () => {
         <Sidebar sideLinks={sideBarLinks} />
       </div>
       <div className={styles.outlet}>
-        <Outlet />
+        <Outlet context={{ sideBarLinks }} />
       </div>
     </main>
   )

@@ -12,26 +12,31 @@ import styles from './layout.module.scss'
 const StudentLayout = () => {
   const sideBarLinks = [
     {
+      id: 1,
       path: '/student/dashboard',
       name: 'Dashboard',
       icon: <SlHome />,
     },
     {
+      id: 2,
       path: '/student/library',
       name: 'My Library',
       icon: <TbNotebook />,
     },
     {
+      id: 3,
       path: '/student/activities',
       name: 'Activities',
       icon: <BsJoystick />,
     },
     {
+      id: 4,
       path: '/student/calendar',
       name: 'link park calendar',
       icon: <RiCalendar2Line />,
     },
     {
+      id: 5,
       path: '/student/portal',
       name: 'Portal',
       icon: <RiCalendar2Line />,
@@ -44,7 +49,7 @@ const StudentLayout = () => {
         <Sidebar sideLinks={sideBarLinks} />
       </div>
       <div className={styles.outlet}>
-        <Outlet />
+        <Outlet context={{ sideBarLinks }} />
       </div>
     </main>
   )

@@ -11,37 +11,37 @@ import styles from './topnav.module.scss'
 import { SearchInput } from '../../atoms'
 import { NavLink } from 'react-router-dom'
 
-const TopNav = ({ name }) => {
+const TopNav = ({ name, navLinks }) => {
   const [toggleNav, setToggleNav] = useState(false)
   const options = ['Temitope Adekunle', 'Temitope', 'Temitope']
 
-  const navLinks = [
-    {
-      id: 1,
-      path: '/student/dashboard',
-      name: 'Dashboard',
-    },
-    {
-      id: 2,
-      path: '/student/library',
-      name: 'My Library',
-    },
-    {
-      id: 3,
-      path: '/student/activities',
-      name: 'Activities',
-    },
-    {
-      id: 4,
-      path: '/student/calendar',
-      name: 'link park calendar',
-    },
-    {
-      id: 5,
-      path: '/student/portal',
-      name: 'Portal',
-    },
-  ]
+  // const navLinks = [
+  //   {
+  //     id: 1,
+  //     path: '/student/dashboard',
+  //     name: 'Dashboard',
+  //   },
+  //   {
+  //     id: 2,
+  //     path: '/student/library',
+  //     name: 'My Library',
+  //   },
+  //   {
+  //     id: 3,
+  //     path: '/student/activities',
+  //     name: 'Activities',
+  //   },
+  //   {
+  //     id: 4,
+  //     path: '/student/calendar',
+  //     name: 'link park calendar',
+  //   },
+  //   {
+  //     id: 5,
+  //     path: '/student/portal',
+  //     name: 'Portal',
+  //   },
+  // ]
 
   return (
     <>
@@ -123,6 +123,7 @@ const TopNav = ({ name }) => {
 
 TopNav.propTypes = {
   name: PropTypes.string.isRequired,
+  navLinks: PropTypes.array.isRequired,
 }
 
 export default TopNav
