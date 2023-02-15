@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import useGetWindowResize from '../../../hooks/useGetWindowResize'
+import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import styles from './table.module.scss'
 
 const Table = ({ content }) => {
-  const { isMobile } = useGetWindowResize()
+  const { isMobile } = useGetScreenSize()
   return (
     <table className={styles.assignment_table}>
       <thead className={styles.table_head}>
