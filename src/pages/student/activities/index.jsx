@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { STUDENT_ACTIVITIES } from './contents'
 import { Carousel, LinkParkCalendar } from '../../../components/organisms'
 import { Container } from '../../../components/templates'
 import { Images } from '../../../constants'
@@ -9,43 +10,7 @@ import { Pill, TableCard } from '../../../components/atoms'
 import styles from './activities.module.scss'
 
 const Activities = () => {
-  const events = [{ id: 1 }, { id: 2 }, { id: 3 }]
-  const leaderBoard = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
-  const tableHead = ['Assignments', 'Assessments', 'Completed']
-  const tableContent = [
-    {
-      head: {
-        headText: 'Maths Algebra Equation Assignment',
-        headSmall: '4th January, 2023',
-      },
-      grade: '7/10',
-      status: 'Completed',
-    },
-    {
-      head: {
-        headText: 'English Assignment on Pronuns',
-        headSmall: '4th January, 2023',
-      },
-      grade: '7/10',
-      status: 'Pending',
-    },
-    {
-      head: {
-        headText: 'Physics Pendulum Assignment',
-        headSmall: '4th January, 2023',
-      },
-      grade: '7/10',
-      status: 'Not done',
-    },
-    {
-      head: {
-        headText: 'Periodic Table Memorization',
-        headSmall: '4th January, 2023',
-      },
-      grade: '7/10',
-      status: 'Completed',
-    },
-  ]
+  const { events, leaderBoard, tableHead, tableContent } = STUDENT_ACTIVITIES
 
   const toggleStatusClass = (item) => {
     if (item === 'completed') {
@@ -58,9 +23,9 @@ const Activities = () => {
   }
   return (
     <Container name={'Activities'}>
-      <section className={[styles.activities, 'app__flex-3'].join(' ')}>
+      <section className={styles.activities}>
         <div className={styles.activities_main}>
-          <h1 className='dashboard-subtext'>Upcoming Event</h1>
+          <h3>Upcoming Event</h3>
           <Carousel
             events={events}
             modules='pagination'
@@ -68,7 +33,7 @@ const Activities = () => {
           >
             <div className={styles.eventCard}>
               <div className={styles.eventCard_content}>
-                <p className='app__flex'>24th January, 2023</p>
+                <p>24th January, 2023</p>
                 <h2>Inter-school</h2>
                 <span>Competition</span>
                 <br />
@@ -80,9 +45,9 @@ const Activities = () => {
             </div>
           </Carousel>
           <div className={styles.activitiesTable}>
-            <h3 className='dashboard-subtext'>To Do Tasks</h3>
+            <h3>To Do Tasks</h3>
             <div className={styles.tableContent}>
-              <div className={['app__flex', styles.tableHeader].join(' ')}>
+              <div className={styles.tableHeader}>
                 {tableHead.map((item, index) => (
                   <button type='button' key={index} className={styles.active}>
                     {item}
@@ -130,14 +95,11 @@ const Activities = () => {
         <div className={styles.activities_side}>
           <LinkParkCalendar height='288.6px' showTitle />
           <article className={styles.leaderBoard}>
-            <h3 className='dashboard-subtext'>Leaderboard</h3>
+            <h3>Leaderboard</h3>
             <div className={styles.leaderBoardActivities}>
-              {leaderBoard.map((item, index) => (
-                <div
-                  className={[styles.activitiesCard, 'app__flex-2'].join(' ')}
-                  key={index}
-                >
-                  <div className={[styles.activityUser, 'app__flex'].join(' ')}>
+              {leaderBoard.map((item) => (
+                <div className={styles.activitiesCard} key={item.id}>
+                  <div className={styles.activityUser}>
                     <div className={[styles.activityImg, 'img-size'].join(' ')}>
                       <img src={Images.user} alt='user' />
                     </div>

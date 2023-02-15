@@ -3,27 +3,7 @@
 @import '../../../scss/utils/breakpoints';
 @import '../../../scss/utils/mixins';
 
-h3 {
-  color: colors.$text-dark;
-  font-size: fn.rem(16);
-  margin-bottom: fn.rem(8);
 
-  @include breakpoint-up('lg') {
-    font-weight: 700;
-    font-size: fn.rem(24);
-  }
-}
-
-h4 {
-  font-size: fn.rem(20);
-  color: colors.$header-dark;
-
-  @include breakpoint-up('lg') {
-    font-weight: 700;
-    font-size: fn.rem(24);
-    color: colors.$text-dark;
-  }
-}
 
 .results__body {
   width: 100%;
@@ -41,6 +21,28 @@ h4 {
 
     @include breakpoint-up('md') {
       margin-bottom: fn.rem(52);
+    }
+  }
+
+  h3 {
+    color: colors.$text-dark;
+    font-size: fn.rem(16);
+    margin-bottom: fn.rem(8);
+  
+    @include breakpoint-up('lg') {
+      font-weight: 700;
+      font-size: fn.rem(24);
+    }
+  }
+  
+  h4 {
+    font-size: fn.rem(20);
+    color: colors.$header-dark;
+  
+    @include breakpoint-up('lg') {
+      font-weight: 700;
+      font-size: fn.rem(24);
+      color: colors.$text-dark;
     }
   }
 
