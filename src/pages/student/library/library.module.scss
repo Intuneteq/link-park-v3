@@ -94,6 +94,10 @@
     width: 100%;
 
     @include breakpoint-up('md') {
+      width: 35%;
+    }
+
+    @include breakpoint-up('lg') {
       width: 25%;
     }
 
@@ -180,6 +184,10 @@
     padding-top: fn.rem(30);
 
     @include breakpoint-up('md') {
+      width: 62%;
+    }
+
+    @include breakpoint-up('lg') {
       width: 71%;
     }
 
@@ -188,7 +196,7 @@
       @include flex_centered;
       margin-bottom: fn.rem(34);
 
-      @include breakpoint-up('md') {
+      @include breakpoint-up('lg') {
         @include flex_align;
         flex-direction: row;
         justify-content: space-between;
@@ -206,16 +214,22 @@
       gap: fn.rem(8);
 
       .accordion {
-        all: unset;
+        @include flex_column;
+        align-items: flex-start;
+
         width: 100%;
+        height: 100%;
+        padding: fn.rem(20);
+
         background-color: #f7f7f7;
         border-radius: fn.rem(8);
-        padding: fn.rem(20);
         cursor: pointer;
 
         & > div {
           @include flex_align;
           justify-content: space-between;
+
+          width: 100%;
         }
 
         h6 {

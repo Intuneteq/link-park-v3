@@ -43,7 +43,6 @@ const LibrarySlugs = () => {
             type='button'
             classType='secondary'
             text='Submit Assignment'
-            width={12}
             height={3}
           />
         </div>
