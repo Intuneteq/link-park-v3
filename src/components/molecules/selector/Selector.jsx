@@ -52,7 +52,7 @@ const Selector = ({
 Selector.propTypes = {
   borderNone: PropTypes.bool,
   title: PropTypes.string,
-  options: PropTypes.array,
+  options: PropTypes.array.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
   padding: PropTypes.string,

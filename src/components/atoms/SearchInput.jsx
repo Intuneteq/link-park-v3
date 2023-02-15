@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { CiSearch } from 'react-icons/ci'
 
-import useGetScreenSize from '../../hooks/useMediaQuery'
+import { useGetScreenSize } from '../../hooks/useMediaQuery'
 import styles from './atoms.module.scss'
 
 const SearchInput = ({ height }) => {

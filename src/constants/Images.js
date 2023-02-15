@@ -10,8 +10,12 @@ import english from '../assets/english.png'
 import teacher from '../assets/teacher.png'
 import eventImage from '../assets/eventImage.png'
 import heroImage from '../assets/heroImage.svg'
+import authParent from '../assets/authParent.png'
+import authStudent from '../assets/authStudent.png'
 
 const Images = {
+  authStudent,
+  authParent,
   heroImage,
   logo,
   user,

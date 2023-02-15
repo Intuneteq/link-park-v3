@@ -1,10 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import useGetScreenSize from '../../hooks/useMediaQuery'
+import { useGetScreenSize } from '../../hooks/useMediaQuery'
 import styles from './atoms.module.scss'
 
-const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
+const Buttons = ({
+  width,
+  height,
+  text,
+  classType,
+  color,
+  onClick,
+  type,
+  fontWeight,
+  fontSize,
+}) => {
   const { isMobile } = useGetScreenSize()
   const toggleClassName = () => {
     if (classType.toLowerCase() === 'primary') {
@@ -21,10 +31,11 @@ const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
       type={type}
       className={toggleClassName()}
       style={{
-        width: isMobile ? '9rem' : `${width}rem`,
-        height: isMobile ? '3rem' : `${height}rem`,
+        width: width ? (isMobile ? '9rem' : `${width}rem`) : '100%',
+        height: height ? (isMobile ? '3rem' : `${height}rem`) : '100%',
         color,
-        fontSize: '1rem',
+        fontSize: fontSize ? `${fontSize}rem` : '1rem',
+        fontWeight,
       }}
     >
       {text}
@@ -35,11 +46,13 @@ const Buttons = ({ width, height, text, classType, color, onClick, type }) => {
 Buttons.propTypes = {
   text: PropTypes.string.isRequired,
   classType: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
   color: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string.isRequired,
+  fontWeight: PropTypes.number,
+  fontSize: PropTypes.string,
 }
 
 export default Buttons
