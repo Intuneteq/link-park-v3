@@ -33,7 +33,6 @@
     font-weight: 700;
     font-size: fn.rem(28);
     text-align: center;
-    //   border: 1px solid red;
 
     @include breakpoint-up('md') {
       font-size: fn.rem(30);
@@ -51,7 +50,6 @@
     margin-top: fn.rem(11);
     width: 60%;
     line-height: 128%;
-    // border: 1px solid red;
 
     @include breakpoint-up('md') {
       font-size: fn.rem(18);
@@ -61,7 +59,6 @@
     @include breakpoint-up('lg') {
       font-size: fn.rem(20);
       margin: 0 auto fn.rem(40);
-      // border: 1px solid red;
     }
   }
 }
@@ -84,11 +81,11 @@
     justify-content: space-between;
     width: fn.rem(446);
     margin: 0 auto;
-    // border: 1px solid red
   }
 }
 
-.formHolder, .formHolderHalf {
+.formHolder,
+.formHolderHalf {
   @include flex_column;
   justify-content: flex-start;
   gap: fn.rem(12);
@@ -111,17 +108,15 @@
 }
 
 .formHolderHalf {
-
-    @include breakpoint-up('lg') {
-        width: 47%;
-    }
+  @include breakpoint-up('lg') {
+    width: 47%;
+  }
 }
 
 .inputHolder {
   width: 100%;
   height: fn.rem(48);
   position: relative;
-//   border: 1px solid red;
 
   input {
     width: 100%;
