@@ -4,86 +4,44 @@
 @import '../../../scss/utils/mixins';
 
 .dashboard__nav {
-  display: none;
-  @include breakpoint-up('md') {
-    display: block;
-    @include flex_align;
-    justify-content: space-between; //here
-    width: 100%;
-    max-height: 6.25rem;
-    padding: 2rem 0.5rem 2rem; //here
-    box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
-    z-index: 10;
+  @include flex_align;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 6.25rem;
+  padding: 2rem 2.6% 2rem 4.5%;
+  box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
+  z-index: 10;
 
-    h3 {
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--black-color);
-      margin-right: 0; //here
-    }
-
-    .dashboard__nav_search {
-      width: 40%; //here
-    }
-
-    & > svg {
-      color: var(--black-color);
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    .dashboard__nav_selector {
-      width: 16%;
-    }
-
-    .dashboard__nav_user {
-      width: 4rem;
-      height: 4rem;
-    }
+  h3 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--black-color);
+    margin-right: 9%;
   }
 
-  @include breakpoint-up('lg') {
-    display: block;
-    @include flex_align;
-    justify-content: space-between;
-    width: 100%;
-    max-height: 6.25rem;
-    padding: 2rem 2.6% 2rem 4.5%;
-    box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
-    z-index: 10;
+  .dashboard__nav_search {
+    width: 40%;
+  }
 
-    h3 {
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--black-color);
-      margin-right: 9%;
-    }
+  & > svg {
+    color: var(--black-color);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-    .dashboard__nav_search {
-      width: 40%;
-    }
+  .dashboard__nav_selector {
+    width: 16%;
+  }
 
-    & > svg {
-      color: var(--black-color);
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    .dashboard__nav_selector {
-      width: 16%;
-    }
-
-    .dashboard__nav_user {
-      width: 4rem;
-      height: 4rem;
-    }
+  .dashboard__nav_user {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
 .mobile {
   @include flex_align;
   justify-content: space-between;
-  // border: 1px solid red;
   width: 100%;
   height: fn.rem(100);
   padding: fn.rem(35) fn.rem(31) fn.rem(20) fn.rem(20);
@@ -109,9 +67,52 @@
       height: fn.rem(24);
     }
   }
+}
 
-  @include breakpoint-up('md') {
-    display: none;
+.mobile_Links {
+  width: 100vw;
+  background: colors.$base-bg;
+  height: fn.rem(339);
+  padding: fn.rem(50) fn.rem(22.75);
+  box-shadow: 0px 4px 1.25rem rgba(225, 225, 225, 0.24);
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+
+  button {
+    all: unset;
+    width: fn.rem(24);
+    height: fn.rem(24);
+    position: absolute;
+    top: fn.rem(22.75);
+    left: fn.rem(22.75);
+
+    @include breakpoint-up('md') {
+      top: fn.rem(30);
+      left: fn.rem(60);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .navLinks {
+    @include flex_column;
+    gap: fn.rem(24);
+
+    .links {
+      color: colors.$text-dark;
+      font-weight: 400;
+      font-size: fn.rem(16);
+    }
+    .activeNav {
+      color: colors.$color-primary;
+      font-weight: 700;
+    }
   }
 }
 

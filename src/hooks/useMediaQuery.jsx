@@ -10,7 +10,7 @@ const useGetScreenSize = () => {
 }
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
+  const isDesktop = useMediaQuery({ minWidth: 993 })
   return isDesktop ? children : null
 }
 
@@ -22,6 +22,11 @@ const Default = ({ children }) => {
 const Mobile = ({ children }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return isMobile ? children : null
+}
+
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ maxWidth: 992 })
+  return isTablet ? children : null
 }
 
 Mobile.propTypes = {
@@ -36,4 +41,8 @@ Desktop.propTypes = {
   children: PropTypes.any,
 }
 
-export { useGetScreenSize, Mobile, Desktop, Default }
+Tablet.propTypes = {
+  children: PropTypes.any,
+}
+
+export { useGetScreenSize, Mobile, Desktop, Default, Tablet }
