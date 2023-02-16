@@ -12,12 +12,12 @@ import './subjectcarousel.scss'
 const SubjectCarousel = ({ courses }) => {
   const { isMobile, isTablet } = useGetScreenSize()
   const style = {
-    width: isMobile ? '12.5rem' : '11.313rem',
+    width: isMobile ? '10.5rem' : '13.375rem',
   }
   return (
     <Swiper
-      slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
-      spaceBetween={40}
+      slidesPerView={isTablet ? 2 : 3}
+      spaceBetween={isTablet ? 25 : 40}
       pagination={{
         clickable: true,
       }}

@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+
+import { PORTAL_RESULTS_CONTENT } from './contents'
 import { Container, ResultBoard } from '../../../components/templates'
 
 const PotalResult = () => {
+  const { selectors, result } = PORTAL_RESULTS_CONTENT
   const [pageNumber, setPageNumber] = useState(0)
 
   const cardPerPage = 7
@@ -9,54 +12,7 @@ const PotalResult = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-  const selectors = [
-    {
-      title: 'Result type',
-      options: ['Exam Result', 'Test Result', 'Assignment scores'],
-    },
-    {
-      title: 'Sort by',
-      options: ['First Term', 'Second Term', 'Third Term'],
-    },
-  ]
 
-  const result = [
-    {
-      subject: 'English Language',
-      Remark: 'Good',
-      score: 70,
-    },
-    {
-      subject: 'Mathematics',
-      Remark: 'Very Good',
-      score: 81,
-    },
-    {
-      subject: 'Social Studies',
-      Remark: 'Excellent',
-      score: 98,
-    },
-    {
-      subject: 'Physics',
-      Remark: 'Good',
-      score: 65,
-    },
-    {
-      subject: 'Chemistry',
-      Remark: 'Good',
-      score: 78,
-    },
-    {
-      subject: 'Information Techology',
-      Remark: 'Excellent',
-      score: 99,
-    },
-    {
-      subject: 'Biology',
-      Remark: 'Pass',
-      score: 45,
-    },
-  ]
   return (
     <Container name={'Portal'}>
       <ResultBoard

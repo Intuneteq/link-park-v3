@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import useGetWindowResize from '../../../hooks/useGetWindowResize'
+import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Pagination } from '../../atoms'
 import { Back, Selector } from '../../molecules'
 import { SubjectCards } from '../../organisms'
@@ -16,7 +16,7 @@ const SubjectTemplate = ({
   changePage,
   style,
 }) => {
-  const { isMobile } = useGetWindowResize()
+  const { isMobile, smallScreen } = useGetScreenSize()
   return (
     <div className={styles.subjects__body}>
       <Back />
@@ -28,7 +28,7 @@ const SubjectTemplate = ({
           width={'38%'}
           height={'48px'}
           padding={'14px 20px'}
-          selectWidth={isMobile ? '97px' : '209px'}
+          selectWidth={isMobile ? '100%' : smallScreen ? '45%' : '33%'}
         />
       </div>
       <SubjectCards

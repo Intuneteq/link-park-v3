@@ -6,14 +6,17 @@
 .container {
   width: 100%;
   background: #ffffff;
-  height: 100vh;
-  overflow-y: scroll;
-  // overflow-x: hidden;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 
-  &::-webkit-scrollbar {
-    display: none;
+  @include breakpoint-up('lg') {
+    height: 100vh;
+    overflow-y: scroll;
+    // overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   // SCREENS 1400px and LARGER

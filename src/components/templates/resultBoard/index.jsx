@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Pagination } from '../../atoms'
 import { Back, Selector } from '../../molecules'
-import useGetWindowResize from '../../../hooks/useGetWindowResize'
+import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import styles from './resultbody.module.scss'
 
 const ResultBoard = ({
@@ -14,15 +14,17 @@ const ResultBoard = ({
   changePage,
   backbutton,
 }) => {
-  const { isMobile } = useGetWindowResize()
+  const { isMobile, smallScreen } = useGetScreenSize()
   return (
     <section className={styles.results__body}>
       <div className={styles.results__body_header}>
-        {backbutton && <Back />}
-        {isMobile && <h4>Result</h4>}
-        <h3>
-          Overall Position <span>2nd</span>
-        </h3>
+        {backbutton && <Back className={styles.backBtn} />}
+        <div className={styles.headerTexts}>
+          {isMobile && <h4>Result</h4>}
+          <h3>
+            {isMobile ? 'Position:' : 'Overall Position'} <span>2nd</span>
+          </h3>
+        </div>
       </div>
       <div className={styles.results__body_selctor}>
         {selectors.map((item, index) => (
@@ -30,7 +32,7 @@ const ResultBoard = ({
             key={index}
             title={item.title}
             options={item.options}
-            width={isMobile ? '100%' : '33%'}
+            width={isMobile ? '100%' : smallScreen ? '45%' : '33%'}
             selectWidth={isMobile ? '100%' : '13.063rem'}
             height='3rem'
             padding='0.875rem 1.25rem'

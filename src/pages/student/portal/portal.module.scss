@@ -1,0 +1,129 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.portal__body {
+  @include flex_column;
+  // justify-content: center;
+  width: 100%;
+  gap: fn.rem(34);
+
+  justify-content: flex-start;
+  align-items: center;
+
+  @include breakpoint-up('lg') {
+    gap: 6%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  h3 {
+    color: colors.$text-dark;
+    font-size: fn.rem(20);
+    margin-bottom: fn.rem(8);
+
+    @include breakpoint-up('lg') {
+      font-weight: 700;
+      font-size: fn.rem(24);
+    }
+  }
+
+  h4 {
+    font-size: fn.rem(20);
+    color: colors.$header-dark;
+
+    @include breakpoint-up('lg') {
+      font-weight: 700;
+      font-size: fn.rem(24);
+      color: colors.$text-dark;
+    }
+  }
+}
+
+.portal__body_main {
+  width: 100%;
+  @include breakpoint-up('lg') {
+    width: 64%;
+  }
+
+  .time_table {
+    margin-top: fn.rem(52);
+    margin-bottom: fn.rem(52);
+
+    h3 {
+      margin-bottom: fn.rem(12);
+    }
+
+    .table_body {
+      background: #f4f5ff;
+      width: 100%;
+      height: fn.rem(222);
+      border-radius: fn.rem(8);
+      padding: fn.rem(20);
+
+      span {
+        color: colors.$header-dark;
+        font-size: fn.rem(16);
+        @include breakpoint-up('md') {
+          font-size: fn.rem(20);
+        }
+      }
+
+      .body_schedule {
+        @include flex_align;
+        justify-content: space-around;
+        text-align: center;
+        margin-top: fn.rem(34);
+        margin-bottom: fn.rem(30);
+
+        p {
+          color: colors.$header-dark;
+          font-weight: 700;
+          margin-bottom: fn.rem(12);
+
+          @include breakpoint-up('md') {
+            font-size: fn.rem(24);
+          }
+        }
+
+        span {
+          font-size: fn.rem(14);
+          
+          @include breakpoint-up('md') {
+            font-size: fn.rem(20);
+          }
+        }
+      }
+    }
+  }
+  
+  .portal_materials {
+    .materials,
+    .subject_material {
+      @include flex_align;
+      justify-content: space-between;
+    }
+
+    .subject_material {
+      flex-wrap: wrap;
+      width: 100%;
+      column-gap: fn.rem(1);
+      row-gap: fn.rem(10);
+      margin-top: fn.rem(15);
+
+      @include breakpoint-up('lg') {
+        flex-wrap: nowrap;
+        gap: fn.rem(17);
+      }
+    }
+  }
+}
+
+.portal__body_side {
+  width: 100%;
+  @include breakpoint-up('lg') {
+    width: 30%;
+  }
+}

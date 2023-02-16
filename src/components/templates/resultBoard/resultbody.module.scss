@@ -7,21 +7,48 @@
 
 .results__body {
   width: 100%;
+
   .results__body_header {
+    @include flex_column;
     @include flex_align;
     justify-content: space-between;
     width: 100%;
     color: colors.$text-dark;
     margin-bottom: fn.rem(32);
-    h3 {
-      span {
-        font-size: 1.75rem;
+
+    
+    @include breakpoint-up('md') {
+      @include flex_row;
+      margin-bottom: fn.rem(52);
+    }
+
+    .headerTexts {
+      @include flex_align;
+      justify-content: space-between;
+      width: 100%;
+      
+      h3 {
+        width: 100%;
+        text-align: right;
+        @include breakpoint-down('xs') {
+          font-weight: 400;
+          font-size: fn.rem(16);
+          color: #3A3A3A;
+          span {
+            font-size: fn.rem(20);
+            font-weight: 600;
+            color: #0ABB11;
+          }
+        }
       }
     }
 
-    @include breakpoint-up('md') {
-      margin-bottom: fn.rem(52);
+    .backBtn {
+      width: 100%;
+      margin-bottom: fn.rem(20);
+      align-items: center;
     }
+
   }
 
   h3 {
@@ -33,9 +60,14 @@
       font-weight: 700;
       font-size: fn.rem(24);
     }
+
+    span {
+      font-size: 1.75rem;
+    }
   }
   
   h4 {
+    font-weight: 600;
     font-size: fn.rem(20);
     color: colors.$header-dark;
   
