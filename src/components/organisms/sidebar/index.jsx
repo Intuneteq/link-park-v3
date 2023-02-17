@@ -17,10 +17,10 @@ const Sidebar = ({ sideLinks }) => {
 
       <div className='sidebar__links'>
         <div>
-          {sideLinks.map((item, index) => (
+          {sideLinks.map((item) => (
             <NavLink
               to={item.path}
-              key={index}
+              key={item.id}
               className='app__flex-3'
               activeclassname='active'
             >

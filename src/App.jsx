@@ -41,7 +41,7 @@ function App() {
     <Suspense fallback={<Loading text='LOADING...' />}>
       <Routes>
         <Route element={<ExternalLayouts />}>
-          <Route path='/' element={<Home />} />
+          <Route index path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/parents' element={<Parents />} />
           <Route path='/signin' element={<SignIn />} />
@@ -71,8 +71,8 @@ function App() {
           <Route path='/username/dashboard' element={<Dashboard />} />
           <Route path='/username/results' element={<Results />} />
           <Route path='/username/subjects' element={<Subjects />} />
-          <Route path='/username/events' element={<Events />}>
-            <Route path='/username/events/new' element={<NewEvents />} />
+          <Route element={<Events />}>
+            <Route path='/username/events/' element={<NewEvents />} />
             <Route
               path='/username/events/past-events'
               element={<PastEvents />}

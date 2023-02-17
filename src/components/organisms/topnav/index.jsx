@@ -7,52 +7,24 @@ import { MdMenu } from 'react-icons/md'
 import { Desktop, Tablet } from '../../../hooks/useMediaQuery'
 import { Icons, Images } from '../../../constants'
 import { Selector } from '../../molecules'
-import styles from './topnav.module.scss'
 import { SearchInput } from '../../atoms'
 import { NavLink } from 'react-router-dom'
+import './topnav.scss'
 
 const TopNav = ({ name, navLinks }) => {
   const [toggleNav, setToggleNav] = useState(false)
   const options = ['Temitope Adekunle', 'Temitope', 'Temitope']
 
-  // const navLinks = [
-  //   {
-  //     id: 1,
-  //     path: '/student/dashboard',
-  //     name: 'Dashboard',
-  //   },
-  //   {
-  //     id: 2,
-  //     path: '/student/library',
-  //     name: 'My Library',
-  //   },
-  //   {
-  //     id: 3,
-  //     path: '/student/activities',
-  //     name: 'Activities',
-  //   },
-  //   {
-  //     id: 4,
-  //     path: '/student/calendar',
-  //     name: 'link park calendar',
-  //   },
-  //   {
-  //     id: 5,
-  //     path: '/student/portal',
-  //     name: 'Portal',
-  //   },
-  // ]
-
   return (
     <>
       <Desktop>
-        <section className={styles.dashboard__nav}>
+        <section className='dashboard__nav'>
           <h3>{name}</h3>
-          <div className={styles.dashboard__nav_search}>
+          <div className='dashboard__nav_search'>
             <SearchInput height={3.25} />
           </div>
           <IoMdNotificationsOutline />
-          <div className={styles.dashboard__nav_selector}>
+          <div className='dashboard__nav_selector'>
             <Selector
               borderNone
               options={options}
@@ -62,7 +34,7 @@ const TopNav = ({ name, navLinks }) => {
               selectWidth={'100%'}
             />
           </div>
-          <div className={[styles.dashboard__nav_user, 'img-size'].join(' ')}>
+          <div className='dashboard__nav_user img-size'>
             <img src={Images.user} alt='user' />
           </div>
         </section>
@@ -70,22 +42,16 @@ const TopNav = ({ name, navLinks }) => {
       {/* mobile view */}
       <Tablet>
         {toggleNav && (
-          <nav
-            className={[
-              styles.mobile_Links,
-              'animate__animated',
-              'animate__fadeInDown',
-            ].join(' ')}
-          >
+          <nav className='mobile_Links animate__animated animate__fadeInDown'>
             <button type='button' onClick={() => setToggleNav(!toggleNav)}>
               <img src={Icons.cut} alt='close' />
             </button>
 
-            <div className={styles.navLinks}>
+            <div className='navLinks'>
               {navLinks.map((item) => (
                 <NavLink
-                  className={styles.link}
-                  activeclassname={styles.activeNav}
+                  className='link'
+                  activeclassname='active'
                   key={item.id}
                   to={item.path}
                 >
@@ -95,11 +61,9 @@ const TopNav = ({ name, navLinks }) => {
             </div>
           </nav>
         )}
-        <section className={styles.mobile}>
-          <div className={styles.aboutUser}>
-            <div
-              className={[styles.dashboard__mobile_user, 'img-size'].join(' ')}
-            >
+        <section className='mobile'>
+          <div className='aboutUser'>
+            <div className='dashboard__mobile_user img-size'>
               <img src={Images.user} alt='user' />
             </div>
             <Selector
@@ -111,7 +75,7 @@ const TopNav = ({ name, navLinks }) => {
               selectWidth={'100%'}
             />
           </div>
-          <div className={styles.menuOptions}>
+          <div className='menuOptions'>
             <CiSearch />
             <MdMenu onClick={() => setToggleNav(!toggleNav)} />
           </div>

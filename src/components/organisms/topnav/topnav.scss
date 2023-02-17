@@ -104,16 +104,18 @@
     @include flex_column;
     gap: fn.rem(24);
 
-    .links {
+    .link {
       color: colors.$text-dark;
       font-weight: 400;
       font-size: fn.rem(16);
     }
-    .activeNav {
-      color: colors.$color-primary;
-      font-weight: 700;
-    }
+
   }
+}
+
+.active {
+  color: colors.$color-primary !important;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1200px) {

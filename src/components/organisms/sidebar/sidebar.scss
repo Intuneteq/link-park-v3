@@ -33,6 +33,9 @@
       & > div {
         width: 100%;
         a {
+          @include flex_row;
+          justify-content: flex-start;
+          align-items: flex-start;
           width: 100%;
           padding: fn.rem(17) fn.rem(40);
           align-items: center;

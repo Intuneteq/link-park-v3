@@ -31,7 +31,7 @@ const DashboardLayout = () => {
     },
     {
       id: 4,
-      path: '/username/events/new',
+      path: `/username/events`,
       name: 'Upcoming Events',
       icon: <RiCalendar2Line />,
     },
