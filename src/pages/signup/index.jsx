@@ -5,12 +5,13 @@ import { useSelector } from 'react-redux'
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
+import { parentStatus, studentStatus } from '../user/slices/userSlice'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
-  const parent = useSelector((state) => state.user.parent)
-  const student = useSelector((state) => state.user.student)
+  const parent = useSelector(parentStatus)
+  const student = useSelector(studentStatus)
 
   function showInput() {
     if (parent) {

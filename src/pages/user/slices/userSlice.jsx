@@ -21,5 +21,7 @@ export const userSlice = createSlice({
 })
 
 export const { selectParent, selectStudent } = userSlice.actions
+export const parentStatus = (state) => state.user.parent
+export const studentStatus = (state) => state.user.student
 
 export default userSlice.reducer

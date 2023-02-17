@@ -5,10 +5,14 @@ import { useSelector } from 'react-redux'
 import { Images } from '../../../constants'
 import { Desktop } from '../../../hooks/useMediaQuery'
 import styles from './authtemplate.module.scss'
+import {
+  parentStatus,
+  studentStatus,
+} from '../../../pages/user/slices/userSlice'
 
 const AuthTemplate = ({ children }) => {
-  const parent = useSelector((state) => state.user.parent)
-  const student = useSelector((state) => state.user.student)
+  const parent = useSelector(parentStatus)
+  const student = useSelector(studentStatus)
   return (
     <main className={styles.authTemplate}>
       <Desktop>

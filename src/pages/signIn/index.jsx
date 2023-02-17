@@ -5,11 +5,12 @@ import { useSelector } from 'react-redux'
 import { SIGNIN_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
+import { parentStatus, studentStatus } from '../user/slices/userSlice'
 
 const SignIn = () => {
   const { formInputs, footerText } = SIGNIN_CONTENTS
-  const parent = useSelector((state) => state.user.parent)
-  const student = useSelector((state) => state.user.student)
+  const parent = useSelector(parentStatus)
+  const student = useSelector(studentStatus)
   const navigate = useNavigate()
 
   const handleSubmit = () => {
