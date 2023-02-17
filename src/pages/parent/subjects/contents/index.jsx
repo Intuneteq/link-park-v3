@@ -117,8 +117,4 @@ export const SUBJECT_CONTENT = {
       color: '#8C1BAB',
     },
   ],
-
-  style: {
-    width: '214px',
-  },
 }

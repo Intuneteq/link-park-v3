@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useGetWindowResize from '../../../hooks/useGetWindowResize'
+import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../../components/atoms'
 import { AssignmentCard } from '../../../components/molecules'
 import {
@@ -15,7 +15,7 @@ import { DASHBOARD_CONTENT } from './contents'
 import styles from './dashboard.module.scss'
 
 const Dashboard = () => {
-  const { isMobile } = useGetWindowResize()
+  const { isMobile } = useGetScreenSize()
   const { cards, tableData, events } = DASHBOARD_CONTENT
 
   return (
