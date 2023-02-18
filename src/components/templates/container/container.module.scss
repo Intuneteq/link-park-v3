@@ -10,7 +10,6 @@
   @include breakpoint-up('lg') {
     height: 100vh;
     overflow-y: scroll;
-    // overflow-x: hidden;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 
@@ -20,9 +19,9 @@
   }
 
   // SCREENS 1400px and LARGER
-  @media only screen and (min-width: 1240px) {
+  @media only screen and (min-width: 1400px) {
     width: 100%;
-    max-width: fn.rem(1248);
+    max-width: fn.rem(1400);
     margin: auto;
   }
 }

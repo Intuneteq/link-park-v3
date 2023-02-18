@@ -215,3 +215,11 @@
     transform: translateY(-50%);
   }
 }
+
+//input box
+
+.inputBox {
+  border: 1px solid #6b6b6b;
+  border-radius: fn.rem(8);
+  padding: 0 fn.rem(20);
+}

@@ -1,0 +1,32 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.form_control {
+  @include flex_column;
+  justify-content: space-between;
+  gap: fn.rem(10);
+  width: 100%;
+
+  @include breakpoint-up('md') {
+    @include flex_row;
+    @include flex_align;
+    justify-content: space-between;
+    gap: unset;
+  }
+
+  label {
+    color: colors.$header-dark;
+    font-weight: 600;
+    font-size: fn.rem(16);
+
+    @include breakpoint-up('md') {
+      font-size: fn.rem(18);
+    }
+
+    @include breakpoint-up('lg') {
+      font-size: fn.rem(20);
+    }
+  }
+}

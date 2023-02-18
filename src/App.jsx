@@ -36,6 +36,12 @@ import PotalResult from './pages/student/portal/PotalResult'
 import PortalMaterials from './pages/student/portal/PortalMaterials'
 import Activities from './pages/student/activities'
 
+import Settings from './pages/settings'
+import Details from './pages/settings/Details'
+import ChangePasswords from './pages/settings/ChangePasswords'
+import ChangeEmail from './pages/settings/ChangeEmail'
+import NotificationsSettingsx from './pages/settings/NotificationsSettingsx'
+
 function App() {
   return (
     <Suspense fallback={<Loading text='LOADING...' />}>
@@ -52,7 +58,7 @@ function App() {
         </Route>
 
         {/* student dashboard */}
-        <Route path='/student' element={<StudentLayout />}>
+        <Route element={<StudentLayout />}>
           <Route path='/student/dashboard' element={<StudentDashboard />} />
           <Route path='/student/library' element={<Library />} />
           <Route path='/student/library/:slugs' element={<LibrarySlugs />} />
@@ -63,6 +69,18 @@ function App() {
             element={<PortalMaterials />}
           />
           <Route path='/student/activities' element={<Activities />} />
+          <Route element={<Settings />}>
+            <Route path='/account/settings' element={<Details />} />
+            <Route path='/account/settings/emails' element={<ChangeEmail />} />
+            <Route
+              path='/account/settings/passwords'
+              element={<ChangePasswords />}
+            />
+            <Route
+              path='/account/settings/notifications'
+              element={<NotificationsSettingsx />}
+            />
+          </Route>
           <Route exact path='*' element={<ErrPage />} />
         </Route>
 
@@ -72,14 +90,26 @@ function App() {
           <Route path='/username/results' element={<Results />} />
           <Route path='/username/subjects' element={<Subjects />} />
           <Route element={<Events />}>
-            <Route path='/username/events/' element={<NewEvents />} />
+            <Route path='/username/events' element={<NewEvents />} />
             <Route
               path='/username/events/past-events'
               element={<PastEvents />}
             />
             <Route path='/username/events/all' element={<AllEvents />} />
-            <Route exact path='*' element={<ErrPage />} />
           </Route>
+          <Route element={<Settings />}>
+            <Route path='/account/settings' element={<Details />} />
+            <Route path='/account/settings/emails' element={<ChangeEmail />} />
+            <Route
+              path='/account/settings/passwords'
+              element={<ChangePasswords />}
+            />
+            <Route
+              path='/account/settings/notifications'
+              element={<NotificationsSettingsx />}
+            />
+          </Route>
+          <Route exact path='*' element={<ErrPage />} />
         </Route>
       </Routes>
     </Suspense>

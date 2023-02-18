@@ -31,7 +31,11 @@ const Sidebar = ({ sideLinks }) => {
         </div>
 
         <div>
-          <NavLink to={'/username/settings'} className='app__flex-3'>
+          <NavLink
+            to={'/account/settings'}
+            activeclassname='active'
+            className='app__flex-3'
+          >
             <span>
               <AiOutlineSetting />
             </span>

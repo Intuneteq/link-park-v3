@@ -1,0 +1,235 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/breakpoints';
+@import '../../scss/utils/mixins';
+
+.settings {
+  padding: fn.rem(29) fn.rem(20) fn.rem(73);
+
+  @include breakpoint-up('lg') {
+    padding: 2rem 2.6% 4rem 4.5%;
+
+    height: 100vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @include breakpoint-up('xxl') {
+    width: 100%;
+    max-width: fn.rem(1400);
+    margin: auto;
+  }
+}
+
+.settings__section1 {
+  position: relative;
+  width: 100%;
+  height: fn.rem(218);
+  background: linear-gradient(
+    180deg,
+    #8214a9 9.38%,
+    rgba(123, 28, 175, 0.927931) 26.04%,
+    rgba(118, 35, 180, 0.864813) 41.67%,
+    rgba(84, 79, 212, 0.484352) 91.67%,
+    rgba(79, 85, 216, 0.43) 100%,
+    #1922e9 100%
+  );
+  border-radius: fn.rem(23);
+  margin-bottom: fn.rem(61);
+
+  article {
+    @include flex_column;
+    @include flex_centered;
+    gap: fn.rem(10);
+    width: 100%;
+
+    position: absolute;
+    top: fn.rem(145);
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include breakpoint-up('md') {
+      @include flex_row;
+      @include flex_justify;
+      align-items: flex-end;
+      top: fn.rem(158);
+      left: fn.rem(61);
+      transform: unset;
+      width: unset;
+    }
+
+    div {
+      width: fn.rem(150);
+      height: fn.rem(150);
+      border: fn.rem(3) solid #ffffff;
+      border-radius: fn.rem(62.25);
+
+      @include breakpoint-up('md') {
+        @include flex_centered;
+        width: fn.rem(166);
+        height: fn.rem(166);
+        border: fn.rem(5) solid #ffffff;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    span {
+      @include flex_align;
+      justify-content: space-between;
+      width: 100%;
+
+      @include breakpoint-up('md') {
+        @include flex_column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      h1 {
+        color: colors.$header-dark;
+        font-weight: 600;
+        font-size: fn.rem(24);
+        margin: 0;
+        padding: 0;
+
+        @include breakpoint-up('md') {
+          font-size: fn.rem(46);
+        }
+      }
+
+      p {
+        font-weight: 700;
+        font-style: italic;
+        font-size: fn.rem(16);
+
+        @include breakpoint-up('md') {
+          font-size: fn.rem(21);
+        }
+      }
+    }
+  }
+}
+
+.settings__section2 {
+  margin-top: fn.rem(150);
+  width: 100%;
+
+  @include breakpoint-up('md') {
+    width: 70%;
+    margin-left: fn.rem(61);
+    margin-bottom: fn.rem(110);
+  }
+
+  &>div {
+    @include flex_align;
+    justify-content: space-between;
+
+    a {
+      color: colors.$header-dark;
+      font-weight: 700;
+      font-size: fn.rem(16);
+      padding: 0 fn.rem(5) fn.rem(3);
+
+      @include breakpoint-up('md') {
+        font-size: fn.rem(20);
+      }
+    }
+  }
+
+  .settings_outlets {
+    width: 100%;
+    margin-top: fn.rem(46);
+}
+
+.settings_details {
+    @include flex_column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    .details_name {
+      @include flex_column;
+      width: 100%;
+      gap: fn.rem(39);
+
+      @include breakpoint-up('md') {
+        width: 75%;
+        gap: fn.rem(62);
+      }
+    }
+
+    hr {
+      height: 1px;
+      color: #d9d9d9;
+      background: #d9d9d9;
+      width: 100%;
+      margin-top: fn.rem(48);
+      margin-bottom: fn.rem(26);
+    }
+  }
+
+  .article-notification {
+    @include flex_column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    .notification-1 {
+      @include flex_row;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      width: 100%;
+
+      margin-top: fn.rem(18);
+      margin-bottom: fn.rem(12);
+
+      h6 {
+        color: colors.$text-dark;
+        font-weight: 700;
+        font-size: fn.rem(20);
+      }
+
+      p {
+        padding: 0;
+        color: #6f6f6f;
+        font-weight: 700;
+        margin-bottom: fn.rem(7);
+      }
+
+      .notification_head {
+        @include flex_column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        width: 48%;
+      }
+
+      .notification_assignment {
+        @include flex_column;
+
+        width: 48%;
+
+        .notification_assignment_settings {
+          @include flex_column;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    .settings_switch {
+      @include flex_align;
+      justify-content: space-between;
+
+      width: 100%;
+    }
+  }
+}
