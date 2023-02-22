@@ -35,6 +35,7 @@ import Portal from './pages/student/portal'
 import PotalResult from './pages/student/portal/PotalResult'
 import PortalMaterials from './pages/student/portal/PortalMaterials'
 import Activities from './pages/student/activities'
+import Notifications from './pages/parent/Notifications'
 
 import Settings from './pages/settings'
 import Details from './pages/settings/Details'
@@ -89,6 +90,7 @@ function App() {
           <Route path='/username/dashboard' element={<Dashboard />} />
           <Route path='/username/results' element={<Results />} />
           <Route path='/username/subjects' element={<Subjects />} />
+          <Route path='/username/notifications' element={<Notifications />} />
           <Route element={<Events />}>
             <Route path='/username/events' element={<NewEvents />} />
             <Route

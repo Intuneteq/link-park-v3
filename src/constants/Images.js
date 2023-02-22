@@ -12,8 +12,10 @@ import eventImage from '../assets/eventImage.png'
 import heroImage from '../assets/heroImage.svg'
 import authParent from '../assets/authParent.png'
 import authStudent from '../assets/authStudent.png'
+import notification from '../assets/notification.png'
 
 const Images = {
+  notification,
   authStudent,
   authParent,
   heroImage,

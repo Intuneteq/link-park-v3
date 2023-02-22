@@ -35,6 +35,12 @@ const DashboardLayout = () => {
       name: 'Upcoming Events',
       icon: <RiCalendar2Line />,
     },
+    {
+      id: 5,
+      path: `/username/notifications`,
+      name: 'Notifications',
+      icon: <RiCalendar2Line />,
+    },
   ]
   return (
     <main className={styles.layout}>
