@@ -5,6 +5,7 @@
 
 .container {
   width: 100%;
+  height: 100%;
   background: #ffffff;
 
   @include breakpoint-up('lg') {
@@ -27,8 +28,10 @@
 }
 
 .containerBody {
+  height: 100dvh;
   padding: fn.rem(29) fn.rem(20) fn.rem(73);
   @include breakpoint-up('lg') {
     padding: 2rem 2.6% 4rem 4.5%;
+    height: unset;
   }
 }

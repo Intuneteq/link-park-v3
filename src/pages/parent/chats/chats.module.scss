@@ -1,0 +1,33 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.chats {
+  @include flex_column;
+  @include flex_centered;
+  @include breakpoint-up('md') {
+    @include flex_row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.chat_list {
+  width: 100%;
+
+  @include flex_column;
+  gap: fn.rem(4);
+
+  @include breakpoint-up('md') {
+    width: 37%;
+  }
+}
+
+.messaging {
+  width: 100%;
+
+  @include breakpoint-up('md') {
+    width: 61%;
+  }
+}

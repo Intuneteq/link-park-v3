@@ -1,0 +1,50 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.card {
+  @include flex_row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: colors.$light;
+  width: 100%;
+  height: fn.rem(100);
+  padding: fn.rem(22) fn.rem(12);
+  gap: fn.rem(12);
+}
+
+.card_img {
+  width: fn.rem(56);
+  min-width: fn.rem(56);
+  height: fn.rem(56);
+  min-height: fn.rem(56);
+  border-radius: 50%;
+}
+
+.card_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card_text {
+  width: 80%;
+  span {
+    color: #cc0642;
+  }
+}
+
+.card_text > h6 {
+  font-size: fn.rem(20);
+  font-weight: 600;
+}
+
+.card_text > p {
+  width: 100%;
+  font-weight: 400;
+  font-size: fn.rem(16);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
