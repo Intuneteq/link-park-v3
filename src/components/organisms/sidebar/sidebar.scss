@@ -10,7 +10,14 @@
     width: 100%;
     height: 100vh;
     padding: 5% 0 10%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
     @include flex_column;
     @include flex_align;
     justify-content: flex-start;
@@ -29,6 +36,7 @@
 
       width: 100%;
       height: 100%;
+      gap: fn.rem(314);
 
       & > div {
         width: 100%;
