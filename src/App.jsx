@@ -28,6 +28,9 @@ import Events from './pages/parent/events'
 import NewEvents from './pages/parent/events/NewEvents'
 import PastEvents from './pages/parent/events/PastEvents'
 import AllEvents from './pages/parent/events/AllEvents'
+import Notifications from './pages/parent/Notifications'
+import Chats from './pages/parent/chats'
+
 import StudentDashboard from './pages/student/dashboard'
 import Library from './pages/student/library'
 import LibrarySlugs from './pages/student/library/LibrarySlugs'
@@ -35,8 +38,7 @@ import Portal from './pages/student/portal'
 import PotalResult from './pages/student/portal/PotalResult'
 import PortalMaterials from './pages/student/portal/PortalMaterials'
 import Activities from './pages/student/activities'
-import Notifications from './pages/parent/Notifications'
-import Chats from './pages/parent/chats'
+import StudentCalendar from './pages/student/calendar'
 
 import Settings from './pages/settings'
 import Details from './pages/settings/Details'
@@ -66,6 +68,7 @@ function App() {
           <Route path='/student/library/:slugs' element={<LibrarySlugs />} />
           <Route path='/student/portal' element={<Portal />} />
           <Route path='/student/portal/results' element={<PotalResult />} />
+          <Route path='/student/calendar' element={<StudentCalendar />} />
           <Route
             path='/student/portal/materials'
             element={<PortalMaterials />}
