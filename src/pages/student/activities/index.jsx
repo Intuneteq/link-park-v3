@@ -93,7 +93,7 @@ const Activities = () => {
           </div>
         </div>
         <div className={styles.activities_side}>
-          <LinkParkCalendar height='288.6px' showTitle />
+          <LinkParkCalendar height='288.6px' />
           <article className={styles.leaderBoard}>
             <h3>Leaderboard</h3>
             <div className={styles.leaderBoardActivities}>

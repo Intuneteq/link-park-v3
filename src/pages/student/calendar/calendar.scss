@@ -1,0 +1,166 @@
+@use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
+.student_calendar {
+  @include flex_align;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.calendar_body {
+  width: 60%;
+
+  .calendar__ {
+    width: 100%;
+    height: fn.rem(612);
+
+    .css-xelq0e-MuiPickerStaticWrapper-content {
+      width: 100%;
+
+      .css-epd502 {
+        width: 100%;
+        height: fn.rem(612);
+        max-height: unset;
+
+        .css-169iwlq-MuiCalendarPicker-root {
+          width: 100%;
+          height: fn.rem(612);
+          max-height: unset;
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .css-nk89i7-MuiPickersCalendarHeader-root {
+            padding: 0;
+            margin-bottom: fn.rem(74);
+
+            .css-10fao8b-MuiPickersCalendarHeader-labelContainer {
+              max-height: unset;
+            }
+
+            .css-dplwbx-MuiPickersCalendarHeader-label {
+              margin-right: fn.rem(6);
+              font-weight: 800;
+              font-size: fn.rem(42);
+              color: #131313;
+            }
+          }
+
+          .css-qklzlb-MuiDayPicker-header {
+            gap: fn.rem(42);
+            border-bottom: 2px solid #6e6d6d;
+            padding-bottom: fn.rem(11);
+
+            .css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
+              font-weight: 800;
+              font-size: fn.rem(25);
+              color: #131313;
+            }
+          }
+
+          .css-sf5t6v-PrivatePickersSlideTransition-root-MuiDayPicker-slideTransition {
+            min-height: fn.rem(500);
+          }
+
+          .css-ghi3gg-MuiDayPicker-weekContainer {
+            gap: fn.rem(42);
+            padding: fn.rem(21) 0;
+            border-bottom: 2px solid #d9d9d9;
+          }
+
+          .css-ghi3gg-MuiDayPicker-weekContainer:nth-last-child(1) {
+            border: none;
+          }
+
+          .css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+            font-size: fn.rem(25);
+            font-weight: 800;
+            color: colors.$text-dark;
+          }
+
+          .css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+            background-color: colors.$color-primary;
+            font-weight: 600;
+          }
+
+          .css-i4bv87-MuiSvgIcon-root {
+            width: fn.rem(40);
+            height: fn.rem(40);
+            color: colors.$header-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calendar_facts {
+  width: 35%;
+
+  h3 {
+    color: colors.$header-dark;
+    font-weight: 700;
+    font-size: fn.rem(24);
+    margin-bottom: fn.rem(20);
+  }
+
+  .factCard {
+    width: 100%;
+    height: fn.rem(466);
+    background: #fdfdff;
+    box-shadow: 0px 4px 20px rgba(191, 191, 191, 0.16);
+    border-radius: fn.rem(8);
+    padding: fn.rem(20) fn.rem(18);
+
+    div {
+      width: 100%;
+      height: fn.rem(239);
+      margin-bottom: fn.rem(52);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    h5 {
+      font-size: fn.rem(20);
+      font-weight: 700;
+      color: colors.$header-dark;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: fn.rem(16);
+      color: colors.$header-dark;
+      text-align: center;
+    }
+  }
+
+  .factBtns {
+    @include flex_centered;
+    gap: fn.rem(40);
+    margin-top: fn.rem(40);
+
+    button {
+      width: fn.rem(38);
+      height: fn.rem(30);
+      padding: fn.rem(3) fn.rem(7);
+      border-radius: fn.rem(4);
+      background: #8a70d6;
+      cursor: pointer;
+
+      svg {
+        width: fn.rem(24);
+        height: fn.rem(24);
+        color: colors.$light;
+      }
+    }
+  }
+}

@@ -9,15 +9,15 @@ import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker'
 
 import './calendar.scss'
 
-const LinkParkCalendar = ({ showTitle, height }) => {
+const LinkParkCalendar = ({ showTitle, height, className }) => {
   const [value, setValue] = React.useState(dayjs(Date.now()))
   return (
     <div className='dashboard-calender'>
-      {showTitle ? '' : <h3>Calender</h3>}
+      {!showTitle ? '' : <h3>Calender</h3>}
       <div style={{ height }}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <StaticDatePicker
-            className='calendar__'
+            className={className ? className : 'calendar___'}
             displayStaticWrapperAs='desktop'
             openTo='day'
             value={value}
@@ -33,8 +33,9 @@ const LinkParkCalendar = ({ showTitle, height }) => {
 }
 
 LinkParkCalendar.propTypes = {
-  showTitle: PropTypes.any,
+  showTitle: PropTypes.bool,
   height: PropTypes.any,
+  className: PropTypes.any,
 }
 
 export default LinkParkCalendar

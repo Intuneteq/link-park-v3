@@ -1,8 +1,11 @@
 @use '../../../scss/global/colors' as colors;
+@use '../../../scss/utils/functions' as fn;
+@import '../../../scss/utils/breakpoints';
+@import '../../../scss/utils/mixins';
+
 .dashboard-calender {
   width: 100%;
   margin-bottom: 1.5rem;
-  // border: 1px solid red;
 
   h3 {
     font-size: 1.5rem;
@@ -11,31 +14,92 @@
     margin-bottom: 2rem;
   }
 
-  .calendar__ {
-    border: 1px solid colors.$form-dark;
-    height: 15.688rem;
+  .calendar___ {
+    height: fn.rem(251);
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: fn.rem(15) fn.rem(15) 0;
+
+    background: #ffffff;
+    box-shadow: 0px 2px fn.rem(20) rgba(174, 173, 173, 0.16);
+    border-radius: fn.rem(8);
+
+    .css-1yt7806-MuiDayPicker-slideTransition {
+      min-height: 100%;
+      height: 100%;
+    }
+
+    .css-ghi3gg-MuiDayPicker-weekContainer {
+      margin: 0;
+      justify-content: space-between;
+
+      .css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+        width: fn.rem(35);
+        height: fn.rem(35);
+        background-color: colors.$color-primary;
+
+        @include flex_centered;
+      }
+
+      .css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+        width: fn.rem(35);
+        height: fn.rem(35);
+        color: colors.$text-dark;
+        font-size: fn.rem(12);
+        font-weight: 700;
+      }
+    }
+
+    .css-10fao8b-MuiPickersCalendarHeader-labelContainer {
+      color: colors.$text-dark;
+      font-size: fn.rem(20);
+      font-weight: 600;
+    }
+
+    .css-9reuh9-MuiPickersArrowSwitcher-root {
+      gap: fn.rem(5);
+      padding: 0;
+
+      button {
+        height: fn.rem(20);
+        width: fn.rem(20);
+      }
+      svg {
+        color: colors.$header-dark;
+        padding: 0;
+      }
+    }
+
+    .css-qklzlb-MuiDayPicker-header {
+      justify-content: space-between;
+      padding: 0;
+
+      .css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
+        font-weight: 700;
+        font-size: fn.rem(12);
+        color: #131313;
+        height: unset;
+        margin: unset;
+        padding: 0;
+      }
+    }
+
+    .css-xb7uwb-MuiPickersArrowSwitcher-spacer {
+      width: unset;
+    }
 
     .css-xelq0e-MuiPickerStaticWrapper-content {
       width: 100%;
-      // background: red;
       min-width: unset;
       height: 100%;
       min-height: unset;
       margin: 0;
       padding: 0;
-      // border: 1px solid red;
 
       .css-epd502 {
         width: 100%;
-        // border: 1px solid blue;
         height: 15.688rem;
         max-height: 15.688rem;
-
-
-        // max-height: unset;
 
         .css-169iwlq-MuiCalendarPicker-root {
           width: 100%;
@@ -43,12 +107,15 @@
           max-height: unset;
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
-      
+
           &::-webkit-scrollbar {
             display: none;
           }
-          // .css-nk89i7-MuiPickersCalendarHeader-root {
-          // }
+          .css-nk89i7-MuiPickersCalendarHeader-root {
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: fn.rem(5);
+          }
         }
       }
     }

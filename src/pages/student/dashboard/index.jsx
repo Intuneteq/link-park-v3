@@ -27,7 +27,7 @@ const StudentDashboard = () => {
           </div>
         </article>
         <article className={styles.studentDashboard__side}>
-          <LinkParkCalendar />
+          <LinkParkCalendar showTitle />
           <CalendarEvents events={events} />
         </article>
       </section>
