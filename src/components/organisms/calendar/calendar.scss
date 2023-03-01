@@ -1,6 +1,8 @@
+@use '../../../scss/global/colors' as colors;
 .dashboard-calender {
   width: 100%;
   margin-bottom: 1.5rem;
+  // border: 1px solid red;
 
   h3 {
     font-size: 1.5rem;
@@ -9,9 +11,46 @@
     margin-bottom: 2rem;
   }
 
-  .calendar {
-    width: 100%;
+  .calendar__ {
+    border: 1px solid colors.$form-dark;
     height: 15.688rem;
-    border: 1px solid red;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .css-xelq0e-MuiPickerStaticWrapper-content {
+      width: 100%;
+      // background: red;
+      min-width: unset;
+      height: 100%;
+      min-height: unset;
+      margin: 0;
+      padding: 0;
+      // border: 1px solid red;
+
+      .css-epd502 {
+        width: 100%;
+        // border: 1px solid blue;
+        height: 15.688rem;
+        max-height: 15.688rem;
+
+
+        // max-height: unset;
+
+        .css-169iwlq-MuiCalendarPicker-root {
+          width: 100%;
+          height: 15.688rem;
+          max-height: unset;
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+      
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          // .css-nk89i7-MuiPickersCalendarHeader-root {
+          // }
+        }
+      }
+    }
   }
 }
