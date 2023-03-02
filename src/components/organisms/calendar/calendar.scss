@@ -15,7 +15,7 @@
   }
 
   .calendar___ {
-    height: fn.rem(251);
+    height: 100%;
     width: 100%;
     margin: 0;
     padding: fn.rem(15) fn.rem(15) 0;
@@ -73,6 +73,8 @@
     .css-qklzlb-MuiDayPicker-header {
       justify-content: space-between;
       padding: 0;
+      margin-top: fn.rem(10);
+      margin-bottom: fn.rem(5);
 
       .css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
         font-weight: 700;

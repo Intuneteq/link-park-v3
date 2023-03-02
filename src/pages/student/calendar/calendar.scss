@@ -4,14 +4,26 @@
 @import '../../../scss/utils/mixins';
 
 .student_calendar {
-  @include flex_align;
-  justify-content: space-between;
+  @include flex_column;
+  @include flex_centered;
+  row-gap: fn.rem(34);
 
   width: 100%;
+
+  @include breakpoint-up('lg') {
+    @include flex_row;
+    @include flex_align;
+    justify-content: space-between;
+  }
 }
 
 .calendar_body {
-  width: 60%;
+  width: 100% !important;
+  max-width: unset;
+
+  @include breakpoint-up('lg') {
+    width: 60%;
+  }
 
   .calendar__ {
     width: 100%;
@@ -100,7 +112,11 @@
 }
 
 .calendar_facts {
-  width: 35%;
+  width: 100%;
+
+  @include breakpoint-up('lg') {
+    width: 35%;
+  }
 
   h3 {
     color: colors.$header-dark;
