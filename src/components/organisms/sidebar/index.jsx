@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { TbLogout } from 'react-icons/tb'
 import { AiOutlineSetting } from 'react-icons/ai'
 
@@ -11,9 +11,9 @@ import './sidebar.scss'
 const Sidebar = ({ sideLinks }) => {
   return (
     <nav className='sidebar'>
-      <div className='sidebar__logo img-size'>
+      <Link to={'/'} className='sidebar__logo img-size'>
         <img src={Images.logo} alt='logo' />
-      </div>
+      </Link>
 
       <div className='sidebar__links'>
         <div>
