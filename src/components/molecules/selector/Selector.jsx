@@ -14,6 +14,9 @@ const Selector = ({
   selectWidth,
 }) => {
   const [toggle, setToggle] = useState(false)
+  const handleClick = function () {
+    setToggle(!toggle)
+  }
   return (
     <div style={{ width }} className={styles.selector}>
       {title && <p className='p-text'>{title}</p>}
@@ -28,7 +31,7 @@ const Selector = ({
       >
         <button
           type='button'
-          onClick={() => setToggle(!toggle)}
+          onClick={(e) => handleClick(e)}
           className={styles.selectBtn}
         >
           <span className={styles.sBtnText}>{options[0]}</span>
