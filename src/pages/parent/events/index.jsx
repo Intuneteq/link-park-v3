@@ -14,9 +14,10 @@ const Events = () => {
         <div className={styles.events__body_head}>
           {eventLink.map((item, index) => (
             <NavLink
+              end
               key={index}
               className={styles.event_links}
-              activeclassname={styles.active_class}
+              activeclassname={styles.active}
               to={item.path}
             >
               {item.name}

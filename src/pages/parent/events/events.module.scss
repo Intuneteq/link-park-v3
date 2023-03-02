@@ -21,8 +21,7 @@
       transition: 0.3s all ease-in;
     }
     
-    .active_class {
-      border: 1px solid red;
+    .active {
       color: var(--black-color);
       font-weight: 700;
       position: relative;

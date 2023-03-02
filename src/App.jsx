@@ -74,17 +74,11 @@ function App() {
             element={<PortalMaterials />}
           />
           <Route path='/student/activities' element={<Activities />} />
-          <Route element={<Settings />}>
-            <Route path='/account/settings' element={<Details />} />
-            <Route path='/account/settings/emails' element={<ChangeEmail />} />
-            <Route
-              path='/account/settings/passwords'
-              element={<ChangePasswords />}
-            />
-            <Route
-              path='/account/settings/notifications'
-              element={<NotificationsSettingsx />}
-            />
+          <Route path='/account/settings' element={<Settings />}>
+            <Route index element={<Details />} />
+            <Route path='emails' element={<ChangeEmail />} />
+            <Route path='passwords' element={<ChangePasswords />} />
+            <Route path='notifications' element={<NotificationsSettingsx />} />
           </Route>
           <Route exact path='*' element={<ErrPage />} />
         </Route>
@@ -96,25 +90,16 @@ function App() {
           <Route path='/username/subjects' element={<Subjects />} />
           <Route path='/username/notifications' element={<Notifications />} />
           <Route path='/username/chats' element={<Chats />} />
-          <Route element={<Events />}>
-            <Route path='/username/events' element={<NewEvents />} />
-            <Route
-              path='/username/events/past-events'
-              element={<PastEvents />}
-            />
-            <Route path='/username/events/all' element={<AllEvents />} />
+          <Route path='/username/events' element={<Events />}>
+            <Route exact index element={<NewEvents />} />
+            <Route exact path='past-events' element={<PastEvents />} />
+            <Route exact path='all' element={<AllEvents />} />
           </Route>
-          <Route element={<Settings />}>
-            <Route path='/account/settings' element={<Details />} />
-            <Route path='/account/settings/emails' element={<ChangeEmail />} />
-            <Route
-              path='/account/settings/passwords'
-              element={<ChangePasswords />}
-            />
-            <Route
-              path='/account/settings/notifications'
-              element={<NotificationsSettingsx />}
-            />
+          <Route path='/account/settings' element={<Settings />}>
+            <Route index element={<Details />} />
+            <Route path='emails' element={<ChangeEmail />} />
+            <Route path='passwords' element={<ChangePasswords />} />
+            <Route path='notifications' element={<NotificationsSettingsx />} />
           </Route>
           <Route exact path='*' element={<ErrPage />} />
         </Route>
