@@ -26,12 +26,11 @@ const Home = () => {
           <p>{heroSection.text}</p>
           <div className='app__flex'>
             <Buttons
-              type='button'
               text='Get Started'
               height={3.875}
               width={10.75}
               classType={'tertiary'}
-              onClick={() => navigate('/user')}
+              to={'/user'}
             />
             <button
               type='button'
@@ -117,10 +116,9 @@ const Home = () => {
         <Buttons
           width={17.25}
           height={3.875}
-          type='button'
           text='Get Started'
           classType='primary'
-          onClick={() => navigate('/user')}
+          to={'/user'}
         />
       </section>
       <section className='home__walk'>
@@ -139,7 +137,7 @@ const Home = () => {
             classType='secondary'
             width={10.4}
             height={3.875}
-            onClick={() => navigate('/about')}
+            to={'/about'}
           />
         </article>
         <div className='dot2 img-size'>

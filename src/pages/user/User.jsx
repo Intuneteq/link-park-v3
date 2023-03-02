@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import 'animate.css'
 
+import { Buttons } from '../../components/atoms'
 import { selectParent, selectStudent } from './slices/userSlice'
 import { USER_CONTENTS } from './contents'
 import './UserSelect.scss'
 
 const User = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const { header, subHeader, users } = USER_CONTENTS
   const [animate, setAnimate] = useState({
@@ -52,13 +51,13 @@ const User = () => {
           </button>
         ))}
       </section>
-      <button
-        type='button'
-        onClick={() => navigate('/signin')}
-        className='btn-primary'
-      >
-        Next
-      </button>
+      <Buttons
+        text='Next'
+        height={3.875}
+        width={10.75}
+        classType={'primary'}
+        to={'/signin'}
+      />
     </main>
   )
 }

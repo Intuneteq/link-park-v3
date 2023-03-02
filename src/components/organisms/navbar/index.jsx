@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Navbar, Button } from '@nextui-org/react'
 
 import Images from '../../../constants/Images'
@@ -14,13 +14,15 @@ const NavBar = () => {
   return (
     <>
       <nav className='nav'>
-        <div className='img-size nav__logo'>
+        <Link to={'/'} className='img-size nav__logo'>
           <img src={Images.logo} alt='logo' />
-        </div>
+        </Link>
         <ul className='nav__links'>
           {navLinks.map((item, index) => (
             <li key={index}>
-              <Link to={item.path}>{item.name}</Link>
+              <NavLink activeClassName='active' to={item.path}>
+                {item.name}
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -9,6 +9,14 @@
   padding: fn.rem(32) 0 fn.rem(100);
   background: colors.$foot-bg;
 
+  a {
+    transition: 0.4s;
+    &:hover {
+      color: colors.$color-primary;
+      font-weight: 600;
+    }
+  }
+
   .footer_logo {
     margin-bottom: fn.rem(85.53);
   }

@@ -1,11 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
+import { Buttons } from '../../components/atoms'
 import { Testimonials, Footer } from '../../components/organisms'
 import './parents.scss'
 
 const Parents = () => {
-  const navigate = useNavigate()
   return (
     <main className='parents'>
       <section className='parents__section1 app__flex-2'>
@@ -18,13 +17,13 @@ const Parents = () => {
             skip out on the assigned reading or assignments. View both your
             personal and academic work in one location.
           </p>
-          <button
-            type='button'
-            onClick={() => navigate('/user')}
-            className='btn-primary'
-          >
-            Get Started
-          </button>
+          <Buttons
+            text='Get Started'
+            height={3.875}
+            width={10.75}
+            classType={'primary'}
+            to={'/user'}
+          />
         </article>
         <div className='parents__section1-div img-size'>
           <img
@@ -71,13 +70,13 @@ const Parents = () => {
           Receive daily evaluations on students&lsquo; performance in order to
           identify shortcomings and improve the appropriate areas.
         </p>
-        <button
-          type='button'
-          onClick={() => navigate('/user')}
-          className='btn-tertiary'
-        >
-          Get Started
-        </button>
+        <Buttons
+          text='Get Started'
+          height={3.875}
+          width={10.75}
+          classType={'tertiary'}
+          to={'/user'}
+        />
       </section>
       <Footer />
     </main>

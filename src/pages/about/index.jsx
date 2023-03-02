@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import './about.scss'
 import { Testimonials, Footer } from '../../components/organisms'
+import { Buttons } from '../../components/atoms'
 
 const About = () => {
   const navigate = useNavigate()
@@ -23,14 +24,14 @@ const About = () => {
                 students.
               </p>
             </div>
-            <button
-              onClick={() => navigate('/user')}
+            <Buttons
               type='button'
-              className='btn-primary'
-            >
-              {' '}
-              Get Started{' '}
-            </button>
+              text='Get Started'
+              height={3.875}
+              width={10.75}
+              classType={'primary'}
+              to={'/user'}
+            />
           </div>
           <div className='aboutUs__img'>
             <img
@@ -179,7 +180,15 @@ const About = () => {
         </p>
         <div className='newsletter__input app__flex'>
           <input type='text' placeholder=' Enter your email address' />{' '}
-          <button className='btn-primary'>Subscribe</button>
+          <div>
+            <Buttons
+              text='Subscribe'
+              height={3}
+              width={8}
+              classType={'primary'}
+              to={'/user'}
+            />
+          </div>
         </div>
       </section>
       <Footer />

@@ -27,7 +27,11 @@
   justify-content: space-between;
   gap: 2.5rem;
 
+  
   li {
+    .active {
+      font-weight: 700;
+    }
     a {
       color: #626262;
       font-size: fn.rem(18);

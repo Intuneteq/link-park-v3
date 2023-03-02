@@ -52,6 +52,12 @@
 
         font-size: 1.25rem;
         font-weight: 600;
+        transition: 0.4s;
+
+        &:hover {
+          background: colors.$light;
+          color: colors.$color-primary;
+        }
       }
     }
   }

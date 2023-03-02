@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { useGetScreenSize } from '../../hooks/useMediaQuery'
 import styles from './atoms.module.scss'
+import { Link } from 'react-router-dom'
 
 const Buttons = ({
   width,
@@ -14,6 +15,7 @@ const Buttons = ({
   type,
   fontWeight,
   fontSize,
+  to,
 }) => {
   const { isMobile } = useGetScreenSize()
   const toggleClassName = () => {
@@ -25,22 +27,45 @@ const Buttons = ({
       return styles.btnTertiary
     }
   }
-  return (
-    <button
-      onClick={onClick}
-      type={type}
-      className={toggleClassName()}
-      style={{
-        width: width ? (isMobile ? '9rem' : `${width}rem`) : '100%',
-        height: height ? (isMobile ? '3rem' : `${height}rem`) : '100%',
-        color,
-        fontSize: fontSize ? `${fontSize}rem` : '1rem',
-        fontWeight,
-      }}
-    >
-      {text}
-    </button>
-  )
+
+  const displayButton = function () {
+    if (to) {
+      return (
+        <Link
+          to={to}
+          className={toggleClassName()}
+          style={{
+            width: width ? (isMobile ? '9rem' : `${width}rem`) : '100%',
+            height: height ? (isMobile ? '3rem' : `${height}rem`) : '100%',
+            color,
+            fontSize: fontSize ? `${fontSize}rem` : '1rem',
+            fontWeight,
+          }}
+        >
+          {text}
+        </Link>
+      )
+    } else {
+      return (
+        <button
+          onClick={onClick}
+          type={type}
+          className={toggleClassName()}
+          style={{
+            width: width ? (isMobile ? '9rem' : `${width}rem`) : '100%',
+            height: height ? (isMobile ? '3rem' : `${height}rem`) : '100%',
+            color,
+            fontSize: fontSize ? `${fontSize}rem` : '1rem',
+            fontWeight,
+          }}
+        >
+          {text}
+        </button>
+      )
+    }
+  }
+
+  return displayButton()
 }
 
 Buttons.propTypes = {
@@ -53,6 +78,7 @@ Buttons.propTypes = {
   type: PropTypes.string.isRequired,
   fontWeight: PropTypes.number,
   fontSize: PropTypes.string,
+  to: PropTypes.string,
 }
 
 export default Buttons

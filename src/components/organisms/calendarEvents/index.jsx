@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './calendarevents.scss'
+import { Buttons } from '../../atoms'
 
 const CalendarEvents = ({ events }) => {
   return (
@@ -23,13 +24,19 @@ const CalendarEvents = ({ events }) => {
         </div>
       ))}
       <div className='app__flex'>
-        <button className='btn-secondary'>View all</button>
+        <Buttons
+          width={8.938}
+          height={2.5}
+          classType={'secondary'}
+          type={'button'}
+          text={'View all'}
+        />
       </div>
     </div>
   )
 }
 CalendarEvents.propTypes = {
-  events: PropTypes.any,
+  events: PropTypes.array,
 }
 
 export default CalendarEvents

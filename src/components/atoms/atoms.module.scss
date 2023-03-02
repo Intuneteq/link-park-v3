@@ -13,9 +13,11 @@
   font-size: fn.rem(20);
   font-weight: 600;
   cursor: pointer;
+  transition: 0.4s;
 
   &:hover {
-    background: #353aa4;
+    background: var(--white-color);
+    color: colors.$color-primary;
   }
 
   &:focus {
@@ -33,6 +35,17 @@
   font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
+
+  transition: 0.4s;
+
+  &:hover {
+    color:  var(--white-color);
+    background: colors.$color-primary;
+  }
+
+  &:focus {
+    border: 1px solid colors.$color-primary;
+  }
 }
 
 .btnTertiary {
@@ -44,6 +57,18 @@
   font-weight: 600;
   color: #121b98;
   cursor: pointer;
+  transition: 0.4s;
+  border: 1px solid colors.$light;
+
+  &:hover {
+    background: colors.$color-primary;
+    color: colors.$light;
+  }
+
+  &:focus {
+    border: 1px solid colors.$light;
+  }
+
 }
 
 .paginationBttns {

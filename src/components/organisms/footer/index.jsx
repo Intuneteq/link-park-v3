@@ -47,9 +47,9 @@ const Footer = () => {
   return (
     <div>
       <footer className={styles.footer}>
-        <div className={['img-size', styles.footer_logo].join(' ')}>
+        <Link to={'/'} className={['img-size', styles.footer_logo].join(' ')}>
           <img src={Images.logo} alt='logo' />
-        </div>
+        </Link>
         <div className={styles.footerLinks}>
           <div className={styles.quickLinks}>
             <h3>Quick Links</h3>

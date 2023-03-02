@@ -37,9 +37,9 @@ const Dashboard = () => {
                   type={'button'}
                   text={'View All'}
                   classType={'tertiary'}
-                  width={4}
-                  height={1.25}
-                  color={'#474646'}
+                  width={8}
+                  height={2.5}
+                  // color={'#474646'}
                 />
               ) : (
                 ''
