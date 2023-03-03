@@ -32,7 +32,7 @@
     // border: 1px solid red;
 
     .css-1brzq0m{
-      border: 1px solid red !important;
+      all: unset !important;
   }
 
     .css-4l7j15 {
@@ -46,7 +46,7 @@
       .css-epd502 {
         width: 100%;
         height: fn.rem(612) !important;
-        max-height: unset;
+        max-height: unset !important;
         // border: 1px solid blue;
 
         .css-169iwlq-MuiCalendarPicker-root {
@@ -65,7 +65,8 @@
             margin-bottom: fn.rem(74);
 
             .css-10fao8b-MuiPickersCalendarHeader-labelContainer {
-              max-height: unset;
+              max-height: unset !important;
+              border: 1px solid green !important;
             }
 
             .css-dplwbx-MuiPickersCalendarHeader-label {
@@ -73,6 +74,7 @@
               font-weight: 800;
               font-size: fn.rem(42);
               color: #131313;
+              border: 1px solid blue !important;
             }
           }
 
@@ -80,6 +82,7 @@
             gap: fn.rem(42);
             border-bottom: 2px solid #6e6d6d;
             padding-bottom: fn.rem(11);
+            border: 1px solid red !important;
 
             .css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
               font-weight: 800;
@@ -106,6 +109,7 @@
             font-size: fn.rem(25);
             font-weight: 800;
             color: colors.$text-dark;
+            border: 1px solid red !important;
           }
 
           .css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
