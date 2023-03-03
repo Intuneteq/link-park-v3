@@ -7,39 +7,40 @@
   @include flex_column;
   @include flex_centered;
   row-gap: fn.rem(34);
+  padding-bottom: fn.rem(30);
 
   width: 100%;
 
   @include breakpoint-up('lg') {
     @include flex_row;
-    @include flex_align;
+    align-items: flex-start;
     justify-content: space-between;
   }
 }
 
 .calendar_body {
-  width: 100% !important;
+  width: 100%;
   max-width: unset;
 
   @include breakpoint-up('lg') {
     width: 60%;
   }
 
-  .calendar__ {
+  .student_calendar-calendar {
     width: 100%;
-    height: fn.rem(612);
+    height: fn.rem(612) !important;
 
     .css-xelq0e-MuiPickerStaticWrapper-content {
-      width: 100%;
+      width: 100% !important;
 
       .css-epd502 {
         width: 100%;
-        height: fn.rem(612);
+        height: fn.rem(612) !important;
         max-height: unset;
 
         .css-169iwlq-MuiCalendarPicker-root {
           width: 100%;
-          height: fn.rem(612);
+          height: fn.rem(612) !important;
           max-height: unset;
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
