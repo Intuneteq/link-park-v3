@@ -17,7 +17,7 @@ const LinkParkCalendar = ({ showTitle, height, className }) => {
       <div style={{ height }}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <StaticDatePicker
-            className={className ? className : 'calendar___'}
+            className={'calendar___'}
             displayStaticWrapperAs='desktop'
             openTo='day'
             value={value}

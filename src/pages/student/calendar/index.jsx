@@ -13,9 +13,7 @@ const StudentCalendar = () => {
     <Container name={'Calendar'}>
       <section className='student_calendar'>
         <div className='calendar_body'>
-          <LinkParkCalendar
-            className={!isMobile && 'student_calendar-calendar'}
-          />
+          <LinkParkCalendar className={'student_calendar-calendar'} />
         </div>
         <div className='calendar_facts'>
           <h3>Fun Fact On This Day</h3>
