@@ -38,6 +38,7 @@
         width: 100%;
         height: fn.rem(612) !important;
         max-height: unset;
+        border: 1px solid blue;
 
         .css-169iwlq-MuiCalendarPicker-root {
           width: 100%;
@@ -45,6 +46,7 @@
           max-height: unset;
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
+          border: 1px solid green;
 
           &::-webkit-scrollbar {
             display: none;
