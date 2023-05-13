@@ -1,14 +1,12 @@
 import React from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
-import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { LinkParkCalendar } from '../../../components/organisms'
 import { Container } from '../../../components/templates'
 import { Images } from '../../../constants'
 import './calendar.scss'
 
 const StudentCalendar = () => {
-  const { isMobile } = useGetScreenSize()
   return (
     <Container name={'Calendar'}>
       <section className='student_calendar'>

@@ -9,7 +9,7 @@ import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker'
 
 import './calendar.scss'
 
-const LinkParkCalendar = ({ showTitle, height, className }) => {
+const LinkParkCalendar = ({ showTitle, height }) => {
   const [value, setValue] = React.useState(dayjs(Date.now()))
   return (
     <div className='dashboard-calender'>
