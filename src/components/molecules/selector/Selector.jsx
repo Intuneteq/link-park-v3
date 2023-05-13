@@ -14,9 +14,16 @@ const Selector = ({
   selectWidth,
 }) => {
   const [toggle, setToggle] = useState(false)
+  const [school, setSchool] = useState('')
+
   const handleClick = function () {
     setToggle(!toggle)
   }
+
+  const selectSchool = function (item) {
+    setSchool(item.name)
+  }
+
   return (
     <div style={{ width }} className={styles.selector}>
       {title && <p className='p-text'>{title}</p>}
@@ -34,16 +41,21 @@ const Selector = ({
           onClick={(e) => handleClick(e)}
           className={styles.selectBtn}
         >
-          <span className={styles.sBtnText}>{options[0]}</span>
+          <span className={styles.sBtnText}>{school[0]?.name}</span>
           <GrDown className={toggle ? styles.rotateUp : ''} />
         </button>
 
         {toggle && (
           <ul style={{ width: selectWidth }} className={styles.options}>
-            {options.map((item, index) => (
-              <li key={index} className={styles.option}>
-                <span className={styles.optionText}>{item}</span>
-              </li>
+            {options.map((item) => (
+              <button
+                onClick={() => selectSchool(item)}
+                onKeyDown={() => selectSchool(item)}
+                key={item.id}
+                className={styles.option}
+              >
+                <span className={styles.optionText}>{item.name}</span>
+              </button>
             ))}
           </ul>
         )}

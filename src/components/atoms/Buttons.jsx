@@ -51,6 +51,7 @@ const Buttons = ({
           onClick={onClick}
           type={type}
           className={toggleClassName()}
+          aria-label='button'
           style={{
             width: width ? (isMobile ? '9rem' : `${width}rem`) : '100%',
             height: height ? (isMobile ? '3rem' : `${height}rem`) : '100%',
@@ -75,7 +76,7 @@ Buttons.propTypes = {
   height: PropTypes.number,
   color: PropTypes.string,
   onClick: PropTypes.func,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   fontWeight: PropTypes.number,
   fontSize: PropTypes.string,
   to: PropTypes.string,
