@@ -11,6 +11,7 @@ import {
   getSchoolsStatus,
   getSchoolsError,
   fetchSchools,
+  // registerUser,
 } from './services'
 // import { useGetAllSchoolsQuery } from '../../api/apiSlice'
 
@@ -35,7 +36,8 @@ const SignUp = () => {
     if (parent) {
       parentInputs.forEach((input) => {
         if (input.id === 6) {
-          input.options = schools
+          // If Fetch all schools return error
+          input.options = error ? [] : schools
         }
       })
       return parentInputs
@@ -46,6 +48,8 @@ const SignUp = () => {
 
   const handleSubmit = () => {
     if (parent) {
+      // Dispatch register
+
       navigate('/username/dashboard')
     } else if (student) {
       navigate('/student/dashboard')

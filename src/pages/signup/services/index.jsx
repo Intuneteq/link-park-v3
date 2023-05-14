@@ -19,10 +19,23 @@ export const fetchSchools = createAsyncThunk(
   }
 )
 
+export const registerUser = createAsyncThunk('user/register', async (data) => {
+  try {
+    const response = await axios.post(`${base_URL}/auth`, data)
+    return response
+  } catch (error) {
+    console.error(error)
+    return error.message
+  }
+})
+
 const initialState = {
   schools: [],
+  user: {},
   status: 'idle', // 'idle', | 'loading' | 'succeeded' | 'failed'
   error: null,
+  registrationError: null,
+  registrationStatus: 'idle',
 }
 
 const signUpSlice = createSlice({
@@ -31,7 +44,7 @@ const signUpSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchSchools.pending, (state, action) => {
+      .addCase(fetchSchools.pending, (state) => {
         state.status = 'loading'
       })
       .addCase(fetchSchools.fulfilled, (state, action) => {
@@ -40,6 +53,14 @@ const signUpSlice = createSlice({
       })
       .addCase(fetchSchools.rejected, (state, action) => {
         state.status = 'failed'
+        state.error = action.error.message
+      })
+      .addCase(registerUser.fulfilled, (state, action) => {
+        console.log('in redux', action.payload)
+        state.user = action.payload
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.registrationStatus = 'failed'
         state.error = action.error.message
       })
   },
