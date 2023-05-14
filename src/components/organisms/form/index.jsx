@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
@@ -11,12 +12,18 @@ import styles from './form.module.scss'
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
 
+  const {
+    register,
+    handleSubmit: hookSubmit,
+    formState: { errors },
+  } = useForm()
+
   return (
     <section className={styles.formBox}>
       <h2>{title}</h2>
       <p>Please enter your details to get started</p>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={hookSubmit(handleSubmit)}>
         {arr.map((item, index) => (
           <div
             className={item.half ? styles.formHolderHalf : styles.formHolder}
@@ -33,7 +40,12 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                   padding={'0.875rem 1.25rem'}
                 />
               ) : (
-                <input type={item.type} placeholder={item.text} />
+                <input
+                  type={item.type}
+                  placeholder={item.text}
+                  aria-describedby={`${item.label}HelpBlock`}
+                  {...register(item.label)}
+                />
               )}
               {item.icon && item.icon}
             </div>

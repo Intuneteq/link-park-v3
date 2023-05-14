@@ -34,6 +34,7 @@ const SignUp = () => {
 
   function showInput() {
     if (parent) {
+      // console.log()
       parentInputs.forEach((input) => {
         if (input.id === 6) {
           // If Fetch all schools return error
@@ -46,7 +47,8 @@ const SignUp = () => {
     }
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (data) => {
+    console.log(data)
     if (parent) {
       // Dispatch register
 
