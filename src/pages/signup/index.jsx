@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-import { parentStatus, studentStatus } from '../user/slices/userSlice'
 import {
   selectAllSchools,
   getSchoolsStatus,
@@ -18,13 +17,17 @@ import {
 const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [user, setUser] = useState('')
+
+  useEffect(() => {
+    const local = localStorage.getItem('user')
+    setUser(local)
+  }, [])
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
   const schools = useSelector(selectAllSchools)
   const schoolsStatus = useSelector(getSchoolsStatus)
   const error = useSelector(getSchoolsError)
-  const parent = useSelector(parentStatus)
-  const student = useSelector(studentStatus)
 
   useEffect(() => {
     if (schoolsStatus === 'idle') {
@@ -33,7 +36,7 @@ const SignUp = () => {
   }, [schoolsStatus, dispatch])
 
   function showInput() {
-    if (parent) {
+    if (user === 'parent') {
       // console.log()
       parentInputs.forEach((input) => {
         if (input.id === 6) {
@@ -49,11 +52,11 @@ const SignUp = () => {
 
   const handleSubmit = (data) => {
     console.log(data)
-    if (parent) {
+    if (user === 'parent') {
       // Dispatch register
 
       navigate('/username/dashboard')
-    } else if (student) {
+    } else if (user === 'student') {
       navigate('/student/dashboard')
     } else {
       navigate('/')

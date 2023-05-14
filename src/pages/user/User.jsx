@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import 'animate.css'
 
 import { Buttons } from '../../components/atoms'
-import { selectParent, selectStudent } from './slices/userSlice'
+// import { selectParent, selectStudent } from './slices/userSlice'
 import { USER_CONTENTS } from './contents'
 import './UserSelect.scss'
 
 const User = () => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const { header, subHeader, users } = USER_CONTENTS
   const [animate, setAnimate] = useState({
     activeUser: null,
@@ -25,9 +25,9 @@ const User = () => {
   const handleUserClick = (index, user) => {
     setAnimate({ ...animate, activeUser: index })
     if (user.toLowerCase() === 'parent') {
-      dispatch(selectParent(true))
+      localStorage.setItem('user', 'parent')
     } else if (user.toLowerCase() === 'student') {
-      dispatch(selectStudent(true))
+      localStorage.setItem('user', 'student')
     }
   }
 

@@ -14,7 +14,7 @@ const Selector = ({
   selectWidth,
 }) => {
   const [toggle, setToggle] = useState(false)
-  const [school, setSchool] = useState(options[0].name)
+  const [school, setSchool] = useState(options[0].name ?? 'null')
 
   const handleClick = function () {
     setToggle(!toggle)

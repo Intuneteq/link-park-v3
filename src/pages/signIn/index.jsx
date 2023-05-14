@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 import { SIGNIN_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-import { parentStatus, studentStatus } from '../user/slices/userSlice'
+// import { parentStatus, studentStatus } from '../user/slices/userSlice'
 
 const SignIn = () => {
   const { formInputs, footerText } = SIGNIN_CONTENTS
-  const parent = useSelector(parentStatus)
-  const student = useSelector(studentStatus)
+  const [user, setUser] = useState('')
   const navigate = useNavigate()
 
+  useEffect(() => {
+    const local = localStorage.getItem('user')
+    console.log('i am local', local)
+    setUser(local)
+  }, [])
+
   const handleSubmit = () => {
-    if (parent) {
+    if (user === 'parent') {
       navigate('/username/dashboard')
-    } else if (student) {
+    } else if (user === 'student') {
       navigate('/student/dashboard')
     } else {
       navigate('/')
@@ -24,7 +29,7 @@ const SignIn = () => {
   }
 
   const showHeadText = () => {
-    if (parent) {
+    if (user === 'parent') {
       return 'Welcome Back Mr/Mrs'
     } else {
       return 'Welcome Back to school'

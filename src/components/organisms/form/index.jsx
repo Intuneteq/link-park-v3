@@ -12,11 +12,7 @@ import styles from './form.module.scss'
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
 
-  const {
-    register,
-    handleSubmit: hookSubmit,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit: hookSubmit } = useForm()
 
   return (
     <section className={styles.formBox}>
@@ -29,7 +25,9 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
             className={item.half ? styles.formHolderHalf : styles.formHolder}
             key={index}
           >
-            <label htmlFor={item.label}>{item.text}</label>
+            <label aria-label={item.label} htmlFor={item.label}>
+              {item.text}
+            </label>
             <div className={styles.inputHolder}>
               {item.type === 'select' ? (
                 <Selector
@@ -44,6 +42,8 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                   type={item.type}
                   placeholder={item.text}
                   aria-describedby={`${item.label}HelpBlock`}
+                  aria-label={item.label}
+                  aria-labelledby={item.label}
                   {...register(item.label)}
                 />
               )}
