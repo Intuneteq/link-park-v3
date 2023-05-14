@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { GrDown } from 'react-icons/gr'
 
@@ -14,7 +14,11 @@ const Selector = ({
   selectWidth,
 }) => {
   const [toggle, setToggle] = useState(false)
-  const [school, setSchool] = useState(options[0].name ?? 'null')
+  const [school, setSchool] = useState('')
+
+  useEffect(() => {
+    setSchool(options[0]?.name)
+  }, [options])
 
   const handleClick = function () {
     setToggle(!toggle)

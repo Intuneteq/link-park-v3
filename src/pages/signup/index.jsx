@@ -12,7 +12,6 @@ import {
   fetchSchools,
   // registerUser,
 } from './services'
-// import { useGetAllSchoolsQuery } from '../../api/apiSlice'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -41,7 +40,11 @@ const SignUp = () => {
       parentInputs.forEach((input) => {
         if (input.id === 6) {
           // If Fetch all schools return error
-          input.options = error ? [] : schools
+          input.options = error
+            ? []
+            : schools.map((school) => {
+                return { ...school, value: school.id, label: school.name }
+              })
         }
       })
       return parentInputs

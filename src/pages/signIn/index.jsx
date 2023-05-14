@@ -14,7 +14,6 @@ const SignIn = () => {
 
   useEffect(() => {
     const local = localStorage.getItem('user')
-    console.log('i am local', local)
     setUser(local)
   }, [])
 

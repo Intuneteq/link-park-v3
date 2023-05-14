@@ -1,18 +1,18 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
+import Select from 'react-select'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../atoms'
-import { Selector } from '../../molecules'
 import styles from './form.module.scss'
 
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
 
-  const { register, handleSubmit: hookSubmit } = useForm()
+  const { register, control, handleSubmit: hookSubmit } = useForm()
 
   return (
     <section className={styles.formBox}>
@@ -30,12 +30,12 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
             </label>
             <div className={styles.inputHolder}>
               {item.type === 'select' ? (
-                <Selector
-                  width={'100%'}
-                  selectWidth={'100%'}
-                  height={'100%'}
-                  options={item.options}
-                  padding={'0.875rem 1.25rem'}
+                <Controller
+                  name='school'
+                  control={control}
+                  render={({ field }) => (
+                    <Select options={item.options} id='school' {...field} />
+                  )}
                 />
               ) : (
                 <input
@@ -89,3 +89,10 @@ Form.propTypes = {
 }
 
 export default Form
+{
+  /* <Select
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={item.options}
+                  /> */
+}
