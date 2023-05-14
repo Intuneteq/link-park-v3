@@ -10,14 +10,10 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     selectParent: (state, action) => {
-      localStorage.setItem('parent', action.payload)
-      localStorage.setItem('student', !action.payload)
       state.student = !action.payload
       state.parent = action.payload
     },
     selectStudent: (state, action) => {
-      localStorage.setItem('student', action.payload)
-      localStorage.setItem('parent', !action.payload)
       state.parent = !action.payload
       state.student = action.payload
     },

@@ -22,8 +22,8 @@ const SignUp = () => {
   const schools = useSelector(selectAllSchools)
   const schoolsStatus = useSelector(getSchoolsStatus)
   const error = useSelector(getSchoolsError)
-  const parent = localStorage.getItem('parent')
-  const student = localStorage.getItem('student')
+  const parent = useSelector(parentStatus)
+  const student = useSelector(studentStatus)
 
   useEffect(() => {
     if (schoolsStatus === 'idle') {
@@ -35,7 +35,7 @@ const SignUp = () => {
     if (parent) {
       parentInputs.forEach((input) => {
         if (input.id === 6) {
-          input.options = schools.map((school) => school)
+          input.options = schools
         }
       })
       return parentInputs
