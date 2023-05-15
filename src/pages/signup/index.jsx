@@ -1,36 +1,28 @@
+// Dependencies
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
+// Components
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-import {
-  selectAllSchools,
-  getSchoolsStatus,
-  getSchoolsError,
-  fetchSchools,
-  getUser,
-  getRegistrationStatus,
-  getRegistrationError,
-  registerUser,
-} from './services'
+
+// Reducers
+import { fetchSchools, getSchoolsStatus } from '../../features/auth'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [user, setUser] = useState('')
 
+  const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
+  const schoolsStatus = useSelector(getSchoolsStatus)
+
   useEffect(() => {
     const local = localStorage.getItem('user')
     setUser(local)
   }, [])
-
-  const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
-  const schools = useSelector(selectAllSchools)
-  const schoolsStatus = useSelector(getSchoolsStatus)
-  const registeredUser = useSelector(getUser)
-  const error = useSelector(getSchoolsError)
 
   useEffect(() => {
     if (schoolsStatus === 'idle') {
@@ -40,17 +32,6 @@ const SignUp = () => {
 
   function showInput() {
     if (user === 'parent') {
-      // console.log()
-      parentInputs.forEach((input) => {
-        if (input.id === 6) {
-          // If Fetch all schools return error
-          input.options = error
-            ? []
-            : schools.map((school) => {
-                return { ...school, value: school.id, label: school.name }
-              })
-        }
-      })
       return parentInputs
     } else {
       return studentInputs
@@ -59,29 +40,29 @@ const SignUp = () => {
 
   const handleSubmit = (data) => {
     console.log(data)
-    const {
-      firstName: first_name,
-      lastName: last_name,
-      email,
-      password,
-      school,
-      phoneNumber: phone_number,
-    } = data
+    // const {
+    //   firstName: first_name,
+    //   lastName: last_name,
+    //   email,
+    //   password,
+    //   school,
+    //   phoneNumber: phone_number,
+    // } = data
     if (user === 'parent') {
       // Dispatch register
 
-      const parentData = {
-        user_type: 'guardian',
-        school_id: school.id,
-        first_name,
-        last_name,
-        email,
-        password,
-        phone_number,
-      }
+      // const parentData = {
+      //   user_type: 'guardian',
+      //   school_id: school.id,
+      //   first_name,
+      //   last_name,
+      //   email,
+      //   password,
+      //   phone_number,
+      // }
 
-      dispatch(registerUser(parentData)).unwrap()
-      console.log(registeredUser)
+      // dispatch(registerUser(parentData)).unwrap()
+      // console.log(registeredUser)
       navigate('/username/dashboard')
     } else if (user === 'student') {
       navigate('/student/dashboard')

@@ -1,17 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import { setupListeners } from '@reduxjs/toolkit/query'
 
 //import reducers here
-import userReducer from './pages/user/slices/userSlice'
-import signUpReducer from './pages/signup/services'
-// import { apiSlice } from './api/apiSlice'
+import authReducer from './features/auth'
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
-    signUp: signUpReducer,
-    // [apiSlice.reducerPath]: apiSlice.reducer,
+    auth: authReducer,
   },
 })
-
-// setupListeners(store.dispatch)

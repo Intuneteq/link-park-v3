@@ -4,13 +4,26 @@ import Select from 'react-select'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
+import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../atoms'
+import { selectAllSchools, getSchoolsStatus } from '../../../features/auth'
 import styles from './form.module.scss'
 
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
+  const schoolStatus = useSelector(getSchoolsStatus)
+  const allSchools = useSelector(selectAllSchools)
+
+  let schools
+  if (schoolStatus === 'succeeded') {
+    schools = allSchools.map((school) => {
+      return { ...school, value: school.id, label: school.name }
+    })
+  } else {
+    schools = []
+  }
 
   const { register, control, handleSubmit: hookSubmit } = useForm()
 
@@ -34,7 +47,7 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                   name='school'
                   control={control}
                   render={({ field }) => (
-                    <Select options={item.options} id='school' {...field} />
+                    <Select options={schools} id='school' {...field} />
                   )}
                 />
               ) : (
@@ -89,10 +102,3 @@ Form.propTypes = {
 }
 
 export default Form
-{
-  /* <Select
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={item.options}
-                  /> */
-}

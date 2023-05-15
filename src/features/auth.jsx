@@ -19,7 +19,7 @@ export const fetchSchools = createAsyncThunk(
   }
 )
 
-export const registerUser = createAsyncThunk('user/register', async (data) => {
+export const register = createAsyncThunk('user/register', async (data) => {
   try {
     const response = await axios.post(`${base_URL}/auth/register`, data)
     return response
@@ -31,46 +31,52 @@ export const registerUser = createAsyncThunk('user/register', async (data) => {
 
 const initialState = {
   schools: [],
+  schoolStatus: 'idle', // 'idle', | 'loading' | 'succeeded' | 'failed'
+  schoolError: null,
   user: {},
-  status: 'idle', // 'idle', | 'loading' | 'succeeded' | 'failed'
-  error: null,
   registrationError: null,
   registrationStatus: 'idle',
 }
 
-const signUpSlice = createSlice({
-  name: 'signUp',
+const authSlice = createSlice({
+  name: 'auth',
   initialState,
   reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchSchools.pending, (state) => {
-        state.status = 'loading'
+        state.schoolStatus = 'loading'
       })
       .addCase(fetchSchools.fulfilled, (state, action) => {
-        state.status = 'succeeded'
+        state.schoolStatus = 'succeeded'
         state.schools = action.payload
       })
       .addCase(fetchSchools.rejected, (state, action) => {
-        state.status = 'failed'
+        state.schoolStatus = 'failed'
         state.error = action.error.message
       })
-      .addCase(registerUser.fulfilled, (state, action) => {
-        console.log('in redux', action.payload)
+      .addCase(register.pending, (state) => {
+        state.registrationStatus = 'loading'
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        console.log('registration fufilled', action.payload)
         state.user = action.payload
       })
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(register.rejected, (state, action) => {
         state.registrationStatus = 'failed'
         state.error = action.error.message
       })
   },
 })
 
-export const selectAllSchools = (state) => state.signUp.schools
-export const getSchoolsStatus = (state) => state.signUp.status
-export const getSchoolsError = (state) => state.signUp.error
-export const getUser = (state) => state.signUp.user
-export const getRegistrationStatus = (state) => state.signUp.registrationStatus
-export const getRegistrationError = (state) => state.signUp.registrationError
+// Schools
+export const selectAllSchools = (state) => state.auth.schools
+export const getSchoolsStatus = (state) => state.auth.schoolStatus
+export const getSchoolsError = (state) => state.auth.schoolError
 
-export default signUpSlice.reducer
+// Users
+export const getUser = (state) => state.auth.user
+export const getRegistrationStatus = (state) => state.auth.registrationStatus
+export const getRegistrationError = (state) => state.auth.registrationError
+
+export default authSlice.reducer

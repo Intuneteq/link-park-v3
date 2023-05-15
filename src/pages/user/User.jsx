@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-// import { useDispatch } from 'react-redux'
 import 'animate.css'
 
 import { Buttons } from '../../components/atoms'
-// import { selectParent, selectStudent } from './slices/userSlice'
 import { USER_CONTENTS } from './contents'
 import './UserSelect.scss'
 
