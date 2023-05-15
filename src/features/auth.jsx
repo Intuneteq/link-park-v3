@@ -22,10 +22,11 @@ export const fetchSchools = createAsyncThunk(
 export const register = createAsyncThunk('user/register', async (data) => {
   try {
     const response = await axios.post(`${base_URL}/auth/register`, data)
-    return response
+    console.log('out here debugging', response)
+    return response.data
   } catch (error) {
-    console.error(error)
-    return error.message
+    console.error(error.response?.data)
+    return error.response?.data
   }
 })
 
@@ -59,8 +60,12 @@ const authSlice = createSlice({
         state.registrationStatus = 'loading'
       })
       .addCase(register.fulfilled, (state, action) => {
-        console.log('registration fufilled', action.payload)
-        state.user = action.payload
+        if (!action.payload.success) {
+          state.registrationStatus = 'failed'
+          state.registrationError = action.payload.message
+        }
+        state.registrationStatus = 'succeeded'
+        state.user = action.payload.data.data
       })
       .addCase(register.rejected, (state, action) => {
         state.registrationStatus = 'failed'

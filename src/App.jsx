@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 
 //import layouts
 import {
@@ -49,6 +50,7 @@ import NotificationsSettingsx from './pages/settings/NotificationsSettingsx'
 function App() {
   return (
     <Suspense fallback={<Loading text='LOADING...' />}>
+      <Toaster />
       <Routes>
         <Route element={<ExternalLayouts />}>
           <Route index path='/' element={<Home />} />
