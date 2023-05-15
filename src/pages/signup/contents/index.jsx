@@ -76,16 +76,6 @@ export const SIGNUP_CONTENTS = {
       text: 'Select school',
       type: 'select',
       options: [],
-      // options: [
-      //   'Nigeria Turkish Nile International College',
-      //   'The Regent Secondary School, Abuja',
-      //   'Ave Maria Secondary School, Abuja',
-      //   'Pace Setters College',
-      //   'Tophill Secondary School',
-      //   'Whiteplains British School',
-      //   'Tophill Nursery Primary and Secondary School',
-      //   'Model Secondary School Maitama',
-      // ],
     },
     {
       id: 7,

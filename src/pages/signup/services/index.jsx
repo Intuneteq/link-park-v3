@@ -21,7 +21,7 @@ export const fetchSchools = createAsyncThunk(
 
 export const registerUser = createAsyncThunk('user/register', async (data) => {
   try {
-    const response = await axios.post(`${base_URL}/auth`, data)
+    const response = await axios.post(`${base_URL}/auth/register`, data)
     return response
   } catch (error) {
     console.error(error)
@@ -69,5 +69,8 @@ const signUpSlice = createSlice({
 export const selectAllSchools = (state) => state.signUp.schools
 export const getSchoolsStatus = (state) => state.signUp.status
 export const getSchoolsError = (state) => state.signUp.error
+export const getUser = (state) => state.signUp.user
+export const getRegistrationStatus = (state) => state.signUp.registrationStatus
+export const getRegistrationError = (state) => state.signUp.registrationError
 
 export default signUpSlice.reducer

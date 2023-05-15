@@ -10,7 +10,10 @@ import {
   getSchoolsStatus,
   getSchoolsError,
   fetchSchools,
-  // registerUser,
+  getUser,
+  getRegistrationStatus,
+  getRegistrationError,
+  registerUser,
 } from './services'
 
 const SignUp = () => {
@@ -26,6 +29,7 @@ const SignUp = () => {
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
   const schools = useSelector(selectAllSchools)
   const schoolsStatus = useSelector(getSchoolsStatus)
+  const registeredUser = useSelector(getUser)
   const error = useSelector(getSchoolsError)
 
   useEffect(() => {
@@ -55,9 +59,29 @@ const SignUp = () => {
 
   const handleSubmit = (data) => {
     console.log(data)
+    const {
+      firstName: first_name,
+      lastName: last_name,
+      email,
+      password,
+      school,
+      phoneNumber: phone_number,
+    } = data
     if (user === 'parent') {
       // Dispatch register
 
+      const parentData = {
+        user_type: 'guardian',
+        school_id: school.id,
+        first_name,
+        last_name,
+        email,
+        password,
+        phone_number,
+      }
+
+      dispatch(registerUser(parentData)).unwrap()
+      console.log(registeredUser)
       navigate('/username/dashboard')
     } else if (user === 'student') {
       navigate('/student/dashboard')
