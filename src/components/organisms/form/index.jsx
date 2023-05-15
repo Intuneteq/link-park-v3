@@ -8,25 +8,33 @@ import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../atoms'
-import { selectAllSchools, getSchoolsStatus } from '../../../features/auth'
+// import { selectAllSchools, getSchoolsStatus } from '../../../features/auth'
 import styles from './form.module.scss'
 
-const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
+const Form = ({
+  title,
+  handleSubmit,
+  arr,
+  schools,
+  signIn,
+  btnText,
+  footerText,
+}) => {
   const { isTablet } = useGetScreenSize()
 
-  // Fetch schools and school GET req status from redux
-  const schoolStatus = useSelector(getSchoolsStatus)
-  const allSchools = useSelector(selectAllSchools)
+  // // Fetch schools and school GET req status from redux
+  // const schoolStatus = useSelector(getSchoolsStatus)
+  // const allSchools = useSelector(selectAllSchools)
 
-  // Schools are selected to register a Parent.
-  let schools
-  if (schoolStatus === 'succeeded') {
-    schools = allSchools.map((school) => {
-      return { ...school, value: school.id, label: school.name }
-    })
-  } else {
-    schools = []
-  }
+  // // Schools are selected to register a Parent.
+  // let schools = []
+  // if (schoolStatus === 'succeeded') {
+  //   schools = allSchools.map((school) => {
+  //     return { ...school, value: school.id, label: school.name }
+  //   })
+  // } else {
+  //   schools = []
+  // }
 
   // Use react hook form to handle form data
   const {
@@ -109,6 +117,7 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
 Form.propTypes = {
   title: PropTypes.string.isRequired,
   arr: PropTypes.array.isRequired,
+  schools: PropTypes.array,
   handleSubmit: PropTypes.func,
   signIn: PropTypes.bool,
   btnText: PropTypes.string.isRequired,
