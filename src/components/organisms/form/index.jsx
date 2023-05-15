@@ -13,9 +13,12 @@ import styles from './form.module.scss'
 
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
+
+  // Fetch schools and school GET req status from redux
   const schoolStatus = useSelector(getSchoolsStatus)
   const allSchools = useSelector(selectAllSchools)
 
+  // Schools are selected to register a Parent.
   let schools
   if (schoolStatus === 'succeeded') {
     schools = allSchools.map((school) => {
@@ -25,7 +28,13 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
     schools = []
   }
 
-  const { register, control, handleSubmit: hookSubmit } = useForm()
+  // Use react hook form to handle form data
+  const {
+    register,
+    control,
+    handleSubmit: hookSubmit,
+    formState: { errors },
+  } = useForm()
 
   return (
     <section className={styles.formBox}>
@@ -46,6 +55,7 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                 <Controller
                   name='school'
                   control={control}
+                  rules={{ required: true }}
                   render={({ field }) => (
                     <Select options={schools} id='school' {...field} />
                   )}
@@ -57,11 +67,15 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                   aria-describedby={`${item.label}HelpBlock`}
                   aria-label={item.label}
                   aria-labelledby={item.label}
-                  {...register(item.label)}
+                  aria-invalid={errors[item.label] ? 'true' : 'false'}
+                  {...register(item.label, { required: true })}
                 />
               )}
               {item.icon && item.icon}
             </div>
+            {errors[item.label]?.type === 'required' && (
+              <small role='alert'>{`${item.text} is required`}</small>
+            )}
           </div>
         ))}
         {signIn && (

@@ -105,6 +105,10 @@
       font-size: fn.rem(20);
     }
   }
+
+  small {
+    color: red;
+  }
 }
 
 .formHolderHalf {
@@ -124,6 +128,12 @@
     border: 1px solid #6b6b6b;
     border-radius: fn.rem(8);
     padding: 0 fn.rem(20);
+  }
+
+  input:focus {
+    border: none;
+    outline: 3px solid rgb(38,132,255);
+    transition: 0.1s all ease;
   }
 
   svg {
