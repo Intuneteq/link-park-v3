@@ -72,12 +72,13 @@ const SignUp = () => {
       navigate('/')
     }
 
-    const response = await dispatch(register(userData)).unwrap()
-    if (!response.success) {
-      toast.error(response.message)
-    } else {
+    try {
+      await dispatch(register(userData)).unwrap()
       toast.success('Registration successful')
       navigate('/signin')
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
     }
   }
 

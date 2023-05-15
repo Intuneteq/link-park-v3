@@ -20,14 +20,8 @@ export const fetchSchools = createAsyncThunk(
 )
 
 export const register = createAsyncThunk('user/register', async (data) => {
-  try {
-    const response = await axios.post(`${base_URL}/auth/register`, data)
-    console.log('out here debugging', response)
-    return response.data
-  } catch (error) {
-    console.error('reg error', error.response?.data)
-    return error.response?.data
-  }
+  const response = await axios.post(`${base_URL}/auth/register`, data)
+  return response.data
 })
 
 const initialState = {
@@ -35,8 +29,6 @@ const initialState = {
   schoolStatus: 'idle', // 'idle', | 'loading' | 'succeeded' | 'failed'
   schoolError: null,
   user: {},
-  registrationError: null,
-  registrationStatus: 'idle',
 }
 
 const authSlice = createSlice({
@@ -56,22 +48,8 @@ const authSlice = createSlice({
         state.schoolStatus = 'failed'
         state.error = action.error.message
       })
-      .addCase(register.pending, (state) => {
-        state.registrationStatus = 'loading'
-      })
       .addCase(register.fulfilled, (state, action) => {
-        if (!action.payload.success) {
-          state.registrationStatus = 'failed'
-          state.registrationError = action.payload.message
-        }
-        if (action.payload.success) {
-          state.registrationStatus = 'succeeded'
-          state.user = action.payload.data.data
-        }
-      })
-      .addCase(register.rejected, (state, action) => {
-        state.registrationStatus = 'failed'
-        state.error = action.error.message
+        state.user = { ...action.payload.data.data }
       })
   },
 })
@@ -83,7 +61,5 @@ export const getSchoolsError = (state) => state.auth.schoolError
 
 // Users
 export const getUser = (state) => state.auth.user
-export const getRegistrationStatus = (state) => state.auth.registrationStatus
-export const getRegistrationError = (state) => state.auth.registrationError
 
 export default authSlice.reducer
