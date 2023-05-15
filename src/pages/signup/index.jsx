@@ -8,23 +8,20 @@ import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
 
-// Reducers
-// import { fetchSchools, getSchoolsStatus, register } from '../../features/auth'
-import { useGetSchoolsQuery } from '../../features/api'
+import { useGetSchoolsQuery, useRegisterMutation } from '../../features/api'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState('')
+  const { data, isSuccess, error, isError } = useGetSchoolsQuery()
+  const [register] = useRegisterMutation()
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
-  // const schoolsStatus = useSelector(getSchoolsStatus)
 
   useEffect(() => {
     const local = localStorage.getItem('user')
     setUser(local)
   }, [])
-
-  const { data, isSuccess, error, isError } = useGetSchoolsQuery()
 
   let schools
   if (isSuccess) {
@@ -46,44 +43,44 @@ const SignUp = () => {
   const handleSubmit = async (data) => {
     console.log(data)
 
-    // let userData = {
-    //   first_name: data.firstName,
-    //   last_name: data.lastName,
-    //   email: data.email,
-    //   password: data.password,
-    //   phone_number: data.phoneNumber,
-    // }
-    // // User is a parent
-    // if (user === 'parent') {
-    //   userData = {
-    //     ...userData,
-    //     user_type: 'guardian',
-    //     school_id: data.school.id,
-    //   }
-    // }
+    let userData = {
+      first_name: data.firstName,
+      last_name: data.lastName,
+      email: data.email,
+      password: data.password,
+      phone_number: data.phoneNumber,
+    }
 
-    // // User is a student
-    // if (user === 'student') {
-    //   userData = {
-    //     ...userData,
-    //     user_type: 'student',
-    //     guardian_code: data.parentCode,
-    //   }
-    // }
+    // User is a parent
+    if (user === 'parent') {
+      userData = {
+        ...userData,
+        user_type: 'guardian',
+        school_id: data.school.id,
+      }
+    }
 
-    // // No user in local storage
-    // if (!user) {
-    //   navigate('/')
-    // }
+    // User is a student
+    if (user === 'student') {
+      userData = {
+        ...userData,
+        user_type: 'student',
+        guardian_code: data.parentCode,
+      }
+    }
 
-    // try {
-    //   await dispatch(register(userData)).unwrap()
-    //   toast.success('Registration successful')
-    //   navigate('/signin')
-    // } catch (error) {
-    //   console.log(error)
-    //   toast.error(error.message)
-    // }
+    // No user in local storage
+    if (!user) {
+      navigate('/')
+    }
+
+    const response = await register(userData)
+    if (response.error) {
+      toast.error(response.error.data.message)
+    } else {
+      toast.success('Registration successful')
+      navigate('/signin')
+    }
   }
 
   return (

@@ -4,11 +4,9 @@ import Select from 'react-select'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
-import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../atoms'
-// import { selectAllSchools, getSchoolsStatus } from '../../../features/auth'
 import styles from './form.module.scss'
 
 const Form = ({
@@ -21,20 +19,6 @@ const Form = ({
   footerText,
 }) => {
   const { isTablet } = useGetScreenSize()
-
-  // // Fetch schools and school GET req status from redux
-  // const schoolStatus = useSelector(getSchoolsStatus)
-  // const allSchools = useSelector(selectAllSchools)
-
-  // // Schools are selected to register a Parent.
-  // let schools = []
-  // if (schoolStatus === 'succeeded') {
-  //   schools = allSchools.map((school) => {
-  //     return { ...school, value: school.id, label: school.name }
-  //   })
-  // } else {
-  //   schools = []
-  // }
 
   // Use react hook form to handle form data
   const {

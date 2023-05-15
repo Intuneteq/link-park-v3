@@ -7,7 +7,14 @@ export const apiSlice = createApi({
     getSchools: builder.query({
       query: () => '/school',
     }),
+    register: builder.mutation({
+      query: (body) => ({
+        url: '/auth/register',
+        method: 'POST',
+        body,
+      }),
+    }),
   }),
 })
 
-export const { useGetSchoolsQuery } = apiSlice
+export const { useGetSchoolsQuery, useRegisterMutation } = apiSlice
