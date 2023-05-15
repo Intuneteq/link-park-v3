@@ -13,7 +13,7 @@ import { useGetSchoolsQuery, useRegisterMutation } from '../../features/api'
 const SignUp = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState('')
-  const { data, isSuccess, error, isError } = useGetSchoolsQuery()
+  const { data: schools } = useGetSchoolsQuery()
   const [register] = useRegisterMutation()
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
@@ -22,15 +22,6 @@ const SignUp = () => {
     const local = localStorage.getItem('user')
     setUser(local)
   }, [])
-
-  let schools
-  if (isSuccess) {
-    schools = data.data.map((school) => {
-      return { ...school, value: school.id, label: school.name }
-    })
-  } else if (isError) {
-    console.error('could not fetch schools', error)
-  }
 
   function showInput() {
     if (user === 'parent') {
