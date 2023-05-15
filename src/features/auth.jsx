@@ -25,7 +25,7 @@ export const register = createAsyncThunk('user/register', async (data) => {
     console.log('out here debugging', response)
     return response.data
   } catch (error) {
-    console.error(error.response?.data)
+    console.error('reg error', error.response?.data)
     return error.response?.data
   }
 })
@@ -64,8 +64,10 @@ const authSlice = createSlice({
           state.registrationStatus = 'failed'
           state.registrationError = action.payload.message
         }
-        state.registrationStatus = 'succeeded'
-        state.user = action.payload.data.data
+        if (action.payload.success) {
+          state.registrationStatus = 'succeeded'
+          state.user = action.payload.data.data
+        }
       })
       .addCase(register.rejected, (state, action) => {
         state.registrationStatus = 'failed'

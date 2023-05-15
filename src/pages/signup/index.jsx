@@ -50,35 +50,45 @@ const SignUp = () => {
   const handleSubmit = (data) => {
     console.log(data)
 
+    let userData = {
+      first_name: data.firstName,
+      last_name: data.lastName,
+      email: data.email,
+      password: data.password,
+      phone_number: data.phoneNumber,
+    }
     // User is a parent
     if (user === 'parent') {
-      const parentData = {
+      userData = {
+        ...userData,
         user_type: 'guardian',
         school_id: data.school.id,
-        first_name: data.firstName,
-        last_name: data.lastName,
-        email: data.email,
-        password: data.password,
-        phone_number: data.phoneNumber,
-      }
-      // Dispatch register
-      dispatch(register(parentData)).unwrap()
-      if (registrationStatus === 'failed') {
-        toast.error(registrationErrorMsg)
-      } else {
-        toast.success('Registration successful')
-        navigate('/signin')
       }
     }
 
     // User is a student
     if (user === 'student') {
-      navigate('/student/dashboard')
+      userData = {
+        ...userData,
+        user_type: 'student',
+        guardian_code: data.parentCode,
+      }
     }
 
     // No user in local storage
     if (!user) {
       navigate('/')
+    }
+
+    try {
+      // Dispatch register
+      dispatch(register(userData)).unwrap()
+      toast.success('Registration successful')
+      console.log('what is going on', registrationStatus)
+      console.log(registrationErrorMsg)
+      // navigate('/signin')
+    } catch (error) {
+      toast.error(registrationErrorMsg)
     }
   }
 
