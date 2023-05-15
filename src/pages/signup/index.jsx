@@ -10,13 +10,7 @@ import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
 
 // Reducers
-import {
-  fetchSchools,
-  getSchoolsStatus,
-  register,
-  getRegistrationStatus,
-  getRegistrationError,
-} from '../../features/auth'
+import { fetchSchools, getSchoolsStatus, register } from '../../features/auth'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -25,8 +19,6 @@ const SignUp = () => {
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
   const schoolsStatus = useSelector(getSchoolsStatus)
-  const registrationStatus = useSelector(getRegistrationStatus)
-  const registrationErrorMsg = useSelector(getRegistrationError)
 
   useEffect(() => {
     const local = localStorage.getItem('user')
@@ -47,7 +39,7 @@ const SignUp = () => {
     }
   }
 
-  const handleSubmit = (data) => {
+  const handleSubmit = async (data) => {
     console.log(data)
 
     let userData = {
@@ -80,15 +72,12 @@ const SignUp = () => {
       navigate('/')
     }
 
-    try {
-      // Dispatch register
-      dispatch(register(userData)).unwrap()
+    const response = await dispatch(register(userData)).unwrap()
+    if (!response.success) {
+      toast.error(response.message)
+    } else {
       toast.success('Registration successful')
-      console.log('what is going on', registrationStatus)
-      console.log(registrationErrorMsg)
-      // navigate('/signin')
-    } catch (error) {
-      toast.error(registrationErrorMsg)
+      navigate('/signin')
     }
   }
 
