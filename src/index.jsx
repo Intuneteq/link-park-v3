@@ -1,17 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ApiProvider } from '@reduxjs/toolkit/query/react'
+import { Provider } from 'react-redux'
 import { NextUIProvider } from '@nextui-org/react'
 
 import App from './App'
-import { apiSlice } from './features/api'
+import { store } from './store'
 import './index.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <ApiProvider api={apiSlice}>
+    <Provider store={store}>
       <NextUIProvider disableBaseline={true}>
         <BrowserRouter>
           <Routes>
@@ -19,6 +19,6 @@ root.render(
           </Routes>
         </BrowserRouter>
       </NextUIProvider>
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>
 )

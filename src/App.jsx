@@ -52,14 +52,14 @@ function App() {
     <Suspense fallback={<Loading text='LOADING...' />}>
       <Toaster />
       <Routes>
-        <Route element={<ExternalLayouts />}>
-          <Route index path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/parents' element={<Parents />} />
-          <Route path='/signin' element={<SignIn />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/faq' element={<Faq />} />
-          <Route path='/user' element={<User />} />
+        <Route path='/' element={<ExternalLayouts />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='parents' element={<Parents />} />
+          <Route path='signin' element={<SignIn />} />
+          <Route path='signup' element={<SignUp />} />
+          <Route path='faq' element={<Faq />} />
+          <Route path='user' element={<User />} />
           <Route exact path='*' element={<ErrPage />} />
         </Route>
 

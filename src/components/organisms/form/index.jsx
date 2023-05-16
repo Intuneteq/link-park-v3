@@ -4,21 +4,18 @@ import Select from 'react-select'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
+import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
+import { useGetSchoolsQuery, selectAllSchools } from '../../../features/auth'
 import { Buttons } from '../../atoms'
 import styles from './form.module.scss'
 
-const Form = ({
-  title,
-  handleSubmit,
-  arr,
-  schools,
-  signIn,
-  btnText,
-  footerText,
-}) => {
+const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
+
+  const { isError } = useGetSchoolsQuery()
+  const schools = useSelector(selectAllSchools)
 
   // Use react hook form to handle form data
   const {
@@ -49,7 +46,11 @@ const Form = ({
                   control={control}
                   rules={{ required: true }}
                   render={({ field }) => (
-                    <Select options={schools} id='school' {...field} />
+                    <Select
+                      options={isError ? [] : schools}
+                      id='school'
+                      {...field}
+                    />
                   )}
                 />
               ) : (
