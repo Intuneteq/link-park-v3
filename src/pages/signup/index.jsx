@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast'
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-import { useRegisterMutation, authApiSlice } from '../../features/auth'
+import { useRegisterMutation, authApiSlice } from '../../features/auth/authApi'
 
 const SignUp = () => {
   const navigate = useNavigate()

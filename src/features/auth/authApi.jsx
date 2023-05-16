@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSelector } from '@reduxjs/toolkit'
-import { apiSlice } from './api'
+import { apiSlice } from '../api'
 
 const schoolAdapter = createEntityAdapter()
 const initialState = schoolAdapter.getInitialState()
