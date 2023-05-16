@@ -8,15 +8,13 @@ import { toast } from 'react-hot-toast'
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-import { authApiSlice } from '../../features/auth'
-
-// import { useGetSchoolsQuery, useRegisterMutation } from '../../features/api'
+import { useRegisterMutation, authApiSlice } from '../../features/auth'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [user, setUser] = useState('')
-  // const [register] = useRegisterMutation()
+  const [register] = useRegisterMutation()
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
 
@@ -26,8 +24,10 @@ const SignUp = () => {
   }, [])
 
   useEffect(() => {
-    dispatch(authApiSlice.endpoints.getSchools.initiate())
-  }, [])
+    if (user === 'parent') {
+      dispatch(authApiSlice.endpoints.getSchools.initiate())
+    }
+  }, [dispatch, user])
 
   function showInput() {
     if (user === 'parent') {
@@ -73,13 +73,14 @@ const SignUp = () => {
       return
     }
 
-    // const response = await register(userData)
-    // if (response.error) {
-    //   toast.error(response.error.data.message)
-    // } else {
-    //   toast.success('Registration successful')
-    //   navigate('/signin')
-    // }
+    try {
+      await register(userData).unwrap()
+      toast.success('Registration successful')
+      navigate('/signin')
+    } catch (error) {
+      console.error(error)
+      toast.error(error.data.message)
+    }
   }
 
   return (
@@ -87,7 +88,6 @@ const SignUp = () => {
       <Form
         title='Create an Account Below'
         arr={showInput()}
-        // schools={schools}
         btnText='Sign up'
         footerText={footerText}
         handleSubmit={handleSubmit}

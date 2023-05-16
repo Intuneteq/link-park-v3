@@ -7,16 +7,14 @@ import { Checkbox } from '@nextui-org/react'
 import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
-import { useGetSchoolsQuery, selectAllSchools } from '../../../features/auth'
+import { selectAllSchools } from '../../../features/auth'
 import { Buttons } from '../../atoms'
 import styles from './form.module.scss'
 
 const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
   const { isTablet } = useGetScreenSize()
-
-  const { isError } = useGetSchoolsQuery()
   const schools = useSelector(selectAllSchools)
-
+  console.log(schools)
   // Use react hook form to handle form data
   const {
     register,
@@ -46,11 +44,7 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
                   control={control}
                   rules={{ required: true }}
                   render={({ field }) => (
-                    <Select
-                      options={isError ? [] : schools}
-                      id='school'
-                      {...field}
-                    />
+                    <Select options={schools ?? []} id='school' {...field} />
                   )}
                 />
               ) : (
