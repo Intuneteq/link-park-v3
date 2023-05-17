@@ -25,6 +25,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body,
       }),
+      transformResponse: (res) => res.data, // Transform the response as needed
     }),
     login: builder.mutation({
       query: (credentials) => ({
