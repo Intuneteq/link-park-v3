@@ -31,6 +31,13 @@
 
   .dashboard__nav_selector {
     width: 16%;
+
+    &>p {
+      font-weight: 600;
+      font-size: fn.rem(15);
+      color: #131313;
+      text-transform: capitalize;
+    }
   }
 
   .dashboard__nav_user {
