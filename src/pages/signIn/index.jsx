@@ -1,7 +1,7 @@
 // Dependencies
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-hot-toast'
 
 // Components
@@ -9,28 +9,23 @@ import { SIGNIN_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
 import { useLoginMutation } from '../../features/auth/authApi'
-import { setCredentials } from '../../features/auth/authSlice'
+import {
+  setCredentials,
+  selectCurrentUserType,
+} from '../../features/auth/authSlice'
 
 const SignIn = () => {
   const { formInputs, footerText } = SIGNIN_CONTENTS
 
-  const [user, setUser] = useState('')
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const user = useSelector(selectCurrentUserType)
 
   const [login, { isLoading }] = useLoginMutation()
 
-  useEffect(() => {
-    const local = localStorage.getItem('user')
-    setUser(local)
-  }, [])
-
   const handleSubmit = async (data) => {
-    console.log('login data', data)
-
     try {
       const response = await login(data).unwrap()
-      console.log(response)
       const {
         id,
         full_name: fullName,
@@ -48,7 +43,7 @@ const SignIn = () => {
   }
 
   const showHeadText = () => {
-    if (user === 'parent') {
+    if (user === 'guardian') {
       return 'Welcome Back Mr/Mrs'
     } else {
       return 'Welcome Back to school'

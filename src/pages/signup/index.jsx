@@ -1,7 +1,7 @@
 // Dependencies
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-hot-toast'
 
 // Components
@@ -9,28 +9,24 @@ import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
 import { useRegisterMutation, authApiSlice } from '../../features/auth/authApi'
+import { selectCurrentUserType } from '../../features/auth/authSlice'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [user, setUser] = useState('')
   const [register, { isLoading }] = useRegisterMutation()
+  const user = useSelector(selectCurrentUserType)
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
 
   useEffect(() => {
-    const local = localStorage.getItem('user')
-    setUser(local)
-  }, [])
-
-  useEffect(() => {
-    if (user === 'parent') {
+    if (user === 'guardian') {
       dispatch(authApiSlice.endpoints.getSchools.initiate())
     }
   }, [dispatch, user])
 
   function showInput() {
-    if (user === 'parent') {
+    if (user === 'guardian') {
       return parentInputs
     } else {
       return studentInputs
