@@ -3,17 +3,42 @@ import PropTypes from 'prop-types'
 import { IoMdNotificationsOutline } from 'react-icons/io'
 import { CiSearch } from 'react-icons/ci'
 import { MdMenu } from 'react-icons/md'
+import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import { Desktop, Tablet } from '../../../hooks/useMediaQuery'
 import { Icons, Images } from '../../../constants'
 import { Selector } from '../../molecules'
 import { SearchInput } from '../../atoms'
-import { NavLink } from 'react-router-dom'
+import {
+  selectCurrentUser,
+  selectCurrentUserType,
+} from '../../../features/auth/authSlice'
 import './topnav.scss'
 
 const TopNav = ({ name, navLinks }) => {
   const [toggleNav, setToggleNav] = useState(false)
+
+  const fullName = useSelector(selectCurrentUser)
+  const userType = useSelector(selectCurrentUserType)
+
   const options = ['Temitope Adekunle', 'Temitope', 'Temitope']
+
+  let nameContent
+  if (userType === 'guardian') {
+    nameContent = (
+      <Selector
+        borderNone
+        options={options}
+        width={'100%'}
+        height={'100%'}
+        padding={'0'}
+        selectWidth={'100%'}
+      />
+    )
+  } else if (userType === 'student') {
+    nameContent = <p>{fullName}</p>
+  }
 
   return (
     <>
@@ -24,16 +49,7 @@ const TopNav = ({ name, navLinks }) => {
             <SearchInput height={3.25} />
           </div>
           <IoMdNotificationsOutline />
-          <div className='dashboard__nav_selector'>
-            <Selector
-              borderNone
-              options={options}
-              width={'100%'}
-              height={'100%'}
-              padding={'0'}
-              selectWidth={'100%'}
-            />
-          </div>
+          <div className='dashboard__nav_selector'>{nameContent}</div>
           <div className='dashboard__nav_user img-size'>
             <img src={Images.user} alt='user' />
           </div>

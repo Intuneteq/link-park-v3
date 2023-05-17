@@ -1,12 +1,26 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { EVENT_CONTENTS } from './contents'
 import { Container } from '../../../components/templates'
+import {
+  selectCurrentUserId,
+  selectCurrentUserType,
+} from '../../../features/auth/authSlice'
 import styles from './events.module.scss'
 
 const Events = () => {
-  const { eventLink } = EVENT_CONTENTS
+  const user = useSelector(selectCurrentUserType)
+  const id = useSelector(selectCurrentUserId)
+  let { eventLink } = EVENT_CONTENTS
+
+  eventLink = eventLink.map((link) => {
+    return {
+      name: link.name,
+      path: `/${user}/${id}/${link.path}`,
+    }
+  })
 
   return (
     <Container name={'Events'}>
@@ -17,7 +31,6 @@ const Events = () => {
               end
               key={index}
               className={styles.event_links}
-              activeclassname={styles.active}
               to={item.path}
             >
               {item.name}

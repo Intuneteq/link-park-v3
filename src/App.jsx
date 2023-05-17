@@ -66,19 +66,16 @@ function App() {
         {/* Protected Routes */}
         <Route element={<RequireAuth />}>
           {/* student dashboard */}
-          <Route element={<StudentLayout />}>
-            <Route path='/student/dashboard' element={<StudentDashboard />} />
-            <Route path='/student/library' element={<Library />} />
-            <Route path='/student/library/:slugs' element={<LibrarySlugs />} />
-            <Route path='/student/portal' element={<Portal />} />
-            <Route path='/student/portal/results' element={<PotalResult />} />
-            <Route path='/student/calendar' element={<StudentCalendar />} />
-            <Route
-              path='/student/portal/materials'
-              element={<PortalMaterials />}
-            />
-            <Route path='/student/activities' element={<Activities />} />
-            <Route path='/account/settings' element={<Settings />}>
+          <Route path='student/:id' element={<StudentLayout />}>
+            <Route index element={<StudentDashboard />} />
+            <Route path='library' element={<Library />} />
+            <Route path='library/:slugs' element={<LibrarySlugs />} />
+            <Route path='portal' element={<Portal />} />
+            <Route path='portal/results' element={<PotalResult />} />
+            <Route path='calendar' element={<StudentCalendar />} />
+            <Route path='portal/materials' element={<PortalMaterials />} />
+            <Route path='activities' element={<Activities />} />
+            <Route path='account/settings' element={<Settings />}>
               <Route index element={<Details />} />
               <Route path='emails' element={<ChangeEmail />} />
               <Route path='passwords' element={<ChangePasswords />} />
@@ -91,7 +88,7 @@ function App() {
           </Route>
 
           {/* Parent dashboard */}
-          <Route path='/:user/:id' element={<DashboardLayout />}>
+          <Route path='guardian/:id' element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path='results' element={<Results />} />
             <Route path='subjects' element={<Subjects />} />

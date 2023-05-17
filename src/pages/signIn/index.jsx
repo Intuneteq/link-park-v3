@@ -42,17 +42,9 @@ const SignIn = () => {
       navigate(`/${userType}/${id}`)
     } catch (error) {
       console.error(error)
-      toast.error('Login Failed')
-      return
+      if (error?.status === 401) toast.error('Username or Password Incorrect')
+      else toast.error('Login Failed')
     }
-
-    // if (user === 'parent') {
-    //   navigate('/username/dashboard')
-    // } else if (user === 'student') {
-    //   navigate('/student/dashboard')
-    // } else {
-    //   navigate('/')
-    // }
   }
 
   const showHeadText = () => {

@@ -30,6 +30,7 @@ const Sidebar = ({ sideLinks }) => {
               key={item.id}
               className='app__flex-3'
               activeclassname='active'
+              end
             >
               <span>{item.icon}</span>
               <p className='p-text'>{item.name}</p>
@@ -42,13 +43,18 @@ const Sidebar = ({ sideLinks }) => {
             to={`/${user}/${id}/account/settings`}
             activeclassname='active'
             className='app__flex-3'
+            end
           >
             <span>
               <AiOutlineSetting />
             </span>
             <p className='p-text'>settings</p>
           </NavLink>
-          <NavLink to={`/${user}/${id}/signout`} className='app__flex-3 sign'>
+          <NavLink
+            end
+            to={`/${user}/${id}/signout`}
+            className='app__flex-3 sign'
+          >
             <span>
               <TbLogout />
             </span>

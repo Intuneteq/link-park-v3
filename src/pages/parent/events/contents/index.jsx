@@ -2,15 +2,15 @@ export const EVENT_CONTENTS = {
   eventLink: [
     {
       name: 'New',
-      path: '/username/events',
+      path: 'events',
     },
     {
       name: 'Past Events',
-      path: '/username/events/past-events',
+      path: 'events/past-events',
     },
     {
       name: 'All',
-      path: '/username/events/all',
+      path: 'events/all',
     },
   ],
 

@@ -88,7 +88,7 @@ const Form = ({
         )}
         <div className={styles.formBtn}>
           <Buttons
-            text={!isLoading ? btnText : 'submitting...'}
+            text={!isLoading ? btnText : 'Submitting...'}
             type='submit'
             classType='primary'
             height={3.875}
