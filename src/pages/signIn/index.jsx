@@ -30,7 +30,8 @@ const SignIn = () => {
 
     try {
       const response = await login(data).unwrap()
-      const { full_name: fullName, accessToken } = response
+      const { full_name: fullName, accessToken } = response.data
+      toast.success('Login successful')
       dispatch(setCredentials({ fullName, accessToken }))
     } catch (error) {
       console.error(error)
