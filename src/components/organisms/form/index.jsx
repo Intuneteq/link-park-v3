@@ -76,7 +76,11 @@ const Form = ({
         {signIn && (
           <div className={styles.signIn}>
             <div className={styles.rememberMe}>
-              <Checkbox />
+              <Checkbox
+                aria-describedby={`Remember me`}
+                aria-label={'Login Check box'}
+                aria-labelledby={'Check box'}
+              />
               <small>Remember me</small>
             </div>
             <Link to={'#'}>Forgot Password?</Link>
