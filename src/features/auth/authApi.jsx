@@ -14,7 +14,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         })
         return schoolAdapter.setAll(initialState, allSchools)
       },
-      providesTags: (result, error, arg) => [
+      providesTags: (result) => [
         { type: 'school', id: 'LIST' },
         ...result.ids.map((id) => ({ type: 'school', id })),
       ],
@@ -36,7 +36,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
   }),
 })
 
-export const { useGetSchoolsQuery, useRegisterMutation } = authApiSlice
+export const { useGetSchoolsQuery, useRegisterMutation, useLoginMutation } =
+  authApiSlice
 
 // returns the query result object
 export const selectSchoolsResult = authApiSlice.endpoints.getSchools.select()

@@ -1,23 +1,43 @@
+// Dependencies
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { toast } from 'react-hot-toast'
 
+// Components
 import { SIGNIN_CONTENTS } from './contents'
 import { AuthTemplate } from '../../components/templates'
 import { Form } from '../../components/organisms'
-// import { parentStatus, studentStatus } from '../user/slices/userSlice'
+import { useLoginMutation } from '../../features/auth/authApi'
+import { setCredentials } from '../../features/auth/authSlice'
 
 const SignIn = () => {
   const { formInputs, footerText } = SIGNIN_CONTENTS
+
   const [user, setUser] = useState('')
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const [login, { isLoading }] = useLoginMutation()
 
   useEffect(() => {
     const local = localStorage.getItem('user')
     setUser(local)
   }, [])
 
-  const handleSubmit = () => {
+  const handleSubmit = async (data) => {
+    console.log('login data', data)
+
+    try {
+      const response = await login(data).unwrap()
+      const { full_name: fullName, accessToken } = response
+      dispatch(setCredentials({ fullName, accessToken }))
+    } catch (error) {
+      console.error(error)
+      toast.error('Login Failed')
+      return
+    }
+
     if (user === 'parent') {
       navigate('/username/dashboard')
     } else if (user === 'student') {
@@ -44,6 +64,7 @@ const SignIn = () => {
         btnText='Sign In'
         footerText={footerText}
         handleSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </AuthTemplate>
   )

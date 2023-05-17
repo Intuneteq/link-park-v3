@@ -11,7 +11,15 @@ import { selectAllSchools } from '../../../features/auth/authApi'
 import { Buttons } from '../../atoms'
 import styles from './form.module.scss'
 
-const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
+const Form = ({
+  title,
+  handleSubmit,
+  isLoading,
+  arr,
+  signIn,
+  btnText,
+  footerText,
+}) => {
   const { isTablet } = useGetScreenSize()
   const schools = useSelector(selectAllSchools)
   console.log(schools)
@@ -76,7 +84,7 @@ const Form = ({ title, handleSubmit, arr, signIn, btnText, footerText }) => {
         )}
         <div className={styles.formBtn}>
           <Buttons
-            text={btnText}
+            text={isLoading ? btnText : 'submitting...'}
             type='submit'
             classType='primary'
             height={3.875}
@@ -99,6 +107,7 @@ Form.propTypes = {
   schools: PropTypes.array,
   handleSubmit: PropTypes.func,
   signIn: PropTypes.bool,
+  isLoading: PropTypes.bool.isRequired,
   btnText: PropTypes.string.isRequired,
   footerText: PropTypes.objectOf(PropTypes.string),
 }

@@ -14,7 +14,7 @@ const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [user, setUser] = useState('')
-  const [register] = useRegisterMutation()
+  const [register, { isLoading }] = useRegisterMutation()
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
 
@@ -91,6 +91,7 @@ const SignUp = () => {
         btnText='Sign up'
         footerText={footerText}
         handleSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </AuthTemplate>
   )
