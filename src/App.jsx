@@ -91,18 +91,18 @@ function App() {
           </Route>
 
           {/* Parent dashboard */}
-          <Route element={<DashboardLayout />}>
-            <Route path='/username/dashboard' element={<Dashboard />} />
-            <Route path='/username/results' element={<Results />} />
-            <Route path='/username/subjects' element={<Subjects />} />
-            <Route path='/username/notifications' element={<Notifications />} />
-            <Route path='/username/chats' element={<Chats />} />
-            <Route path='/username/events' element={<Events />}>
+          <Route path='/:user/:id' element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path='results' element={<Results />} />
+            <Route path='subjects' element={<Subjects />} />
+            <Route path='notifications' element={<Notifications />} />
+            <Route path='chats' element={<Chats />} />
+            <Route path='events' element={<Events />}>
               <Route exact index element={<NewEvents />} />
               <Route exact path='past-events' element={<PastEvents />} />
               <Route exact path='all' element={<AllEvents />} />
             </Route>
-            <Route path='/account/settings' element={<Settings />}>
+            <Route path='account/settings' element={<Settings />}>
               <Route index element={<Details />} />
               <Route path='emails' element={<ChangeEmail />} />
               <Route path='passwords' element={<ChangePasswords />} />

@@ -3,12 +3,19 @@ import PropTypes from 'prop-types'
 import { Link, NavLink } from 'react-router-dom'
 import { TbLogout } from 'react-icons/tb'
 import { AiOutlineSetting } from 'react-icons/ai'
+import { useSelector } from 'react-redux'
 
 import { Images } from '../../../constants'
+import {
+  selectCurrentUserId,
+  selectCurrentUserType,
+} from '../../../features/auth/authSlice'
 
 import './sidebar.scss'
 
 const Sidebar = ({ sideLinks }) => {
+  const id = useSelector(selectCurrentUserId)
+  const user = useSelector(selectCurrentUserType)
   return (
     <nav className='sidebar'>
       <Link to={'/'} className='sidebar__logo img-size'>
@@ -32,7 +39,7 @@ const Sidebar = ({ sideLinks }) => {
 
         <div>
           <NavLink
-            to={'/account/settings'}
+            to={`/${user}/${id}/account/settings`}
             activeclassname='active'
             className='app__flex-3'
           >
@@ -41,7 +48,7 @@ const Sidebar = ({ sideLinks }) => {
             </span>
             <p className='p-text'>settings</p>
           </NavLink>
-          <NavLink to={'/username/signout'} className='app__flex-3 sign'>
+          <NavLink to={`/${user}/${id}/signout`} className='app__flex-3 sign'>
             <span>
               <TbLogout />
             </span>

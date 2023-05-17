@@ -1,15 +1,20 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { Sidebar } from '../../organisms'
-
+// import { useSelector } from 'react-redux'
 import { SlHome } from 'react-icons/sl'
 import { TbNotebook } from 'react-icons/tb'
 import { BsJoystick } from 'react-icons/bs'
 import { RiCalendar2Line } from 'react-icons/ri'
 
+import { Sidebar } from '../../organisms'
+// import {
+//   selectCurrentUserId,
+//   selectCurrentUserType,
+// } from '../../../features/auth/authSlice'
 import styles from './layout.module.scss'
 
 const StudentLayout = () => {
+  // const id = useSelector(selectCurrentUserId)
   const sideBarLinks = [
     {
       id: 1,

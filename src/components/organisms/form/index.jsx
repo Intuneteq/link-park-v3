@@ -22,7 +22,7 @@ const Form = ({
 }) => {
   const { isTablet } = useGetScreenSize()
   const schools = useSelector(selectAllSchools)
-  console.log(schools)
+
   // Use react hook form to handle form data
   const {
     register,

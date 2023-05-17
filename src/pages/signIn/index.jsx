@@ -30,22 +30,29 @@ const SignIn = () => {
 
     try {
       const response = await login(data).unwrap()
-      const { full_name: fullName, accessToken } = response.data
+      console.log(response)
+      const {
+        id,
+        full_name: fullName,
+        accessToken,
+        user_type: userType,
+      } = response.data
       toast.success('Login successful')
-      dispatch(setCredentials({ fullName, accessToken }))
+      dispatch(setCredentials({ id, fullName, accessToken, userType }))
+      navigate(`/${userType}/${id}`)
     } catch (error) {
       console.error(error)
       toast.error('Login Failed')
       return
     }
 
-    if (user === 'parent') {
-      navigate('/username/dashboard')
-    } else if (user === 'student') {
-      navigate('/student/dashboard')
-    } else {
-      navigate('/')
-    }
+    // if (user === 'parent') {
+    //   navigate('/username/dashboard')
+    // } else if (user === 'student') {
+    //   navigate('/student/dashboard')
+    // } else {
+    //   navigate('/')
+    // }
   }
 
   const showHeadText = () => {
