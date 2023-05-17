@@ -1,21 +1,50 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { TbLogout } from 'react-icons/tb'
 import { AiOutlineSetting } from 'react-icons/ai'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { toast } from 'react-hot-toast'
 
 import { Images } from '../../../constants'
 import {
   selectCurrentUserId,
   selectCurrentUserType,
+  logOut,
 } from '../../../features/auth/authSlice'
+import { useLogoutMutation } from '../../../features/auth/authApi'
 
 import './sidebar.scss'
 
 const Sidebar = ({ sideLinks }) => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const id = useSelector(selectCurrentUserId)
   const user = useSelector(selectCurrentUserType)
+  const [logout, { isLoading, isSuccess }] = useLogoutMutation()
+
+  const handleLogout = async () => {
+    try {
+      await dispatch(logout)
+    } catch (error) {
+      console.error(error)
+      toast.error('Logout Failed')
+      return
+    }
+
+    if (isLoading) {
+      // Show loading state
+
+      console.log('Almost there...')
+    } else if (isSuccess) {
+      // Remove loading state
+
+      dispatch(logOut)
+      navigate('/user')
+    }
+  }
+
   return (
     <nav className='sidebar'>
       <Link to={'/'} className='sidebar__logo img-size'>
@@ -50,16 +79,16 @@ const Sidebar = ({ sideLinks }) => {
             </span>
             <p className='p-text'>settings</p>
           </NavLink>
-          <NavLink
-            end
-            to={`/${user}/${id}/signout`}
+          <button
+            type='button'
+            onClick={handleLogout}
             className='app__flex-3 sign'
           >
             <span>
               <TbLogout />
             </span>
             <p className='p-text'>sign out</p>
-          </NavLink>
+          </button>
         </div>
       </div>
     </nav>

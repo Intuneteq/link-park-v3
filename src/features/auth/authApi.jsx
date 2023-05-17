@@ -34,11 +34,21 @@ export const authApiSlice = apiSlice.injectEndpoints({
         body: { ...credentials },
       }),
     }),
+    logout: builder.mutation({
+      query: () => ({
+        url: '/auth/logout',
+        method: 'DELETE',
+      }),
+    }),
   }),
 })
 
-export const { useGetSchoolsQuery, useRegisterMutation, useLoginMutation } =
-  authApiSlice
+export const {
+  useGetSchoolsQuery,
+  useRegisterMutation,
+  useLoginMutation,
+  useLogoutMutation,
+} = authApiSlice
 
 // returns the query result object
 export const selectSchoolsResult = authApiSlice.endpoints.getSchools.select()

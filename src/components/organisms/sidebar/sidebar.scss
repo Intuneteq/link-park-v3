@@ -40,7 +40,7 @@
 
       & > div {
         width: 100%;
-        a {
+        a, button {
           @include flex_row;
           justify-content: flex-start;
           align-items: flex-start;
@@ -68,6 +68,10 @@
               color: colors.$light;
             }
           }
+        }
+
+        button {
+          background: none;
         }
 
         .active {

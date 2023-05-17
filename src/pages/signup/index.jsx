@@ -45,7 +45,7 @@ const SignUp = () => {
     }
 
     // User is a parent
-    if (user === 'parent') {
+    if (user === 'guardian') {
       userData = {
         ...userData,
         user_type: 'guardian',
