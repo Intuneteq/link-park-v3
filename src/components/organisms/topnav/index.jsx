@@ -13,7 +13,7 @@ import { SearchInput } from '../../atoms'
 import {
   selectCurrentUser,
   selectCurrentUserType,
-} from '../../../features/auth/authSlice'
+} from '../../../pages/auth/api/authSlice'
 import './topnav.scss'
 
 const TopNav = ({ name, navLinks }) => {

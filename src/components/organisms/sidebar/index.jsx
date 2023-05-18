@@ -11,8 +11,8 @@ import {
   selectCurrentUserId,
   selectCurrentUserType,
   logOut,
-} from '../../../features/auth/authSlice'
-import { useLogoutMutation } from '../../../features/auth/authApi'
+} from '../../../pages/auth/api/authSlice'
+import { useLogoutMutation } from '../../../pages/auth/api/authApi'
 
 import './sidebar.scss'
 

@@ -1,5 +1,5 @@
 import { apiSlice } from '../api'
-import { setGuardianStudents } from './guardianSlice'
+import { setGuardianStudents } from '../../../features/guardians./../pages/parent/api/guardianSlice'
 
 export const guardianApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

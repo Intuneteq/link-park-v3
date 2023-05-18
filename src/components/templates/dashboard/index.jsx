@@ -10,7 +10,7 @@ import { Sidebar } from '../../organisms'
 import {
   selectCurrentUserId,
   selectCurrentUserType,
-} from '../../../features/auth/authSlice'
+} from '../../../pages/auth/api/authSlice'
 import styles from './layout.module.scss'
 
 const DashboardLayout = () => {

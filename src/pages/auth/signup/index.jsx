@@ -6,10 +6,10 @@ import { toast } from 'react-hot-toast'
 
 // Components
 import { SIGNUP_CONTENTS } from './contents'
-import { AuthTemplate } from '../../components/templates'
-import { Form } from '../../components/organisms'
-import { useRegisterMutation, authApiSlice } from '../../features/auth/authApi'
-import { selectCurrentUserType } from '../../features/auth/authSlice'
+import { AuthTemplate } from '../../../components/templates'
+import { Form } from '../../../components/organisms'
+import { useRegisterMutation, authApiSlice } from '../api/authApi'
+import { selectCurrentUserType } from '../api/authSlice'
 
 const SignUp = () => {
   const navigate = useNavigate()

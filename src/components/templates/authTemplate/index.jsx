@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { Images } from '../../../constants'
 import { Desktop } from '../../../hooks/useMediaQuery'
-import { selectCurrentUserType } from '../../../features/auth/authSlice'
+import { selectCurrentUserType } from '../../../pages/auth/api/authSlice'
 import styles from './authtemplate.module.scss'
 
 const AuthTemplate = ({ children }) => {

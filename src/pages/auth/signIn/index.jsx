@@ -6,13 +6,10 @@ import { toast } from 'react-hot-toast'
 
 // Components
 import { SIGNIN_CONTENTS } from './contents'
-import { AuthTemplate } from '../../components/templates'
-import { Form } from '../../components/organisms'
-import { useLoginMutation } from '../../features/auth/authApi'
-import {
-  setCredentials,
-  selectCurrentUserType,
-} from '../../features/auth/authSlice'
+import { AuthTemplate } from '../../../components/templates'
+import { Form } from '../../../components/organisms'
+import { useLoginMutation } from '../api/authApi'
+import { setCredentials, selectCurrentUserType } from '../api/authSlice'
 
 const SignIn = () => {
   const { formInputs, footerText } = SIGNIN_CONTENTS

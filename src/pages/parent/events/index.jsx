@@ -7,7 +7,7 @@ import { Container } from '../../../components/templates'
 import {
   selectCurrentUserId,
   selectCurrentUserType,
-} from '../../../features/auth/authSlice'
+} from '../../auth/api/authSlice'
 import styles from './events.module.scss'
 
 const Events = () => {

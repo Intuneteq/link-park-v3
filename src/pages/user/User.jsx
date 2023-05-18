@@ -4,7 +4,7 @@ import 'animate.css'
 
 import { Buttons } from '../../components/atoms'
 import { USER_CONTENTS } from './contents'
-import { setCredentials } from '../../features/auth/authSlice'
+import { setCredentials } from '../auth/api/authSlice'
 
 import './UserSelect.scss'
 
@@ -26,13 +26,6 @@ const User = () => {
   const handleUserClick = (index, user) => {
     setAnimate({ ...animate, activeUser: index })
     dispatch(setCredentials({ userType: user }))
-
-    // if (user.toLowerCase() === 'parent') {
-    //   dispatch(setCredentials({userType: 'parent'}))
-    //   // localStorage.setItem('user', 'parent')
-    // } else if (user.toLowerCase() === 'student') {
-    //   localStorage.setItem('user', 'student')
-    // }
   }
 
   return (

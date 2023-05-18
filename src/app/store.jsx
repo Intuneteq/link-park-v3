@@ -13,8 +13,8 @@ import {
 import thunk from 'redux-thunk'
 
 // Reducers
-import { apiSlice } from './features/api'
-import authReducer from './features/auth/authSlice'
+import { apiSlice } from './api'
+import authReducer from '../pages/auth/api/authSlice'
 
 const persistConfig = {
   key: 'root',
