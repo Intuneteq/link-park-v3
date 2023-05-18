@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../../components/atoms'
@@ -13,16 +12,12 @@ import {
 } from '../../../components/organisms'
 import { Container } from '../../../components/templates'
 import { DASHBOARD_CONTENT } from './contents'
-import { selectCurrentUser } from '../../../features/auth/authSlice'
 import styles from './dashboard.module.scss'
 
 const Dashboard = () => {
   const { isMobile } = useGetScreenSize()
   const { cards, tableData, events } = DASHBOARD_CONTENT
 
-  const fullName = useSelector(selectCurrentUser)
-
-  const user = fullName ?? 'fullName'
   return (
     <Container name={'Dashboard'}>
       <section className={styles.dashboard}>
@@ -30,7 +25,7 @@ const Dashboard = () => {
           <div className={styles.assessment}>
             <div className={styles.assessment_head}>
               <h4>{isMobile ? 'Dashboard' : 'Assessments'}</h4>
-              <h4>SS3C {user}</h4>
+              <h4>SS3C</h4>
             </div>
             <AssessmentCards cards={cards} />
           </div>
