@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { Buttons } from '../../../components/atoms'
@@ -13,10 +14,23 @@ import {
 import { Container } from '../../../components/templates'
 import { DASHBOARD_CONTENT } from './contents'
 import styles from './dashboard.module.scss'
+import { useGetStudentsByGuardianIdQuery } from '../api/guardianApi'
+import { setGuardianStudents } from '../api/guardianSlice'
+import { selectCurrentUserId } from '../../auth/api/authSlice'
 
 const Dashboard = () => {
+  const dispatch = useDispatch()
+
   const { isMobile } = useGetScreenSize()
   const { cards, tableData, events } = DASHBOARD_CONTENT
+
+  const guardianId = useSelector(selectCurrentUserId)
+
+  const { data, isSuccess } = useGetStudentsByGuardianIdQuery(guardianId)
+
+  if (isSuccess) {
+    dispatch(setGuardianStudents(data))
+  }
 
   return (
     <Container name={'Dashboard'}>

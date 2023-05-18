@@ -14,6 +14,8 @@ import {
   selectCurrentUser,
   selectCurrentUserType,
 } from '../../../pages/auth/api/authSlice'
+import { selectGuardianStudents } from '../../../pages/parent/api/guardianSlice'
+
 import './topnav.scss'
 
 const TopNav = ({ name, navLinks }) => {
@@ -21,8 +23,7 @@ const TopNav = ({ name, navLinks }) => {
 
   const fullName = useSelector(selectCurrentUser)
   const userType = useSelector(selectCurrentUserType)
-
-  const options = ['Temitope Adekunle', 'Temitope', 'Temitope']
+  const options = useSelector(selectGuardianStudents)
 
   let nameContent
   if (userType === 'guardian') {

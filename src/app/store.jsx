@@ -15,6 +15,7 @@ import thunk from 'redux-thunk'
 // Reducers
 import { apiSlice } from './api'
 import authReducer from '../pages/auth/api/authSlice'
+import guardianReducer from '../pages/parent/api/guardianSlice'
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +25,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
   auth: authReducer,
+  guardian: guardianReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

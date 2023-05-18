@@ -10,7 +10,13 @@ const guardianSlice = createSlice({
   initialState: STATE,
   reducers: {
     setGuardianStudents: (state, action) => {
-      state.students = [...action.payload]
+      const students = action.payload.map((student) => {
+        return {
+          id: student.id,
+          name: student.first_name + ' ' + student.last_name,
+        }
+      })
+      state.students = [...students]
     },
   },
 })
