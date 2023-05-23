@@ -12,7 +12,7 @@ import {
 } from 'redux-persist'
 
 // Reducers
-import { apiSlice } from './api'
+import { apiSlice } from './api/apiSlice'
 import authReducer from '../pages/auth/api/authSlice'
 import guardianReducer from '../pages/parent/api/guardianSlice'
 

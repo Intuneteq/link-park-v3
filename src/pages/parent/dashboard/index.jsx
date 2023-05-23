@@ -14,7 +14,7 @@ import {
 import { Container } from '../../../components/templates'
 import { DASHBOARD_CONTENT } from './contents'
 import styles from './dashboard.module.scss'
-import { useGetStudentsByGuardianIdQuery } from '../api/guardianApi'
+import { useGetStudentsByGuardianIdQuery } from '../api/guardianApiSlice'
 import { setGuardianStudents } from '../api/guardianSlice'
 import { selectCurrentUserId } from '../../auth/api/authSlice'
 

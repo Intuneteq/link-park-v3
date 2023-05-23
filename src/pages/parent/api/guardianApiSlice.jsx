@@ -1,4 +1,4 @@
-import { apiSlice } from '../../../app/api'
+import { apiSlice } from '../../../app/api/apiSlice'
 
 export const guardianApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
