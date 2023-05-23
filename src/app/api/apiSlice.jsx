@@ -16,7 +16,7 @@ const baseQuery = fetchBaseQuery({
 const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions)
 
-  if (result?.error?.originalStatus === 401) {
+  if (result?.error?.originalStatus === 403) {
     console.log('sending refresh Token')
 
     // Send refresh token to get new access token
@@ -41,6 +41,6 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: baseQueryWithReauth,
-  tagTypes: ['school', 'auth'],
+  tagTypes: ['School', 'Auth'],
   endpoints: () => ({}),
 })

@@ -28,7 +28,7 @@ const SignIn = () => {
     } else if (user === 'student') {
       setTitle('Welcome Back to school')
     } else {
-      navigate('/user')
+      // navigate('/user')
     }
   }, [user, navigate])
 

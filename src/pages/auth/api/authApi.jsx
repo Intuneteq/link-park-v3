@@ -9,16 +9,14 @@ export const authApiSlice = apiSlice.injectEndpoints({
     getSchools: builder.query({
       query: () => '/school',
       transformResponse: (res) => {
-        console.log('res', res)
         const allSchools = res.data.map((school) => {
           return { id: school.id, value: school.id, label: school.name }
         })
         return schoolAdapter.setAll(initialState, allSchools)
       },
-      keepUnusedDataFor: 1,
       providesTags: (result) => [
-        { type: 'school', id: 'LIST' },
-        ...result.ids.map((id) => ({ type: 'school', id })),
+        { type: 'School', id: 'LIST' },
+        ...result.ids.map((id) => ({ type: 'School', id })),
       ],
     }),
     register: builder.mutation({
