@@ -10,7 +10,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import thunk from 'redux-thunk'
 
 // Reducers
 import { apiSlice } from './api'
@@ -37,7 +36,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(thunk, apiSlice.middleware),
+    }).concat(apiSlice.middleware),
   devTools: true, // Only for development
 })
 

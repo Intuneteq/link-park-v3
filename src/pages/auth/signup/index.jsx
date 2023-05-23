@@ -8,22 +8,17 @@ import { toast } from 'react-hot-toast'
 import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../../components/templates'
 import { Form } from '../../../components/organisms'
-import { useRegisterMutation, authApiSlice } from '../api/authApi'
+import { useRegisterMutation, useGetSchoolsQuery } from '../api/authApi'
 import { selectCurrentUserType } from '../api/authSlice'
 
 const SignUp = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [register, { isLoading }] = useRegisterMutation()
+  const schools = useGetSchoolsQuery()
   const user = useSelector(selectCurrentUserType)
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
-
-  useEffect(() => {
-    if (user === 'guardian') {
-      dispatch(authApiSlice.endpoints.getSchools.initiate())
-    }
-  }, [dispatch, user])
 
   function showInput() {
     if (user === 'guardian') {
