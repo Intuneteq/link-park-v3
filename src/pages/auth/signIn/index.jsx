@@ -1,5 +1,5 @@
 // Dependencies
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-hot-toast'
@@ -12,13 +12,25 @@ import { useLoginMutation } from '../api/authApi'
 import { setCredentials, selectCurrentUserType } from '../api/authSlice'
 
 const SignIn = () => {
-  const { formInputs, footerText } = SIGNIN_CONTENTS
+  const [title, setTitle] = useState('')
+  const user = useSelector(selectCurrentUserType)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const user = useSelector(selectCurrentUserType)
+
+  const { formInputs, footerText } = SIGNIN_CONTENTS
 
   const [login, { isLoading }] = useLoginMutation()
+
+  useEffect(() => {
+    if (user === 'guardian') {
+      setTitle('Welcome Back Mr/Mrs')
+    } else if (user === 'student') {
+      setTitle('Welcome Back to school')
+    } else {
+      navigate('/user')
+    }
+  }, [user, navigate])
 
   const handleSubmit = async (data) => {
     try {
@@ -39,18 +51,10 @@ const SignIn = () => {
     }
   }
 
-  const showHeadText = () => {
-    if (user === 'guardian') {
-      return 'Welcome Back Mr/Mrs'
-    } else {
-      return 'Welcome Back to school'
-    }
-  }
-
   return (
     <AuthTemplate>
       <Form
-        title={showHeadText()}
+        title={title}
         arr={formInputs}
         signIn
         btnText='Sign In'

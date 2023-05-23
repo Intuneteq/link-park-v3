@@ -1,7 +1,7 @@
 // Dependencies
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { toast } from 'react-hot-toast'
 
 // Components
@@ -12,21 +12,25 @@ import { useRegisterMutation, useGetSchoolsQuery } from '../api/authApi'
 import { selectCurrentUserType } from '../api/authSlice'
 
 const SignUp = () => {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const [register, { isLoading }] = useRegisterMutation()
-  const schools = useGetSchoolsQuery()
   const user = useSelector(selectCurrentUserType)
+  const [content, setContent] = useState([])
+
+  const navigate = useNavigate()
+
+  const [register, { isLoading: isRegistering }] = useRegisterMutation()
+  const { isLoading: fetchingSchool, isError, error } = useGetSchoolsQuery()
 
   const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
 
-  function showInput() {
+  useEffect(() => {
     if (user === 'guardian') {
-      return parentInputs
+      setContent(parentInputs)
+    } else if (user === 'student') {
+      setContent(studentInputs)
     } else {
-      return studentInputs
+      navigate('/user')
     }
-  }
+  }, [user, navigate, parentInputs, studentInputs])
 
   const handleSubmit = async (data) => {
     console.log(data)
@@ -74,18 +78,28 @@ const SignUp = () => {
     }
   }
 
-  return (
-    <AuthTemplate>
-      <Form
-        title='Create an Account Below'
-        arr={showInput()}
-        btnText='Sign up'
-        footerText={footerText}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
-      />
-    </AuthTemplate>
-  )
+  let render
+
+  if (fetchingSchool) {
+    render = <p>Loading...</p>
+  } else if (isError) {
+    render = <h1>{error}</h1>
+  } else {
+    render = (
+      <AuthTemplate>
+        <Form
+          title='Create an Account Below'
+          arr={content}
+          btnText='Sign up'
+          footerText={footerText}
+          handleSubmit={handleSubmit}
+          isLoading={isRegistering}
+        />
+      </AuthTemplate>
+    )
+  }
+
+  return render
 }
 
 export default SignUp
