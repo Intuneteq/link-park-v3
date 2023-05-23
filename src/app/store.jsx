@@ -10,6 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+import thunk from 'redux-thunk'
 
 // Reducers
 import { apiSlice } from './api/apiSlice'
@@ -19,6 +20,8 @@ import guardianReducer from '../pages/parent/api/guardianSlice'
 const persistConfig = {
   key: 'root',
   storage,
+  version: 1,
+  blackList: [],
 }
 
 const rootReducer = combineReducers({
@@ -26,7 +29,6 @@ const rootReducer = combineReducers({
   auth: authReducer,
   guardian: guardianReducer,
 })
-
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
@@ -36,8 +38,8 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(apiSlice.middleware),
-  devTools: true, // Only for development
+    }).concat(thunk, apiSlice.middleware),
+  devTools: process.env.NODE_ENV !== 'production',
 })
 
 export const persistor = persistStore(store)
