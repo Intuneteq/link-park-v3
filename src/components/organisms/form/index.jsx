@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import Select from 'react-select'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Checkbox } from '@nextui-org/react'
 import { useSelector } from 'react-redux'
+import { AiFillEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
 import { selectAllSchools } from '../../../pages/auth/api/authSlice'
@@ -22,6 +23,7 @@ const Form = ({
 }) => {
   const { isTablet } = useGetScreenSize()
   const schools = useSelector(selectAllSchools)
+  const [toggle, setToggle] = useState(false)
 
   // Use react hook form to handle form data
   const {
@@ -57,7 +59,13 @@ const Form = ({
                 />
               ) : (
                 <input
-                  type={item.type}
+                  type={
+                    item.type !== 'password'
+                      ? item.type
+                      : toggle
+                      ? 'text'
+                      : 'password'
+                  }
                   placeholder={item.text}
                   aria-describedby={`${item.label}HelpBlock`}
                   aria-label={item.label}
@@ -66,7 +74,16 @@ const Form = ({
                   {...register(item.label, { required: true })}
                 />
               )}
-              {item.icon && item.icon}
+              {item.icon &&
+                (item.label === 'password' ? (
+                  !toggle ? (
+                    <AiFillEyeInvisible onClick={() => setToggle(!toggle)} />
+                  ) : (
+                    <AiOutlineEye onClick={() => setToggle(!toggle)} />
+                  )
+                ) : (
+                  <item.icon />
+                ))}
             </div>
             {errors[item.label]?.type === 'required' && (
               <small role='alert'>{`${item.text} is required`}</small>

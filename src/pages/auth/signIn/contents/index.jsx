@@ -1,5 +1,3 @@
-import { AiFillEyeInvisible } from 'react-icons/ai'
-
 export const SIGNIN_CONTENTS = {
   formInputs: [
     {
@@ -13,7 +11,7 @@ export const SIGNIN_CONTENTS = {
       label: 'password',
       text: 'Password',
       type: 'password',
-      icon: <AiFillEyeInvisible />,
+      icon: true,
     },
   ],
 
