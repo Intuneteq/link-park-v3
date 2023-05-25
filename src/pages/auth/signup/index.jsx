@@ -50,7 +50,6 @@ const SignUp = () => {
   }, [user, navigate, parentInputs, studentInputs])
 
   const handleSubmit = async (data) => {
-
     let userData = {
       first_name: data.firstName,
       last_name: data.lastName,
