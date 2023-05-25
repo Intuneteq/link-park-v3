@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
+import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
 import {
   persistReducer,
@@ -37,7 +38,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(apiSlice.middleware),
+    }).concat(thunk, apiSlice.middleware),
   devTools: process.env.NODE_ENV !== 'production',
 })
 

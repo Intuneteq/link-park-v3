@@ -7,7 +7,7 @@ import { Checkbox } from '@nextui-org/react'
 import { useSelector } from 'react-redux'
 
 import { useGetScreenSize } from '../../../hooks/useMediaQuery'
-import { selectAllSchools } from '../../../pages/auth/api/authApi'
+import { selectAllSchools } from '../../../pages/auth/api/authSlice'
 import { Buttons } from '../../atoms'
 import styles from './form.module.scss'
 

@@ -26,7 +26,7 @@ const Sidebar = ({ sideLinks }) => {
 
   const handleLogout = async () => {
     try {
-      await dispatch(logout)
+      dispatch(logout)
     } catch (error) {
       console.error(error)
       toast.error('Logout Failed')

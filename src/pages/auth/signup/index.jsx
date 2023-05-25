@@ -1,7 +1,7 @@
 // Dependencies
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-hot-toast'
 
 // Components
@@ -9,18 +9,36 @@ import { SIGNUP_CONTENTS } from './contents'
 import { AuthTemplate } from '../../../components/templates'
 import { Form } from '../../../components/organisms'
 import { useRegisterMutation, useGetSchoolsQuery } from '../api/authApi'
-import { selectCurrentUserType } from '../api/authSlice'
+import { selectCurrentUserType, setSchools } from '../api/authSlice'
 
 const SignUp = () => {
-  const user = useSelector(selectCurrentUserType)
+  const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
+
   const [content, setContent] = useState([])
+  const user = useSelector(selectCurrentUserType)
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [register, { isLoading: isRegistering }] = useRegisterMutation()
-  const { isLoading: fetchingSchool, isError, error } = useGetSchoolsQuery()
+  const {
+    data: schools,
+    isLoading: fetchingSchool,
+    isError,
+    error,
+    refetch,
+    isSuccess,
+  } = useGetSchoolsQuery('getSchools', {
+    refetchOnMountOrArgChange: true,
+  })
 
-  const { studentInputs, parentInputs, footerText } = SIGNUP_CONTENTS
+  console.log(fetchingSchool)
+  useEffect(() => {
+    refetch()
+    if (isSuccess) {
+      dispatch(setSchools(schools))
+    }
+  }, [refetch, dispatch, schools, isSuccess])
 
   useEffect(() => {
     if (user === 'guardian') {
@@ -79,7 +97,6 @@ const SignUp = () => {
   }
 
   let render
-
   if (fetchingSchool) {
     render = <p>Loading...</p>
   } else if (isError) {
