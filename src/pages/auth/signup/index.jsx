@@ -32,7 +32,6 @@ const SignUp = () => {
     refetchOnMountOrArgChange: true,
   })
 
-  console.log(fetchingSchool)
   useEffect(() => {
     refetch()
     if (isSuccess) {
@@ -51,7 +50,6 @@ const SignUp = () => {
   }, [user, navigate, parentInputs, studentInputs])
 
   const handleSubmit = async (data) => {
-    console.log(data)
 
     let userData = {
       first_name: data.firstName,
