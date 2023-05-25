@@ -54,7 +54,21 @@ const Form = ({
                   control={control}
                   rules={{ required: true }}
                   render={({ field }) => (
-                    <Select options={schools ?? []} id='school' {...field} />
+                    <Select
+                      placeholder={'Select School'}
+                      options={schools ?? []}
+                      id='school'
+                      {...field}
+                      styles={{
+                        control: (baseStyles) => ({
+                          ...baseStyles,
+                          height: '48px',
+                          borderRadius: '8px',
+                          border: '1px solid #6b6b6b',
+                          fontSize: '14px',
+                        }),
+                      }}
+                    />
                   )}
                 />
               ) : (
