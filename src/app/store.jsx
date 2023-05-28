@@ -16,6 +16,7 @@ import {
 import { apiSlice } from './api/apiSlice'
 import authReducer from '../pages/auth/api/authSlice'
 import guardianReducer from '../pages/parent/api/guardianSlice'
+import studentsReducer from '../pages/student/api/studentSlice'
 
 const persistConfig = {
   key: 'root',
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
   auth: authReducer,
   guardian: guardianReducer,
+  students: studentsReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

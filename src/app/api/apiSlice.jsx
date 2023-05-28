@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { setCredentials, logOut } from '../../pages/auth/api/authSlice'
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://api.intuneteq.tk/api/v1',
+  baseUrl: 'http://localhost:8000/api/v1',
+  // baseUrl: 'https://api.intuneteq.tk/api/v1',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token
@@ -41,6 +42,6 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: baseQueryWithReauth,
-  tagTypes: ['School', 'Auth'],
+  tagTypes: ['School', 'Auth', 'students'],
   endpoints: () => ({}),
 })
