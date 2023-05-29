@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 import { LIBRARY_CONTENTS } from './contents'
 import { AccordionIcon, Buttons, LinkButton } from '../../../components/atoms'
 import { Container } from '../../../components/templates'
 import { Icons, Images } from '../../../constants'
+
+import { selectSubjectById } from '../api/studentSlice'
+
 import styles from './library.module.scss'
 
 const LibrarySlugs = () => {
   const [active, setActive] = useState(null)
+
+  const { slugs } = useParams()
+  const subject = useSelector(selectSubjectById(slugs))
+
   const { subjectContent, subjectCardContent } = LIBRARY_CONTENTS
 
   const handleToggleAccordion = (i) => {
@@ -23,7 +32,7 @@ const LibrarySlugs = () => {
         <div className={styles.subjectHolder}>
           <div className={styles.subjectCard}>
             <div className={[styles.cardImg, 'img-size'].join(' ')}>
-              <img src={Images.subject} alt='subject' />
+              <img src={subject.image} alt='subject' />
             </div>
             {subjectCardContent.map((item, index) => (
               <div key={index} className={styles.cardContent}>
@@ -36,7 +45,7 @@ const LibrarySlugs = () => {
                 <img src={Images.teacher} alt='teacher' />
               </div>
               <h6>Teacher:</h6>
-              <p>Mr James Joeseph</p>
+              <p>{subject.teacher}</p>
             </div>
           </div>
           <Buttons
