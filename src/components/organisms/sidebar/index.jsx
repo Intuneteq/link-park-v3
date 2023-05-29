@@ -13,6 +13,7 @@ import {
   logOut,
 } from '../../../pages/auth/api/authSlice'
 import { useLogoutMutation } from '../../../pages/auth/api/authApi'
+import { apiSlice } from '../../../app/api/apiSlice'
 
 import './sidebar.scss'
 
@@ -22,27 +23,18 @@ const Sidebar = ({ sideLinks }) => {
 
   const id = useSelector(selectCurrentUserId)
   const user = useSelector(selectCurrentUserType)
-  const [logout, { isLoading, isSuccess }] = useLogoutMutation()
+  const [logout] = useLogoutMutation()
 
   const handleLogout = async () => {
     try {
-      dispatch(logout)
+      await dispatch(logout)
     } catch (error) {
       console.error(error)
       toast.error('Logout Failed')
-      return
     }
-
-    if (isLoading) {
-      // Show loading state
-
-      console.log('Almost there...')
-    } else if (isSuccess) {
-      // Remove loading state
-
-      dispatch(logOut)
-      navigate('/user')
-    }
+    dispatch(apiSlice.util.resetApiState())
+    dispatch(logOut())
+    navigate('/user')
   }
 
   return (

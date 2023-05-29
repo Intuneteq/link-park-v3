@@ -26,6 +26,7 @@ const authSlice = createSlice({
       state.fullName = null
       state.token = null
       state.id = null
+      state.schools = []
     },
   },
 })

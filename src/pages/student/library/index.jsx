@@ -12,9 +12,7 @@ import styles from './library.module.scss'
 
 const Library = () => {
   // const { libraryItems } = LIBRARY_CONTENTS
-  let libraryItems
   const userId = useSelector(selectCurrentUserId)
-
   const result = useGetAllSubjectsQuery('getSubjects')
 
   if (result.isLoading) {
@@ -22,6 +20,7 @@ const Library = () => {
     return <p>...Loading</p>
   }
 
+  let libraryItems
   if (result.isSuccess) {
     libraryItems = result.data
     return (
