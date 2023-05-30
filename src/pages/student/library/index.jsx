@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { Buttons } from '../../../components/atoms'
@@ -65,12 +65,10 @@ const Library = () => {
           ].join(' ')}
         >
           {libraryItems.slice(0, index).map((item) => (
-            <NavLink
+            <Link
               to={`/student/${userId}/library/${item.id}`}
               key={item.id}
               className={styles.library_card}
-              activeclassname={'active'}
-              end
             >
               <div className={[styles.subject_img, 'img-size'].join(' ')}>
                 <img src={item.image} alt='subject' />
@@ -78,7 +76,7 @@ const Library = () => {
               <h6>{item.title}</h6>
               <p>Teacher: {item.teacher}</p>
               <span>Class: {item.class}</span>
-            </NavLink>
+            </Link>
           ))}
         </div>
         <div className={[styles.library__body_btn, 'app__flex'].join(' ')}>

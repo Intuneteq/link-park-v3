@@ -50,8 +50,7 @@ const Sidebar = ({ sideLinks }) => {
               to={item.path}
               key={item.id}
               className='app__flex-3'
-              activeclassname='active'
-              end
+              activeclassname={'active'}
             >
               <span>{item.icon}</span>
               <p className='p-text'>{item.name}</p>

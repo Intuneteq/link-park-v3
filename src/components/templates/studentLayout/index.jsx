@@ -20,7 +20,7 @@ const StudentLayout = () => {
   const sideBarLinks = [
     {
       id: 1,
-      path: `/${user}/${id}`,
+      path: `/${user}/${id}/`,
       name: 'Dashboard',
       icon: <SlHome />,
     },
