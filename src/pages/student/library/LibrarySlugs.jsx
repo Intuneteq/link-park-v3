@@ -93,7 +93,7 @@ const LibrarySlugs = () => {
               {subject.outline.map((item) => (
                 <button
                   type='button'
-                  key={item.key}
+                  key={item._key}
                   onClick={() => handleToggleAccordion(item.key)}
                   className={[styles.accordion].join(' ')}
                 >

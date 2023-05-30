@@ -7,12 +7,19 @@
   width: 100%;
   height: 100%;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   grid-template-rows: auto auto;
   grid-auto-flow: column;
   grid-column-gap: fn.rem(20);
   grid-row-gap: fn.rem(40);
   overflow-x: scroll;
   padding-bottom: fn.rem(10);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.show_scrollbar {
   &::-webkit-scrollbar {
     display: none;
     @include breakpoint-up('md') {
@@ -22,11 +29,24 @@
       border-radius: fn.rem(10);
     }
   }
+
   &::-webkit-scrollbar-thumb:horizontal {
     background: var(--primary-color);
     border-radius: fn.rem(10);
     cursor: pointer;
   }
+}
+
+.show_scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background: var(--primary-color);
+  border-radius: fn.rem(10);
+  cursor: pointer;
+}
+
+.show_scrollbar::horizontal {
+  background: var(--primary-color);
+  border-radius: fn.rem(10);
+  cursor: pointer;
 }
 
 .library_card {
@@ -68,15 +88,9 @@
 .library__body_btn {
   width: 100%;
   margin-top: fn.rem(40);
-
-  button {
-    width: fn.rem(144);
-    height: fn.rem(48);
-  }
 }
 
-//slugs
-
+//-------------------------------------------------SLUGS--------------------------------------//
 .slugs {
   width: 100%;
   display: flex;
@@ -200,7 +214,7 @@
         @include flex_align;
         flex-direction: row;
         justify-content: space-between;
-      } 
+      }
 
       & > div {
         @include flex_centered;
