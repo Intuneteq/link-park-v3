@@ -32,6 +32,8 @@ const Library = () => {
               to={`/student/${userId}/library/${item.id}`}
               key={item.id}
               className={styles.library_card}
+              activeclassname={'active'}
+              end
             >
               <div className={[styles.subject_img, 'img-size'].join(' ')}>
                 <img src={item.image} alt='subject' />

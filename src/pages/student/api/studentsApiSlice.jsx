@@ -7,7 +7,13 @@ export const studentsApiSlice = apiSlice.injectEndpoints({
       transformResponse: (res) => res.data,
       providesTags: 'students',
     }),
+    getSubjectById: builder.query({
+      query: (subjectID) => `/students/subjects/${subjectID}`,
+      transformResponse: (res) => res.data,
+      providesTags: ['students'],
+    }),
   }),
 })
 
-export const { useGetAllSubjectsQuery } = studentsApiSlice
+export const { useGetAllSubjectsQuery, useGetSubjectByIdQuery } =
+  studentsApiSlice
